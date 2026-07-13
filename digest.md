@@ -1,58 +1,58 @@
-# Weekly ToC Digest (week of 2026-07-06)
+# Weekly ToC Digest (week of 2026-07-13)
 
-No relevant articles matching brain-age modeling or related topics were found this week. Prioritized papers involve brain aging models, neuroimaging biomarkers, and computational methods relevant to brain aging. No items matched brain aging / brain-age modeling criteria for this week. This week's selections do not strongly align with brain aging interests. Most papers lack focus on brain-age models or relevant computational methods.
+No relevant brain aging titles found in this week's papers. This week's selection prioritized studies on neuroimaging and modeling related to brain aging, as well as methodological papers applicable to brain-age research. No directly relevant publications matching the criteria for brain aging models, neuroimaging biomarkers, or computational methodologies in this week's items.
 
 **Included:** 3 (score ≥ 0.35)  
-**Scored:** 5 total items
+**Scored:** 8 total items
 
 ---
 
-## [Multifocal Noninvasive Deep Brain Stimulation to Enhance Cognition in MCI](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2851135)
-*JAMA Network Open*  
-Score: **0.80**  
-Published: 2026-07-06T00:00:00+00:00
-Tags: brain age, MCI, neurostimulation, modeling
+## [Comparing Harmonization Approaches for Protocol-Related Variability in Multisite Diffusion MRI Data](https://www.biorxiv.org/content/10.64898/2026.07.07.737018v1?rss=1)
+*bioRxiv*  
+Score: **0.85**  
+Published: 2026-07-11T00:00:00+00:00
+Tags: harmonization, MRI, multimodal
 
-Focuses on deep brain stimulation in MCI, involving modeling methods that could transfer to brain aging models.
+Focuses on harmonization of multisite MRI data, crucial for robust modeling in brain aging research.
 
 <details>
 <summary>RSS summary</summary>
 
-This randomized crossover trial examines whether sequential cerebellar transcranial magnetic stimulation and striatal transcranial temporal interference stimulation enhance working memory in individuals with mild cognitive impairment (MCI).
+Diffusion MRI (dMRI) enables assessment of white matter microstructural abnormalities in Alzheimer's disease (AD), and multisite datasets enable more robust modeling of non-biological variation that can confound analyses. The Alzheimer's Disease Neuroimaging Initiative (ADNI) includes over 10 dMRI protocols, necessitating robust methods to model protocol-related variability when pooling data. Here, we compared three harmonization approaches: (1) mixed-effects models, (2) ComBat-GAM, and (3) eHar…
 
 </details>
 
 ---
 
-## [Age-related molecular changes that are exercise independent](https://www.nature.com/articles/s43587-026-01157-4)
-*Nature Aging*  
-Score: **0.60**  
-Published: 2026-07-03T00:00:00+00:00
-Tags: aging, molecular, multiomics
+## [Shared lipidome and proteome signatures of frontotemporal lobar degeneration and Alzheimer's disease](https://www.biorxiv.org/content/10.64898/2026.07.11.737778v1?rss=1)
+*bioRxiv*  
+Score: **0.40**  
+Published: 2026-07-11T00:00:00+00:00
+Tags: neuroimaging, neurodegeneration
 
-Study on molecular changes with aging may provide insights into models of aging independent of exercise.
+Uses neuroimaging to explore neurodegeneration, relevant for understanding trajectories in brain aging.
 
 <details>
 <summary>RSS summary</summary>
 
-<p>Nature Aging, Published online: 03 July 2026; <a href="https://www.nature.com/articles/s43587-026-01157-4">doi:10.1038/s43587-026-01157-4</a></p>Multiomics analysis of human muscle suggests that physical fitness reshapes age-related molecular changes, and highlights distinct transcriptomic patterns of ‘preventable’ and ‘unavoidable’ alterations. Trained older adults retain youthful profiles, and stronger stress responses to exercise are associated with better health.
+Frontotemporal lobar degeneration (FTLD) and Alzheimer's disease (AD) differ in their clinical features and genetic etiologies but share progressive cognitive decline. Emerging evidence implicates lipid dysregulation in neurodegeneration, but its extent across FTLD subtypes and how it compares to AD are unclear. Here, we performed integrated lipidomic and proteomic analyses of matched frontal (disease-vulnerable) and occipital (relatively spared) post-mortem cortices from individuals with geneti…
 
 </details>
 
 ---
 
-## [Delayed molecular aging, preservation of energy metabolism and enhanced exercise response in exercise-trained human muscle](https://www.nature.com/articles/s43587-026-01150-x)
-*Nature Aging*  
-Score: **0.50**  
-Published: 2026-07-03T00:00:00+00:00
-Tags: exercise, aging, molecular
+## [Spatial confinement shapes organelle architecture and remodeling in axons](https://www.biorxiv.org/content/10.64898/2026.07.07.737043v1?rss=1)
+*bioRxiv*  
+Score: **0.35**  
+Published: 2026-07-11T00:00:00+00:00
+Tags: neuroimaging, neuronal structure
 
-Examines exercise effects on aging; molecular insights could relate to brain health and aging models.
+Provides insights on neuronal changes with potential implications for brain structure in aging.
 
 <details>
 <summary>RSS summary</summary>
 
-<p>Nature Aging, Published online: 03 July 2026; <a href="https://www.nature.com/articles/s43587-026-01150-x">doi:10.1038/s43587-026-01150-x</a></p>Exercise has an important role in healthy aging, yet the underlying molecular mechanisms are incompletely understood. Here the authors consider age, physical function and acute exercise in the context of the multiomics of human skeletal muscle, linking fitness to distinct aging profiles. Physically trained older individuals show ~50% fewer age-relate…
+Axons are extended cellular compartments that mediate neuronal connectivity over extraordinary distances, placing unique demands on local organelle organization and trafficking. How these geometric constraints influence organelle architecture remains poorly understood. Here, we used cryoelectron tomography and quantitative morphometric analyses to define the three-dimensional ultrastructural organization of dorsal root ganglion axons in a near native state. We identify distinct vesicle populatio…
 
 </details>
 
