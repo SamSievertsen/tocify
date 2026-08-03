@@ -1,143 +1,126 @@
-# Weekly ToC Digest (week of 2026-07-27)
+# Weekly ToC Digest (week of 2026-08-03)
 
-The RSS feed for this week includes several articles relevant to brain aging and neuroimaging, with focuses on computational methods and biomarkers for aging. This week's papers have a limited connection to brain-age-specific research. Most documented studies focus on unrelated fields such as clinical trials, behavioral health, or molecular biology without tying back to brain aging or computational modeling relevant to brain age prediction. No items directly addressed brain aging or modeling, thus scored these topics lower. Papers with strong computational contributions and association with brain age models ranked higher. Relevance is determined by direct connection to brain aging or modeling methodologies.
+No articles match specific user interests in brain aging, modeling, or neuroimaging methods. Prioritized studies involving brain aging models and computational methods relevant to brain-age research. Selected papers are those that strongly relate to brain aging, neuroimaging, or computational models relevant to brain aging processes, as per user guidelines. No items relevant to brain aging, brain-age models, or relevant computational neuroscience methodologies this week.
 
-**Included:** 8 (score ≥ 0.35)  
-**Scored:** 14 total items
+**Included:** 7 (score ≥ 0.35)  
+**Scored:** 7 total items
 
 ---
 
-## [Aperiodic EEG activity is a domain-specific marker of attentional aging in neurotypical adults](https://www.biorxiv.org/content/10.64898/2026.07.22.739645v1?rss=1)
+## [The Lifespan Architecture of Human EEG](https://www.biorxiv.org/content/10.64898/2026.07.28.741219v1?rss=1)
 *bioRxiv*  
-Score: **0.80**  
-Published: 2026-07-27T00:00:00+00:00
-Tags: brain age, EEG, normative
+Score: **0.95**  
+Published: 2026-07-31T00:00:00+00:00
+Tags: brain age, EEG, normative, trajectories
 
-The paper discusses EEG as a biomarker for cognitive aging, relevant for brain age modeling using electrophysiological data.
+This study analyzes EEG to map brain maturation and aging through large-scale electrophysiological activity, highlighting age-sensitive features and brain aging trajectories.
 
 <details>
 <summary>RSS summary</summary>
 
-Aperiodic neural activity has been reliably shown to be reduced among older adults, and these reductions are associated with age-related cognitive decline. These results suggest that aperiodic activity, as measured by the spectral exponent, might be a viable electrophysiological biomarker for cognitive aging. However, this has not been tested longitudinally, within participants, during normal aging. Here, we used a longitudinal cohort to test whether changes in aperiodic activity between two ses…
+Human brain maturation and aging are highly nonlinear, yet their organization at the level of large-scale electrophysiological activity remains poorly understood. We analyzed resting-state electroencephalography (EEG) recordings from 1,763 healthy individuals aged 5-85 years to map lifespan trajectories across spectral, complexity, and morphological features. Age-sensitive features clustered into distinct nonlinear trajectories, most commonly showing rapid change during childhood and adolescence…
 
 </details>
 
 ---
 
-## [Cross-task, explainable and real-time decoding of human emotion states by integrating gray and white matter intracranial neural activity](https://www.nature.com/articles/s43588-026-01021-w)
-*Nature Comput Sci*  
-Score: **0.75**  
-Published: 2026-07-22T00:00:00+00:00
-Tags: multimodal, modeling, neuroimaging
+## [Neuroanatomical subtypes of Long COVID reveal distinct cognitive profiles alongside longitudinal brain changes](https://www.biorxiv.org/content/10.64898/2026.07.30.741878v1?rss=1)
+*bioRxiv*  
+Score: **0.85**  
+Published: 2026-07-31T00:00:00+00:00
+Tags: longitudinal, MRI, brain age
 
-This study develops personalized models using intracranial recordings to decode brain states, indicating a potential extension to brain age models.
+Combines neuroimaging, cognitive assessment, and longitudinal data to explore structural brain changes, relevant to brain aging models.
 
 <details>
 <summary>RSS summary</summary>
 
-<p>Nature Computational Science, Published online: 22 July 2026; <a href="https://www.nature.com/articles/s43588-026-01021-w">doi:10.1038/s43588-026-01021-w</a></p>This study reports personalized models that decode human emotion states from intracranial brain recordings in real time, work across different tasks and uncover key brain networks that could guide future treatments for mental health conditions.
+Background: Long COVID is characterized by persistent symptoms following SARS-CoV-2 infection, including cognitive deficits among its most disabling manifestations. However, their neurobiological basis is poorly understood. Previous neuroimaging studies reported structural brain alterations, but few have integrated cognitive assessment, network-based analyses, and longitudinal imaging to identify neurobiological subtypes. Methods: We studied 42 individuals with persistent post-COVID cognitive sy…
 
 </details>
 
 ---
 
-## [Neural sampling from cognitive maps enables goal-directed imagination and planning](https://www.nature.com/articles/s42256-026-01254-4)
-*Nature Machine Intell*  
+## [Longitudinal Reorganization of Cortical and Cerebellar Functional Networks in Spinocerebellar Ataxia Type 7](https://www.biorxiv.org/content/10.64898/2026.07.28.741349v1?rss=1)
+*bioRxiv*  
+Score: **0.70**  
+Published: 2026-08-02T00:00:00+00:00
+Tags: longitudinal, multimodal, neurodegeneration, modeling
+
+Involves multimodal imaging and machine learning to study neurodegenerative progression, aligning with interests in brain aging trajectories and modeling.
+
+<details>
+<summary>RSS summary</summary>
+
+Spinocerebellar ataxia type 7 (SCA7) is a rare neurodegenerative disorder characterized by progressive cerebellar ataxia and visual impairment. We investigated longitudinal changes in resting-state functional connectivity and their clinical associations. Resting-state functional MRI was acquired from 16 individuals with SCA7 and 16 age- and sex-matched healthy controls across three visits over 24 months. Network-to-network functional connectivity was quantified, and machine-learning models were …
+
+</details>
+
+---
+
+## [Age-dependent brain proteome remodeling links Abca7 deficiency to insulin signaling and neuroinflammation in Alzheimers disease mice](https://www.biorxiv.org/content/10.64898/2026.07.28.741021v1?rss=1)
+*bioRxiv*  
+Score: **0.70**  
+Published: 2026-07-31T00:00:00+00:00
+Tags: neurodegeneration, biomarkers, brain aging
+
+This paper discusses age-related brain proteome changes and neuroinflammation, which is indirectly linked to computational modeling of brain aging.
+
+<details>
+<summary>RSS summary</summary>
+
+The human ABCA7 gene, which encodes ATP-binding cassette transporter A7 (ABCA7), is one of the strongest genetic risk factors for late-onset Alzheimers disease (AD), yet the molecular mechanisms linking ABCA7 deficiency to AD remain incompletely understood. Because impaired insulin signaling and neuroinflammation are increasingly recognized as key contributors to AD pathogenesis, and ABCA7 has been implicated in both metabolic and immune processes, we investigated whether ABCA7 deficiency is ass…
+
+</details>
+
+---
+
+## [Distinct transcriptomic and hierarchical organization associated with brain hyperconnectivity and hypoconnectivity in autism spectrum disorder](https://www.biorxiv.org/content/10.64898/2026.07.31.742105v1?rss=1)
+*bioRxiv*  
 Score: **0.65**  
-Published: 2026-07-21T00:00:00+00:00
-Tags: modeling, cognitive maps, AI
+Published: 2026-08-01T00:00:00+00:00
+Tags: fMRI, neuroimaging, connectivity, modeling
 
-Introduces a brain-inspired generative model that may inform brain age modeling frameworks through cognitive map usage.
+Combines fMRI with gene expression to explore brain connectivity patterns; relevant to model validation in atypical neurodevelopment and aging.
 
 <details>
 <summary>RSS summary</summary>
 
-<p>Nature Machine Intelligence, Published online: 21 July 2026; <a href="https://www.nature.com/articles/s42256-026-01254-4">doi:10.1038/s42256-026-01254-4</a></p>Lin et al. introduce a brain-inspired generative model that provides two key features of intelligence: planning and problem-solving. It uses cognitive maps, stochastic computing and compositional coding, and requires only local synaptic plasticity.
+Functional hyperconnectivity and hypoconnectivity in autism spectrum disorder (ASD) are typically treated as opposing expressions of a single circuit-level disturbance, but their molecular and hierarchical basis remains unclear. We combined resting-state fMRI from 1,737 individuals from the Autism Brain Imaging Data Exchange (ABIDE I/II) with gene-expression maps from the Allen Human Brain Atlas and show that hyperconnectivity and hypoconnectivity are dissociable neurobiological phenomena, diffe…
 
 </details>
 
 ---
 
-## [Epigenetic and 3D genome reprogramming during the aging of the human hippocampus](https://www.science.org/doi/abs/10.1126/science.adt8307?af=R)
-*Science*  
-Score: **0.60**  
-Published: 2026-07-23T07:00:00+00:00
-Tags: epigenetics, 3D genome, aging, hippocampus
-
-This study involves aging of the human hippocampus, relevant to brain aging, although it lacks explicit mention of brain-age models or computational methods.
-
-<details>
-<summary>RSS summary</summary>
-
-Science, Volume 393, Issue 6809, July 2026. <br />
-
-</details>
-
----
-
-## [Single-cell multiomics connects 3D genome and transcriptome alterations in Alzheimer’s disease](https://www.science.org/doi/abs/10.1126/science.adz1652?af=R)
-*Science*  
-Score: **0.50**  
-Published: 2026-07-23T07:00:00+00:00
-Tags: multiomics, 3D genome, Alzheimer's
-
-Focus on Alzheimer's connects to neurodegenerative aspects of brain aging, but lacks specifics on brain-age modeling or biomarkers.
-
-<details>
-<summary>RSS summary</summary>
-
-Science, Volume 393, Issue 6809, July 2026. <br />
-
-</details>
-
----
-
-## [A stereotaxic atlas of primary cortical areas in the developing rat brain from postnatal days 8 to 20](https://www.biorxiv.org/content/10.64898/2026.07.22.740117v1?rss=1)
+## [An end-to-end framework for single-cell-resolution, whole-transcriptomic spatial profiling in post-mortem human brain](https://www.biorxiv.org/content/10.64898/2026.07.28.740610v1?rss=1)
 *bioRxiv*  
-Score: **0.40**  
-Published: 2026-07-27T00:00:00+00:00
-Tags: normative, MRI, neuroanatomy
+Score: **0.60**  
+Published: 2026-08-01T00:00:00+00:00
+Tags: transcriptomics, biomarkers, tissue profiling, brain
 
-While focused on development, the creation of stereotaxic atlases supports neuroanatomical mapping, which can inform brain age modeling.
+Innovative workflow for brain tissue profiling could enhance neuroimaging biomarker research relevant to aging endpoints.
 
 <details>
 <summary>RSS summary</summary>
 
-Postnatal brain growth is non-linear, making precise stereotaxic targeting in the developing rat neocortex difficult without age-specific knowledge of cortical area locations. Traditional atlases visualize brain slices in the coronal plane, which can obscure top-down areal boundaries and sub-domains. To address these shortcomings, we created a developmental stereotaxic atlas that maps the neocortex of postnatal day (P) 8, P12, P16, and P20 in Sprague-Dawley and Long-Evans rats onto a coordinate …
+Single-cell resolution spatial transcriptomics enables transcriptome-wide molecular profiling within intact tissue architecture, providing unprecedented opportunities to investigate cellular organization and disease-associated molecular states in the human brain. However, applying these technologies to post-mortem human brain tissue remains challenging due to RNA degradation, heterogeneity in tissue preservation, and a lack of standardized analytical workflows. These challenges are particularly …
 
 </details>
 
 ---
 
-## [Stabilization of recurrent neural networks through divisive normalization](https://www.pnas.org/doi/abs/10.1073/pnas.2601841123?af=R)
-*PNAS*  
-Score: **0.40**  
-Published: 2026-07-23T07:00:00+00:00
-Tags: neural networks, computational modeling
+## [Opportunities and risks of big data for the methods and culture of psychological science](https://www.nature.com/articles/s44159-026-00603-9)
+*Nature Rev Psychol*  
+Score: **0.45**  
+Published: 2026-08-03T00:00:00+00:00
+Tags: big data, generalization, methodology
 
-Neural networks and computational modeling mentioned, yet it's not directly tied to brain-age research.
-
-<details>
-<summary>RSS summary</summary>
-
-Proceedings of the National Academy of Sciences, Volume 123, Issue 30, July 2026. <br />SignificanceNeural circuits must remain stable to function correctly, yet strong recurrent connections, which are essential for complex computations, often hinder this stability. We demonstrate that divisive normalization, a canonical neural operation ...
-
-</details>
-
----
-
-## [VAMP7-dependent mitochondria–lysosome contacts contribute to glial mitochondrial dynamics and dopaminergic neuron survival](https://www.pnas.org/doi/abs/10.1073/pnas.2603069123?af=R)
-*PNAS*  
-Score: **0.40**  
-Published: 2026-07-24T07:00:00+00:00
-Tags: neurodegeneration, mitochondria, glial cells
-
-Pertains to neurodegenerative disease mechanisms, which are relevant to brain aging, though lacking in computational approaches.
+Discusses big data's potential in generalization, relevant to multi-site brain aging model development.
 
 <details>
 <summary>RSS summary</summary>
 
-Proceedings of the National Academy of Sciences, Volume 123, Issue 30, July 2026. <br />SignificanceMitochondrial dysfunction is a central feature of neurodegenerative diseases, yet research has largely focused on neurons, leaving the contribution of glial cells poorly understood. We identify the SNARE protein VAMP7 as a critical regulator ...
+<p>Nature Reviews Psychology, Published online: 03 August 2026; <a href="https://www.nature.com/articles/s44159-026-00603-9">doi:10.1038/s44159-026-00603-9</a></p>Big data can address problems with generalizability and enable the study of real-world behaviours. However, the overuse of big data could lead to over-reliance on correlations bereft of explanatory power. In this Perspective, Ibasco et al. describe the methodological and cultural opportunities and risks of big data for psychological sc…
 
 </details>
 
