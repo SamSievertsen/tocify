@@ -1,109 +1,92 @@
-# Weekly ToC Digest (week of 2026-02-11)
+# Weekly ToC Digest (week of 2026-08-10)
 
-Focusing on papers involving brain aging models, neuroimaging markers, and computational contributions. No items directly relevant to brain-aging or brain-age modeling found in this week's articles. This week's scan revealed no highly relevant articles that fully address multiple criteria related to brain age modeling, computational approaches, or neuroimaging-based aging biomarkers. Analyzed based on relevance to brain-aging, neuroimaging, and computational modeling. The top results have strong relevance to brain age modeling or computational methods in neuroscience.
+No items directly related to brain-aging or neuroimaging-based aging models this week. Focus on neuroimaging, brain age prediction, and computational methods in brain aging. No highly relevant brain-aging model papers found this week. Articles focus more on general neuroscience and do not align with user's computational modeling interests in brain age prediction and normative modeling. Focused on brain-aging models and computational methodologies, selected relevant articles based on user interests in neuroimaging, brain age modeling, and computational techniques.
 
-**Included:** 6 (score ≥ 0.35)  
-**Scored:** 9 total items
+**Included:** 5 (score ≥ 0.35)  
+**Scored:** 10 total items
 
 ---
 
-## [Distributed fMRI Patterns Coupled to Low-Frequency Cardiorespiratory Dynamics Provide Markers of Aging](http://www.jneurosci.org/cgi/content/short/46/6/e1231252026?rss=1)
-*J Neurosci*  
+## [Boosting hyperalignment performance with age-specific templates](https://elifesciences.org/articles/110566)
+*eLife*  
 Score: **0.90**  
-Published: 2026-02-11T17:30:25+00:00
-Tags: MRI, aging biomarkers, neuroimaging
+Published: 2026-08-05T00:00:00+00:00
+Tags: brain age, MRI, normative
 
-This paper investigates whole-brain fMRI patterns linked to cardiorespiratory activity as markers of aging, fitting well with interests in neuroimaging-based aging biomarkers.
+The article addresses age-specific brain functional changes and alignment through computational models, relevant for brain-age modeling.
 
 <details>
 <summary>RSS summary</summary>
 
-<p>How aging affects brain&ndash;body connections can be investigated through changes in the coupling between functional magnetic resonance imaging (fMRI) signals and bodily autonomic processes across the adult lifespan. Recent studies using univariate approaches have identified age-related changes in the association between fMRI signals from multiple individual brain regions and low-frequency respiratory and cardiac activity. Here, we investigate if whole-brain spatial fMRI patterns associated …
+Hyperalignment aligns individual brain activity and functional connectivity patterns to a common, high-dimensional model space, resolving idiosyncrasies in functional–anatomical correspondence and revealing shared information encoded in fine-grained spatial patterns. Given that the brain undergoes significant developmental and functional changes over the lifespan, certain features in brain functional organization may be more prominent in certain age groups than others. In this study, we examined…
 
 </details>
 
 ---
 
-## [Cognitive rejuvenation through partial reprogramming of engram cells](https://www.cell.com/neuron/fulltext/S0896-6273(25)00925-0?rss=yes)
-*Neuron*  
-Score: **0.90**  
-Published: 2026-02-10T00:00:00+00:00
-Tags: brain aging, rejuvenation, neuroplasticity
-
-The paper focuses on rejuvenating brain functions through molecular and cellular methods, linking directly to brain aging. Innovative computational methods may be implied in linking molecular changes to observed cognitive improvements.
-
-<details>
-<summary>RSS summary</summary>
-
-Berdugo-Vega et al. combine partial reprogramming and engram technologies to achieve molecular rejuvenation of learning-associated neuronal ensembles. Engram reprogramming counteracts molecular, cellular, and electrophysiological signs of aging and disease and is associated with behavioral improvements that are consistent with a rejuvenation of learning and memory capacities.
-
-</details>
-
----
-
-## [In vivo aberration measurement and correction for ultrafast FACED two-photon fluorescence microscopy of the brain](https://www.biorxiv.org/content/10.64898/2026.02.06.704504v1?rss=1)
-*bioRxiv*  
+## [Premature epigenetic aging, deviations from normative brain development, and cognitive performance in young adulthood](https://www.nature.com/articles/s41398-026-04337-3)
+*Trans Psychiatry*  
 Score: **0.70**  
-Published: 2026-02-10T00:00:00+00:00
-Tags: MRI, neuroimaging, computational imaging
+Published: 2026-08-06T00:00:00+00:00
+Tags: epigenetic aging, normative, cognition
 
-Focus on advanced imaging techniques could aid in high-resolution neuroimaging, potentially benefiting brain age modeling through improved data acquisition.
+Mentions epigenetic aging and deviations from normative brain development, aligning with interests in brain age and normative models.
 
 <details>
 <summary>RSS summary</summary>
 
-Ultrafast two-photon fluorescence microscopy (2PFM) based on free-space angular-chirp-enhanced delay (FACED) enables megahertz line scanning and kilohertz frame rates for in vivo brain imaging. However, optical aberrations from the imaging system and brain tissue degrade spatial resolution, signal, and contrast at depth. Here we integrate adaptive optics (AO) with FACED 2PFM to achieve synapse-resolving ultrafast imaging in the living mouse brain. Because FACED generates a one-dimensional array …
+<p>Translational Psychiatry, Published online: 06 August 2026; <a href="https://www.nature.com/articles/s41398-026-04337-3">doi:10.1038/s41398-026-04337-3</a></p>Premature epigenetic aging, deviations from normative brain development, and cognitive performance in young adulthood
 
 </details>
 
 ---
 
-## [High spatial resolution 23Na-MRI for ischemic brain injury detection](https://www.biorxiv.org/content/10.64898/2026.02.05.703829v1?rss=1)
-*bioRxiv*  
+## [Efficient and reproducible pipelines for spike sorting large-scale electrophysiology data](https://elifesciences.org/articles/110170)
+*eLife*  
 Score: **0.60**  
-Published: 2026-02-10T00:00:00+00:00
-Tags: MRI, neuroimaging, biomarkers
+Published: 2026-08-05T00:00:00+00:00
+Tags: computational, pipelines, efficiency
 
-While more focused on injury, the development of high-resolution imaging techniques like 23Na-MRI could contribute to neuroimaging biomarkers in aging research.
+Involves computational/pipeline development, which is crucial for aging-related computational neuroscience although not directly brain-age focused.
 
 <details>
 <summary>RSS summary</summary>
 
-High spatial resolution sodium (23Na) imaging of brain lesions remains challenging due to the intrinsically low signal-to-noise ratio (SNR) of 23Na-MRI compared with conventional proton (1H) MRI. In this study, we established a high-resolution 23Na-MRI platform based on 14 T preclinical scanner using a dual-tuned head-implanted RF coil. This configuration enables the acquisition of 1H-based T2-weighted anatomical and diffusion-weighted imaging (DWI), as well as 23Na-MRI, from the same animal. Br…
+The scale of <i>in vivo</i> electrophysiology has expanded in recent years, with simultaneous recordings across thousands of electrodes now becoming routine. These advances have enabled a wide range of discoveries, but they also impose substantial computational demands. Spike sorting, the procedure that extracts spikes from extracellular voltage measurements, remains a major bottleneck: a dataset collected in a few hours can take days to spike sort on a single machine, and the field lacks rigoro…
 
 </details>
 
 ---
 
-## [Aberrant Medial Prefrontal Cortex Activity and Flexible Behavior in the TgF344-AD Rat Model of Alzheimers Disease](http://www.jneurosci.org/cgi/content/short/46/6/e1387252026?rss=1)
-*J Neurosci*  
-Score: **0.50**  
-Published: 2026-02-11T17:30:25+00:00
-Tags: Alzheimer's, aging, neuroimaging
-
-While primarily focused on Alzheimer's, it uses an age-dependent rat model which might relate to brain aging trajectories, though it's less centered on neuroimaging or modeling methodologies.
-
-<details>
-<summary>RSS summary</summary>
-
-<p>Executive dysfunction can precede the accumulation of canonical neuropathological markers and severe dementia in Alzheimer&rsquo;s disease (AD) patients often characterized by memory changes. Deficits in executive function including flexible behavior, i.e., the ability to shift behavior following negative consequences, are often mediated by the prefrontal cortex. However, it is unknown how medial prefrontal cortex activity is altered in behaving Tg-F344-AD rats, which exhibit age-dependent AD…
-
-</details>
-
----
-
-## [AI System Using Unsupervised Learning to Discover Novel Subtypes in Alzheimer's Disease](https://www.biorxiv.org/content/10.64898/2026.02.08.704669v1?rss=1)
+## [Multimodal neuroimaging-microbiota integration identifies Akkermansia as a modulator of alcohol-induced gut-liver-brain pathology](https://www.biorxiv.org/content/10.64898/2026.08.03.742281v1?rss=1)
 *bioRxiv*  
-Score: **0.40**  
-Published: 2026-02-10T00:00:00+00:00
-Tags: MRI, machine learning
+Score: **0.50**  
+Published: 2026-08-07T00:00:00+00:00
+Tags: multimodal, MRI, brain pathology
 
-The paper utilizes unsupervised machine learning with structural MRI data, a method relevant for computational insights into brain aging, though it focuses more on Alzheimer's phenotypes without explicit mention of brain-age models.
+This study integrates advanced diffusion MRI with microbiota profiling to investigate the gut-brain axis, which may provide insights into brain aging mechanisms.
 
 <details>
 <summary>RSS summary</summary>
 
-Early Alzheimer's disease often evades timely detection because typical diagnostics are based on symptomatic thinking rather than intrinsic neurodegeneration. Here, we use unsupervised machine learning to identify latent Alzheimer's phenotypes from structural MRI-derived volumetric features and neuropsychological scores, without using diagnosis labels or predefined subtype definitions. We analyzed participants (18-96 years) from the OASIS-1 study using intracranial, normalized, global, and regio…
+Alcohol use disorder (AUD) disrupts the gut-liver-brain axis, yet mechanistically grounded and therapeutically actionable targets within this network remain poorly defined. To identify microbial modulators of alcohol-induced tissue pathology, longitudinal advanced diffusion MRI and fecal 16S rRNA profiling were integrated across Marchigian Sardinian alcohol-preferring rats evaluated at baseline, after four weeks of voluntary alcohol intake, and following six weeks of abstinence. Machine learning…
+
+</details>
+
+---
+
+## [Social inequalities linked to accelerated biological aging](https://www.nature.com/articles/s43587-026-01201-3)
+*Nature Aging*  
+Score: **0.50**  
+Published: 2026-08-06T00:00:00+00:00
+Tags: biological aging, social factors
+
+Addresses accelerated biological aging but lacks a direct focus on computational brain-age models or neuroimaging contributions.
+
+<details>
+<summary>RSS summary</summary>
+
+<p>Nature Aging, Published online: 06 August 2026; <a href="https://www.nature.com/articles/s43587-026-01201-3">doi:10.1038/s43587-026-01201-3</a></p>Social inequalities linked to accelerated biological aging
 
 </details>
 
