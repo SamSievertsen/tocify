@@ -31,7 +31,7 @@ jobs:
     steps:
       - name: Check out repository
         # For workflow_run, check out the commit the digest job just pushed.
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.ref }}
 
