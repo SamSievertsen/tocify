@@ -27,8 +27,15 @@ from openai import APITimeoutError, APIConnectionError, RateLimitError, APIStatu
 
 
 # ---------------------------------------------------------------- config
-def _env_int(k, d): return int(os.getenv(k, str(d)))
-def _env_float(k, d): return float(os.getenv(k, str(d)))
+# GitHub Actions renders an unset ${{ vars.X }} as an empty string, not as an absent
+# variable. os.getenv(k, default) returns "" in that case, not the default. Every
+# config read below has to treat empty as missing or the defaults silently vanish.
+def _env_str(k, d=""):
+    v = os.getenv(k)
+    return v.strip() if v and v.strip() else d
+
+def _env_int(k, d): return int(_env_str(k, str(d)))
+def _env_float(k, d): return float(_env_str(k, str(d)))
 
 OPENROUTER_BASE = "https://openrouter.ai/api/v1"
 
@@ -40,22 +47,31 @@ DEFAULT_MODEL_CHAIN = [
     "meta-llama/llama-3.3-70b-instruct:free",
     "openrouter/free",  # auto-router: picks any free model meeting the request's needs
 ]
-MODEL_CHAIN = [m.strip() for m in os.getenv("MODEL_CHAIN", ",".join(DEFAULT_MODEL_CHAIN)).split(",") if m.strip()]
+MODEL_CHAIN = [m.strip() for m in _env_str("MODEL_CHAIN", ",".join(DEFAULT_MODEL_CHAIN)).split(",") if m.strip()]
+if not MODEL_CHAIN:
+    raise SystemExit("MODEL_CHAIN resolved to an empty list. Unset the MODEL_CHAIN "
+                     "repository variable to use the built-in defaults.")
 
 MAX_ITEMS_PER_FEED   = _env_int("MAX_ITEMS_PER_FEED", 60)
-MAX_TOTAL_ITEMS      = _env_int("MAX_TOTAL_ITEMS", 600)
+# Safety valve only. Many publisher feeds (all the ScienceDirect ones) carry no dates,
+# so their items sort last. When this cap was 600 it cut exactly those feeds, which are
+# the most clinically relevant ones here. PREFILTER_KEEP_TOP does the real selection,
+# and it ranks by keyword relevance rather than by date.
+MAX_TOTAL_ITEMS      = _env_int("MAX_TOTAL_ITEMS", 2500)
 LOOKBACK_DAYS        = _env_int("LOOKBACK_DAYS", 7)
 INTERESTS_MAX_CHARS  = _env_int("INTERESTS_MAX_CHARS", 4000)
 SUMMARY_MAX_CHARS    = _env_int("SUMMARY_MAX_CHARS", 500)
 PREFILTER_KEEP_TOP   = _env_int("PREFILTER_KEEP_TOP", 220)
 BATCH_SIZE           = _env_int("BATCH_SIZE", 40)
 FEED_TIMEOUT         = _env_int("FEED_TIMEOUT", 45)
-HOST_DELAY           = _env_float("HOST_DELAY", 3.0)   # min seconds between same-host hits
+# With interleaving this is nearly free: the throttle only sleeps when other feeds have
+# not already consumed the interval, so a larger floor costs little wall-clock time.
+HOST_DELAY           = _env_float("HOST_DELAY", 6.0)   # min seconds between same-host hits
 FEED_RETRIES         = _env_int("FEED_RETRIES", 3)     # attempts before giving up on a feed
 PUBMED_RETMAX        = _env_int("PUBMED_RETMAX", 60)
-PUBMED_ENABLED       = os.getenv("PUBMED_ENABLED", "1") not in ("0", "false", "False")
-NCBI_API_KEY         = os.getenv("NCBI_API_KEY", "").strip()   # optional, raises rate limit
-CONTACT_EMAIL        = os.getenv("CONTACT_EMAIL", "").strip()  # polite E-utilities identifier
+PUBMED_ENABLED       = _env_str("PUBMED_ENABLED", "1") not in ("0", "false", "False")
+NCBI_API_KEY         = _env_str("NCBI_API_KEY")   # optional, raises the PubMed rate limit
+CONTACT_EMAIL        = _env_str("CONTACT_EMAIL")  # polite E-utilities identifier
 
 # Per-section thresholds and caps. Tune without touching code.
 SECTIONS = [
@@ -206,8 +222,8 @@ def fetch_one_feed(feed, cutoff):
         head = raw[:400].decode("utf-8", "ignore").lower()
         is_challenge = "<html" in head or "<!doctype html" in head
         if is_challenge and attempt < FEED_RETRIES - 1:
-            # Rate-limit challenge page. Back off harder each time.
-            time.sleep(5 * (attempt + 1) + random.random() * 3)
+            # Rate-limit challenge page. Nature's window is long, so back off hard.
+            time.sleep(15 * (attempt + 1) + random.random() * 5)
             continue
         break
 
@@ -237,12 +253,39 @@ def fetch_one_feed(feed, cutoff):
     print(f"  · {source}: {kept} new / {len(d.entries)} in feed")
     return out
 
+def interleave_by_host(feeds):
+    """Round-robin the feed order across hosts.
+
+    feeds.txt groups journals by topic, which means a dozen consecutive nature.com
+    requests. Nature rate-limits bursts and answers with an HTML challenge page, so a
+    random handful of its feeds come back empty every run. Interleaving puts roughly a
+    dozen other requests between any two hits on the same host, which spaces them out
+    using time we were going to spend anyway instead of with sleep().
+    """
+    buckets = {}
+    for f in feeds:
+        buckets.setdefault(urllib.parse.urlparse(f["value"]).netloc, []).append(f)
+    order, queues = [], list(buckets.values())
+    while queues:
+        for q in list(queues):
+            order.append(q.pop(0))
+            if not q:
+                queues.remove(q)
+    return order
+
+
 def fetch_rss(feeds):
     cutoff = datetime.now(timezone.utc) - timedelta(days=LOOKBACK_DAYS)
     items = []
-    print(f"Fetching {len(feeds)} RSS feeds (lookback {LOOKBACK_DAYS}d)…")
-    for f in feeds:
+    ordered = interleave_by_host(feeds)
+    hosts = len({urllib.parse.urlparse(f["value"]).netloc for f in feeds})
+    print(f"Fetching {len(feeds)} RSS feeds across {hosts} hosts, interleaved "
+          f"(lookback {LOOKBACK_DAYS}d)…")
+    for f in ordered:
         items.extend(fetch_one_feed(f, cutoff))
+    undated = sum(1 for i in items if not i["published_utc"])
+    if undated:
+        print(f"  ({undated} items carry no date; LOOKBACK_DAYS cannot filter those)")
     return items
 
 
