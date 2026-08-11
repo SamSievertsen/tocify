@@ -1,7 +1,7 @@
 name: Publish site to GitHub Pages
 
 # NOTE: a push made by the digest job using the default GITHUB_TOKEN does NOT
-# re-trigger `on: push`. That is why `workflow_run` is here — it is what actually
+# re-trigger `on: push`. That is why `workflow_run` is here. It is what actually
 # publishes the weekly digest. The `push` trigger only covers your own manual edits.
 
 on:

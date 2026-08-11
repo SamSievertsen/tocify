@@ -1,5 +1,5 @@
 """
-tocify — weekly journal ToC digest.
+tocify: weekly journal ToC digest.
 
 Pipeline:  RSS feeds + PubMed queries -> dedupe -> keyword prefilter
            -> LLM triage (OpenRouter) -> sectioned markdown digest
@@ -13,7 +13,7 @@ Useful CLI flags:
     python digest.py --limit 40          # cap items sent to the model (cheap test)
 """
 
-import os, re, sys, json, time, math, html, hashlib, argparse
+import os, re, sys, json, time, math, html, random, hashlib, argparse
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -50,7 +50,8 @@ SUMMARY_MAX_CHARS    = _env_int("SUMMARY_MAX_CHARS", 500)
 PREFILTER_KEEP_TOP   = _env_int("PREFILTER_KEEP_TOP", 220)
 BATCH_SIZE           = _env_int("BATCH_SIZE", 40)
 FEED_TIMEOUT         = _env_int("FEED_TIMEOUT", 45)
-HOST_DELAY           = _env_float("HOST_DELAY", 1.5)   # min seconds between same-host hits
+HOST_DELAY           = _env_float("HOST_DELAY", 3.0)   # min seconds between same-host hits
+FEED_RETRIES         = _env_int("FEED_RETRIES", 3)     # attempts before giving up on a feed
 PUBMED_RETMAX        = _env_int("PUBMED_RETMAX", 60)
 PUBMED_ENABLED       = os.getenv("PUBMED_ENABLED", "1") not in ("0", "false", "False")
 NCBI_API_KEY         = os.getenv("NCBI_API_KEY", "").strip()   # optional, raises rate limit
@@ -170,7 +171,8 @@ _last_hit = {}
 
 def _throttle(url):
     """Space out requests to the same host. Publishers serve an HTML challenge page
-    instead of the feed when hit too fast, which silently looks like a dead feed."""
+    instead of the feed when hit too fast, and that looks exactly like a dead feed.
+    nature.com hosts a dozen feeds here, so this matters."""
     host = urllib.parse.urlparse(url).netloc
     wait = HOST_DELAY - (time.monotonic() - _last_hit.get(host, 0))
     if wait > 0:
@@ -192,7 +194,7 @@ def fetch_one_feed(feed, cutoff):
     url, out = feed["value"], []
     label = feed.get("name") or url
     d = None
-    for attempt in range(2):
+    for attempt in range(FEED_RETRIES):
         try:
             raw = _get(url)
         except Exception as e:
@@ -202,8 +204,10 @@ def fetch_one_feed(feed, cutoff):
         if d.entries:
             break
         head = raw[:400].decode("utf-8", "ignore").lower()
-        if attempt == 0 and ("<html" in head or "<!doctype html" in head):
-            time.sleep(4)   # probably a rate-limit challenge page; back off once
+        is_challenge = "<html" in head or "<!doctype html" in head
+        if is_challenge and attempt < FEED_RETRIES - 1:
+            # Rate-limit challenge page. Back off harder each time.
+            time.sleep(5 * (attempt + 1) + random.random() * 3)
             continue
         break
 
@@ -335,9 +339,10 @@ def dedupe(items):
 
 # ---------------------------------------------------------------- prefilter
 JUNK = re.compile(
-    r"^(correction|corrigend|erratum|retraction|editorial|in this issue|masthead|"
-    r"issue information|book review|errata|author correction|publisher correction|"
-    r"table of contents|front matter|back matter|acknowledg)", re.I)
+    r"^(correction|corrigend|erratum|errata|retraction|editorial|error in|"
+    r"author correction|publisher correction|in this issue|this month in|masthead|"
+    r"issue information|book review|table of contents|front matter|back matter|"
+    r"acknowledg|highlights|cover image|editor'?s? (choice|pick))", re.I)
 
 def keyword_hits(it, kws):
     text = (it.get("title", "") + " " + it.get("summary", "")).lower()
@@ -458,7 +463,7 @@ def triage_batch(client, prompt):
                     time.sleep(min(45, 3 * 2 ** attempt))
                 except (APIStatusError, ValueError, KeyError) as e:
                     last = e
-                    break  # schema unsupported or bad output — change mode/model
+                    break  # schema unsupported or bad output. Change mode or model.
     raise RuntimeError(f"All models in MODEL_CHAIN failed. Last error: {last}")
 
 
@@ -518,9 +523,9 @@ def dry_run_triage(interests, items):
         h = keyword_hits(it, kws)
         ranked.append({"id": it["id"], "section": sec,
                        "score": round(min(0.99, 0.30 + 0.12 * h), 2),
-                       "why": f"DRY RUN — keyword-only score ({h} keyword matches). No model was called.",
+                       "why": f"DRY RUN. Keyword-only score, {h} keyword matches. No model was called.",
                        "tags": ["dry-run"]})
-    return {"notes": "**DRY RUN** — scores are keyword counts, not model judgements.", "ranked": ranked}
+    return {"notes": "**DRY RUN**. Scores are keyword counts, not model judgements.", "ranked": ranked}
 
 
 # ---------------------------------------------------------------- render
@@ -540,7 +545,7 @@ def render(result, items_by_id, stats):
         kept[s["id"]] = [r for r in rows if r["score"] >= s["min"]][:s["max"]]
 
     total_kept = sum(len(v) for v in kept.values())
-    L = [f"# Weekly ToC Digest — week of {week_of}", ""]
+    L = [f"# Weekly ToC Digest, week of {week_of}", ""]
     if notes:
         L += [f"> {notes}", ""]
     L += ["| Section | Kept | Threshold |", "|---|---:|---:|"]
@@ -603,9 +608,9 @@ def main():
     week_of = datetime.now(timezone.utc).date().isoformat()
     if not items:
         with open("digest.md", "w", encoding="utf-8") as f:
-            f.write(f"# Weekly ToC Digest — week of {week_of}\n\n"
+            f.write(f"# Weekly ToC Digest, week of {week_of}\n\n"
                     f"_No items found in the last {LOOKBACK_DAYS} days. "
-                    f"If this repeats, run the **Validate feeds** workflow — "
+                    f"If this repeats, run the **Validate feeds** workflow. "
                     f"feed URLs rot._\n")
         print("No items; wrote digest.md")
         return

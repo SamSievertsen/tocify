@@ -1,7 +1,12 @@
 # tocify feed list
 # Format:  Name | URL     ("Name |" is optional). Lines starting with # are ignored.
 #
-# Revised after the 2026-08-11 validation run. Two things that run taught us:
+# nature.com hosts nine feeds below and rate-limits bursts. digest.py spaces same-host
+# requests by HOST_DELAY seconds and retries FEED_RETRIES times. If a validation run
+# reports a random handful of nature.com feeds as BLOCKED with an HTML challenge page
+# while the rest pass, that is the rate limit, not a dead feed. Raise HOST_DELAY.
+#
+# Revised after the 2026-08-11 validation runs. What those runs taught us:
 #
 # 1. rss.sciencedirect.com works from GitHub runners. Publisher-branded Elsevier sites
 #    (thelancet.com, cell.com, jaacap.org, jahonline.org) return 403. So every Elsevier
@@ -48,10 +53,6 @@ Adv Methods Pract Psych Sci | https://journals.sagepub.com/action/showFeed?ui=0&
 Biol Psychiatry CNNI | https://rss.sciencedirect.com/publication/science/24519022
 Biol Psychiatry GOS | https://rss.sciencedirect.com/publication/science/26671743
 
-# === METHODS / QUANTITATIVE ===
-Behavior Research Methods | https://link.springer.com/search.rss?facet-journal-id=13428&channel-name=Behavior+Research+Methods
-Psychometrika | https://link.springer.com/search.rss?facet-journal-id=11336&channel-name=Psychometrika
-
 # === ML / COMPUTATIONAL ===
 Nature Machine Intelligence | https://www.nature.com/natmachintell.rss
 Nature Computational Science | https://www.nature.com/natcomputsci.rss
@@ -79,6 +80,9 @@ arXiv cs.LG | http://export.arxiv.org/rss/cs.LG
 #   JCPP, World Psychiatry                                   (Wiley)
 #   Am J Psychiatry, Psychiatric Services                    (psychiatryonline.org)
 #   Multivariate Behav Res                                   (Taylor & Francis)
+# Blocked by Springer (HTML challenge page on every attempt, both validation runs).
+# Already covered by the "Quant methods journals" PubMed query:
+#   Behavior Research Methods, Psychometrika          (link.springer.com search.rss)
 # Dead URLs:
 #   Crisis        econtent.hogrefe.com jc=crisis -> 404. Covered by PubMed instead.
 #   J Am Med Inform Assoc  academic.oup.com site_5344 -> 404. OUP rotates site IDs.

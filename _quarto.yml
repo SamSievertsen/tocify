@@ -2,7 +2,7 @@ project:
   type: website
   output-dir: _site
   # Render ONLY these. Without an explicit list, Quarto treats every .qmd AND .md in
-  # the project as a page — so interests.qmd and interests.md would both try to write
+  # the project as a page, so interests.qmd and interests.md would both try to write
   # interests.html (an output collision that fails the render), and README.md would
   # become a stray page. digest.md and interests.md are content, pulled in via
   # {{< include >}}; includes still resolve fine when a file is not in this list.
@@ -12,7 +12,7 @@ project:
 
 website:
   title: "tocify"
-  description: "Weekly journal ToC digest — suicidality, intensive longitudinal data, computational methods"
+  description: "Weekly journal ToC digest. Suicidality, intensive longitudinal data, computational methods"
   navbar:
     left:
       - href: index.qmd

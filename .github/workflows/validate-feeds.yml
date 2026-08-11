@@ -1,7 +1,7 @@
 name: Validate feeds
 
 # Publisher feed URLs rot. Run this on demand (and monthly) to find dead feeds.
-# The report appears in the run's Summary tab — no API key needed.
+# The report appears in the run's Summary tab. No API key needed.
 
 on:
   workflow_dispatch:
