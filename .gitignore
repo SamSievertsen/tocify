@@ -208,3 +208,8 @@ __marimo__/
 
 /.quarto/
 **/*.quarto_ipynb
+
+# --- tocify ---
+/_site/
+/.quarto/
+report.txt

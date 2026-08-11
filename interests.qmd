@@ -1,0 +1,8 @@
+---
+title: "Interests"
+---
+
+These are the interests that drive relevance scoring. Editing `interests.md` in the
+repo changes what the digest surfaces — no code changes required.
+
+{{< include interests.md >}}

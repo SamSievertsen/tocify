@@ -1,0 +1,45 @@
+name: Validate feeds
+
+# Publisher feed URLs rot. Run this on demand (and monthly) to find dead feeds.
+# The report appears in the run's Summary tab — no API key needed.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 14 1 * *"   # 1st of each month
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Validate
+        run: |
+          python validate_feeds.py 2>&1 | tee report.txt
+
+      - name: Publish report to summary
+        if: always()
+        run: |
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          cat report.txt >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: feed-validation-report
+          path: report.txt

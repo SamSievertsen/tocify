@@ -3,12 +3,24 @@ project:
   output-dir: _site
 
 website:
-  title: "tocify digest"
+  title: "tocify"
+  description: "Weekly journal ToC digest — suicidality, intensive longitudinal data, computational methods"
   navbar:
     left:
       - href: index.qmd
         text: Digest
+      - href: interests.qmd
+        text: Interests
+    right:
+      - icon: github
+        href: https://github.com/SamSievertsen/tocify
+  page-footer:
+    center: "Auto-generated weekly. Scores are model judgements, not peer review."
 
 format:
   html:
+    theme: cosmo
     toc: true
+    toc-depth: 3
+    anchor-sections: true
+    smooth-scroll: true

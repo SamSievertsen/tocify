@@ -1,29 +1,116 @@
-# tocify
-# ingest ToCs and push links to papers relevant to me
+# tocify — research interests
 
-# interests seed
-<!-- 
-## scoring block
-Scoring calibration:
-Score ≥ 0.80 ONLY if the item clearly involves brain aging measurement or modeling, such as:
-
-Brain age prediction / “brain age gap” / Brain-PAD (from MRI, fMRI, DTI, multimodal imaging, EEG, or other neuro data)
-
-Aging clocks for the brain (neuroimaging-based or multimodal clocks) and their calibration/validation (e.g., bias correction, age-bias adjustment)
-
-Core methodological advances that transfer directly to brain-age pipelines, including: feature extraction from neuroimaging, harmonization across scanners/sites, domain adaptation, normative modeling, uncertainty estimation, and external validation 
-
-If it is primarily about clinical syndromes or behavior (e.g., depression, bipolar symptoms, cognition, functional outcomes) without a clear brain aging biomarker or aging clock orr brain age modeling component, cap score at 0.70.
-
-If it is primarily about immunology, microbiome, metabolism, or genetics without a direct link to brain aging endpoints (e.g., neurodegeneration markers, or explicit brain age modeling), cap score at 0.45. -->
-
-## keywords
-aging clocks
-computational neuroscience
-aging 
-cognition
-translational psychiatry 
-
+This file drives relevance scoring. `digest.py` parses the `## keywords`,
+`## narrative`, and `## sections` headings below. Edit freely; no code changes needed.
 
 ## narrative
-I’m primarily interested in computational methods and applied machine learning for brain aging, especially brain age prediction and brain-age gap (Brain-PAD) models using neuroimaging  and, secondarily, blood based aging markers. I am also generally interested in papers that introduce or benchmark robust, generalizable pipelines. This includes calibration/age-bias correction, normative modeling, and uncertainty quantification/interpretability.  
+
+I am a psychological scientist studying **suicidality**, with a primary focus on
+**pediatric and adolescent populations**. My work centers on **intensive longitudinal
+data (ILD)** — ecological momentary assessment (EMA), digital phenotyping, passive
+sensing, wearables and biosensors — and on the **statistical and computational
+frameworks** needed to model short-timescale risk processes from those data.
+
+Methodologically I am most interested in **machine learning** and **dynamical systems
+modeling**. This includes both (a) substantive applications to suicide risk assessment,
+prediction, and intervention, and (b) major technical developments in those method
+families in their own right, even when the application domain is not suicide —
+for example advances in time-series modeling, idiographic/person-specific modeling,
+early-warning-signal detection, state-space and nonlinear dynamics methods,
+just-in-time adaptive interventions (JITAI) and micro-randomized trial design,
+and the calibration, validation, and generalizability of clinical prediction models.
+
+I care about methodological rigor: external validation, replication, calibration,
+handling of class imbalance and rare events, measurement reliability, and honest
+reporting of predictive performance. I would rather see a well-validated null than
+an overfit headline.
+
+## keywords
+
+suicide
+suicidal ideation
+suicidal behavior
+suicide attempt
+self-harm
+non-suicidal self-injury
+NSSI
+self-injurious
+crisis
+safety planning
+suicide prevention
+adolescent
+adolescence
+youth
+pediatric
+child
+teen
+ecological momentary assessment
+EMA
+experience sampling
+intensive longitudinal
+digital phenotyping
+passive sensing
+wearable
+biosensor
+actigraphy
+smartphone sensing
+real-time monitoring
+just-in-time adaptive intervention
+JITAI
+micro-randomized
+machine learning
+deep learning
+predictive model
+risk prediction
+prediction model
+classifier
+natural language processing
+large language model
+dynamical systems
+nonlinear dynamics
+early warning signal
+critical slowing
+state space
+time series
+idiographic
+person-specific
+network analysis
+multilevel model
+DSEM
+latent state
+calibration
+external validation
+generalizability
+class imbalance
+measurement burst
+mental health
+psychiatry
+depression
+mood
+
+## sections
+
+Each item is assigned to exactly one section. IDs must match `digest.py`.
+
+- **suicide** — Suicide & self-harm
+  Suicidal ideation, behavior, attempts, self-injury, crisis services, means safety,
+  prevention and intervention trials, epidemiology and risk factors.
+  Boost heavily for pediatric/adolescent samples and for ILD or ML components.
+
+- **sensing** — Intensive longitudinal & sensing
+  EMA/ESM, digital phenotyping, passive smartphone or wearable sensing, biosensors,
+  actigraphy, measurement-burst designs, JITAI and micro-randomized trials,
+  real-time risk monitoring. Any clinical population; mental health preferred.
+
+- **methods** — ML & dynamical systems methods
+  Substantive technical advances in machine learning, prediction modeling, dynamical
+  systems, nonlinear time-series, idiographic/person-specific modeling, early warning
+  signals, network psychometrics, causal inference for longitudinal data, model
+  calibration, validation and generalization. Include strong methods papers even when
+  the application is outside psychiatry, if the method plausibly transfers to ILD or
+  risk prediction.
+
+- **adjacent** — Adjacent mental health
+  High-quality psychiatry, clinical psychology, or child/adolescent mental health work
+  that does not fit the above but is close enough to be worth a glance. Keep this
+  section small and selective.

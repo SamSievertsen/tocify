@@ -1,0 +1,27 @@
+# PubMed E-utilities queries — publisher-agnostic coverage.
+#
+# Format:  Name | PubMed query
+# Lines starting with # are ignored.
+#
+# Why this exists: RSS ToC feeds break when journals change publishers or platforms,
+# and they miss papers published in journals you don't subscribe to. PubMed E-utilities
+# is a stable NCBI API and searches everything indexed in MEDLINE. Each query is run
+# with reldate = LOOKBACK_DAYS so you only get new records.
+#
+# Syntax notes: [tiab] = title/abstract, [MeSH Terms] = indexed subject heading,
+# [Journal] = journal name. Truncation with * works in [tiab] but NOT inside quotes
+# unless the phrase is short. Test queries at https://pubmed.ncbi.nlm.nih.gov first.
+
+Suicide + youth | (suicide[MeSH Terms] OR suicid*[tiab] OR "self-harm"[tiab] OR "self harm"[tiab] OR "self-injury"[tiab] OR "self-injurious"[tiab] OR NSSI[tiab]) AND (adolescen*[tiab] OR youth[tiab] OR pediatric[tiab] OR paediatric[tiab] OR child*[tiab] OR teen*[tiab])
+
+Suicide + intensive longitudinal | (suicid*[tiab] OR "self-harm"[tiab] OR "self-injury"[tiab] OR NSSI[tiab]) AND ("ecological momentary"[tiab] OR "experience sampling"[tiab] OR "digital phenotyping"[tiab] OR "passive sensing"[tiab] OR wearable*[tiab] OR actigraph*[tiab] OR "intensive longitudinal"[tiab] OR "real-time monitoring"[tiab] OR smartphone[tiab] OR biosensor*[tiab])
+
+Suicide + machine learning | (suicid*[tiab] OR "self-harm"[tiab] OR "self-injury"[tiab] OR NSSI[tiab]) AND ("machine learning"[tiab] OR "deep learning"[tiab] OR "artificial intelligence"[tiab] OR "predictive model"[tiab] OR "prediction model"[tiab] OR "risk prediction"[tiab] OR "natural language processing"[tiab] OR "large language model"[tiab] OR algorithm*[tiab])
+
+EMA + mental health | ("ecological momentary assessment"[tiab] OR "experience sampling"[tiab] OR "digital phenotyping"[tiab] OR "passive sensing"[tiab] OR "intensive longitudinal"[tiab] OR "measurement burst"[tiab]) AND (depress*[tiab] OR anxiet*[tiab] OR psychiatr*[tiab] OR "mental health"[tiab] OR psychopatholog*[tiab])
+
+Dynamical systems + psychopathology | ("dynamical system"[tiab] OR "dynamical systems"[tiab] OR "early warning signal"[tiab] OR "early warning signals"[tiab] OR "critical slowing"[tiab] OR "nonlinear dynamics"[tiab] OR "state space model"[tiab] OR idiographic[tiab] OR "person-specific"[tiab] OR "network analysis"[tiab]) AND (psychopatholog*[tiab] OR psychiatr*[tiab] OR "mental health"[tiab] OR depress*[tiab] OR mood[tiab] OR suicid*[tiab])
+
+JITAI + adaptive trials | ("just-in-time adaptive intervention"[tiab] OR "just in time adaptive"[tiab] OR JITAI[tiab] OR "micro-randomized"[tiab] OR microrandomized[tiab] OR "sequential multiple assignment randomized"[tiab])
+
+Computational Psychiatry journal | "Comput Psychiatr"[Journal]
