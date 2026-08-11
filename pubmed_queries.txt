@@ -40,7 +40,7 @@ Quant methods journals | "Behav Res Methods"[Journal] OR "Psychometrika"[Journal
 # Safety net for the nature.com feeds that rate-limiting sometimes drops. These journals
 # also have working RSS feeds; dedupe keeps the RSS copy when both fire, because it
 # carries the abstract. Costs nothing when the feeds succeed.
-Nature family safety net | ("Nat Mach Intell"[Journal] OR "NPJ Ment Health Res"[Journal] OR "Nat Ment Health"[Journal] OR "Nat Comput Sci"[Journal] OR "Nat Rev Psychol"[Journal]) AND (suicid*[tiab] OR "mental health"[tiab] OR psychiatr*[tiab] OR adolescen*[tiab] OR "machine learning"[tiab] OR "time series"[tiab] OR longitudinal[tiab] OR predict*[tiab])
+Nature family safety net | ("Nat Mach Intell"[Journal] OR "NPJ Ment Health Res"[Journal] OR "Nat Ment Health"[Journal] OR "Nat Comput Sci"[Journal] OR "Nat Rev Psychol"[Journal] OR "Mol Psychiatry"[Journal] OR "Transl Psychiatry"[Journal] OR "Neuropsychopharmacology"[Journal]) AND (suicid*[tiab] OR "mental health"[tiab] OR psychiatr*[tiab] OR adolescen*[tiab] OR "machine learning"[tiab] OR "time series"[tiab] OR longitudinal[tiab] OR predict*[tiab])
 
 # Large general psychiatry journals: filtered, or they would swamp the digest.
 Blocked psychiatry journals | ("J Child Psychol Psychiatry"[Journal] OR "World Psychiatry"[Journal] OR "Am J Psychiatry"[Journal] OR "Psychiatr Serv"[Journal] OR "J Am Med Inform Assoc"[Journal]) AND (suicid*[tiab] OR "self-harm"[tiab] OR "self-injury"[tiab] OR adolescen*[tiab] OR youth[tiab] OR "machine learning"[tiab] OR "ecological momentary"[tiab] OR "digital phenotyping"[tiab] OR wearable*[tiab] OR predict*[tiab] OR longitudinal[tiab])

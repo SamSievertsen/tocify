@@ -30,7 +30,11 @@ import feedparser
 UA = "tocify-validator/2.1 (+https://github.com/SamSievertsen/tocify)"
 TIMEOUT = int(os.getenv("FEED_TIMEOUT", "45"))
 STALE_DAYS = int(os.getenv("STALE_DAYS", "120"))
-HOST_DELAY = float(os.getenv("HOST_DELAY", "3.0"))   # seconds between hits on one host
+# Keep this at or above digest.py's HOST_DELAY. digest.py also interleaves hosts, so it
+# spaces same-host requests further apart than this script does. If the validator is the
+# more aggressive of the two it reports BLOCKED for feeds the digest reads fine, which
+# is the worst kind of false alarm because it makes you delete working feeds.
+HOST_DELAY = float(os.getenv("HOST_DELAY", "10.0"))  # seconds between hits on one host
 HOST_WORKERS = int(os.getenv("HOST_WORKERS", "6"))   # distinct hosts in parallel
 ATTEMPTS = int(os.getenv("FEED_RETRIES", "3"))       # tries before calling a feed dead
 

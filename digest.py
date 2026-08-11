@@ -39,13 +39,24 @@ def _env_float(k, d): return float(_env_str(k, str(d)))
 
 OPENROUTER_BASE = "https://openrouter.ai/api/v1"
 
-# Free OpenRouter models rotate. This is a fallback CHAIN: the first that works wins.
-# Run `python digest.py --list-free-models` to see what is currently available.
+# Free OpenRouter models rotate, and dead IDs waste free-tier requests on every run.
+# This is a fallback CHAIN: the first that works wins, and the winner is then reused for
+# the remaining batches. Run `python digest.py --list-free-models`, or read the tail of
+# the Validate feeds report, to see what is currently available.
+#
+# Chosen 2026-08-11 from the models that reported strict json_schema support, ordered by
+# expected instruction-following quality for this task. Size is a weak proxy for that,
+# so treat the order as a starting point and not as a benchmark result.
+#   nemotron-3-super  120B MoE, 12B active. Largest schema-capable free model here.
+#   gpt-oss-20b       20B MoE. Reliable at structured output and instruction following.
+#   gemma-4-31b       31B dense. Good fallback with a different failure profile.
+#   openrouter/free   Auto-router. Last resort only: it picks a DIFFERENT model per
+#                     request, so scores stop being comparable across batches.
 DEFAULT_MODEL_CHAIN = [
-    "google/gemini-2.0-flash-exp:free",
-    "deepseek/deepseek-chat-v3-0324:free",
-    "meta-llama/llama-3.3-70b-instruct:free",
-    "openrouter/free",  # auto-router: picks any free model meeting the request's needs
+    "nvidia/nemotron-3-super-120b-a12b:free",
+    "openai/gpt-oss-20b:free",
+    "google/gemma-4-31b-it:free",
+    "openrouter/free",
 ]
 MODEL_CHAIN = [m.strip() for m in _env_str("MODEL_CHAIN", ",".join(DEFAULT_MODEL_CHAIN)).split(",") if m.strip()]
 if not MODEL_CHAIN:
@@ -66,7 +77,7 @@ BATCH_SIZE           = _env_int("BATCH_SIZE", 40)
 FEED_TIMEOUT         = _env_int("FEED_TIMEOUT", 45)
 # With interleaving this is nearly free: the throttle only sleeps when other feeds have
 # not already consumed the interval, so a larger floor costs little wall-clock time.
-HOST_DELAY           = _env_float("HOST_DELAY", 6.0)   # min seconds between same-host hits
+HOST_DELAY           = _env_float("HOST_DELAY", 10.0)  # min seconds between same-host hits
 FEED_RETRIES         = _env_int("FEED_RETRIES", 3)     # attempts before giving up on a feed
 PUBMED_RETMAX        = _env_int("PUBMED_RETMAX", 60)
 PUBMED_ENABLED       = _env_str("PUBMED_ENABLED", "1") not in ("0", "false", "False")

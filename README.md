@@ -173,6 +173,17 @@ Pinning a specific model matters for more than speed. `openrouter/free` is an au
 that picks a different model per request, so scores are not comparable across batches and
 your section thresholds stop meaning one thing. Pin a model once you find one that works.
 
+A model marked `no` under JSON-SCHEMA can still work. The pipeline falls back to asking
+for plain JSON and recovering the object from the response. That path is less reliable at
+40 items per batch, so prefer a `yes` model, but a much larger `no` model is worth testing
+against a `yes` one before you decide.
+
+**Nature feeds come back BLOCKED, and a different set each run.** That is nature.com rate
+limiting, not dead feeds. Roughly eight of the twelve succeed per run and which eight
+varies. `HOST_DELAY` controls the spacing. The PubMed safety-net query covers those
+journals when a feed does get dropped, so a rotating handful is tolerable rather than
+urgent.
+
 **A batch fails but the digest still publishes.** That is intended. A failed batch is
 skipped, a note goes at the top of the digest saying how many items went unscored, and
 the run continues. Only a total failure of every batch stops the run.
