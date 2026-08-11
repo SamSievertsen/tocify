@@ -1,40 +1,85 @@
 # tocify
 
-A weekly research digest. Every Monday a GitHub Action pulls new papers from journal
-RSS feeds and PubMed, has a language model triage them against a written statement of
-research interests, and publishes a ranked, sectioned digest to GitHub Pages.
+Pulls new papers from journal RSS feeds and PubMed every Monday, ranks them against your
+research interests with an LLM, and publishes the result to GitHub Pages.
 
-**Live digest:** <https://samsievertsen.github.io/tocify/>
+Live digest: <https://samsievertsen.github.io/tocify/>
 
-Maintained by Sam Sievertsen. Forked from [voytek/tocify](https://github.com/voytek/tocify)
-by Bradley Voytek, with earlier contributions from [Renee (Hui Xin) Ng](https://github.com/nghuixin).
-The triage pipeline, scoring rubric, source coverage, and backend have since been
-substantially rewritten, but the original idea and scaffolding are theirs.
+## Quick start
 
----
+Five minutes, assuming you forked this repo.
 
-## What this digest tracks
+1. **Get an API key.** Sign up at <https://openrouter.ai>, then create a key at
+   <https://openrouter.ai/keys>. The free tier needs no card.
 
-Four sections, each scored and thresholded independently:
+2. **Add it as a secret.** Settings, then Secrets and variables, then Actions, then New
+   repository secret. Name it `OPENROUTER_API_KEY`. Paste the key.
 
-| Section | What lands here |
+3. **Turn on Pages.** Settings, then Pages, then set Source to **GitHub Actions**. Do not
+   pick "Deploy from a branch". The publish workflow also tries to enable this for you,
+   but set it by hand if you can.
+
+4. **Check the feeds.** Actions, then Validate feeds, then Run workflow. Feed URLs rot and
+   publishers block bots. Act on the report before your first real run.
+
+5. **Run it.** Actions, then Weekly ToC Digest, then Run workflow. Tick *dry run* the
+   first time. That skips the API and proves the feeds and rendering work. Then run it for
+   real.
+
+After that it runs every Monday at 15:00 UTC. That is 08:00 PDT, 07:00 PST. GitHub cron
+ignores daylight saving.
+
+## Configuration
+
+Four text files. You should not need to touch the Python.
+
+| File | What it does |
 |---|---|
-| **Suicide & self-harm** | Suicidal ideation and behavior, self-injury, crisis services, means safety, prevention and intervention trials. Pediatric and adolescent samples are up-weighted. |
-| **Intensive longitudinal & sensing** | EMA/ESM, digital phenotyping, passive smartphone and wearable sensing, biosensors, actigraphy, measurement-burst designs, JITAI and micro-randomized trials. |
-| **ML & dynamical systems methods** | Prediction modeling, deep learning, nonlinear time series, idiographic and person-specific models, early warning signals, network psychometrics, calibration and external validation. Included even when the application sits outside psychiatry, if the method transfers. |
-| **Adjacent mental health** | Nearby psychiatry and child/adolescent work worth a glance. Deliberately kept small. |
+| `interests.md` | Keywords, a narrative paragraph, section definitions |
+| `prompt.txt` | Scoring rubric, meaning what gets up- and down-weighted |
+| `feeds.txt` | RSS feeds, `Name \| URL` per line |
+| `pubmed_queries.txt` | PubMed queries, `Name \| query` per line |
 
-The rubric up-weights external validation, prospective designs, and honest handling of
-rare events and class imbalance; it down-weights cross-sectional self-report studies,
-single-site models framed as clinically actionable, and editorials and corrections.
+The narrative paragraph in `interests.md` does most of the work. Write it in prose.
 
-### A caveat worth stating plainly
+Thresholds and caps are env vars in `.github/workflows/weekly-digest.yml`:
+`MIN_SCORE_SUICIDE`, `MIN_SCORE_SENSING`, `MIN_SCORE_METHODS`, `MIN_SCORE_ADJACENT`, and
+the matching `MAX_*`. Raise them if the digest gets noisy.
 
-Scores are a language model's judgement from a title and a short abstract snippet. The
-model has not read the paper. A high score means *worth opening*, not *methodologically
-sound*. This is a triage aid, not an appraisal.
+## What it currently tracks
 
----
+| Section | Contents |
+|---|---|
+| Suicide & self-harm | Ideation, behavior, self-injury, crisis services, prevention and intervention trials. Pediatric and adolescent samples score higher. |
+| Intensive longitudinal & sensing | EMA/ESM, digital phenotyping, passive and wearable sensing, actigraphy, JITAI, micro-randomized trials. |
+| ML & dynamical systems methods | Prediction models, nonlinear time series, idiographic models, early warning signals, network psychometrics, calibration and external validation. Included even outside psychiatry if the method transfers. |
+| Adjacent mental health | Nearby work worth a glance. Kept small on purpose. |
+
+The rubric rewards external validation, prospective designs, and honest handling of rare
+events. It penalizes cross-sectional self-report studies, single-site models sold as
+clinically actionable, editorials, and corrections.
+
+Scores come from a model reading a title and an abstract snippet. It has not read the
+paper. Treat a high score as "worth opening" and nothing more.
+
+## Local use
+
+```bash
+pip install -r requirements.txt
+
+python digest.py --dry-run             # no API calls, keyword-only scores
+python digest.py --list-free-models    # what's free on OpenRouter today
+python digest.py --limit 40            # small live test
+python validate_feeds.py               # feed health report
+
+export OPENROUTER_API_KEY=sk-or-v1-...
+python digest.py
+quarto preview
+```
+
+Run `--list-free-models` when triage starts failing. OpenRouter's free model list changes.
+It prints which free models support strict JSON schema output. Put working ones in the
+`MODEL_CHAIN` repository variable, comma-separated.
 
 ## How it works
 
@@ -45,130 +90,91 @@ pubmed_queries.txt ┘                                              ▲
                                               interests.md + prompt.txt
 ```
 
-**Why two sources.** RSS gives table-of-contents coverage with abstracts, but publisher
-feed URLs rot constantly and a feed only covers journals you thought to list. PubMed
-E-utilities is a stable NCBI API that searches all of MEDLINE, so it catches relevant
-work in journals you never subscribed to and keeps working when a journal changes
-publisher — as *Computational Psychiatry* did. Papers found by both routes are
-deduplicated on normalized title, keeping the publisher record because it carries the
-abstract.
+Two sources, because neither is enough alone. RSS gives you table-of-contents coverage
+with abstracts, but feed URLs break and you only get journals you thought to list. PubMed
+E-utilities searches all of MEDLINE and survives publisher changes. *Computational
+Psychiatry* moved publishers and its feed died, but the PubMed query still works. Papers
+found twice get deduplicated on normalized title, keeping the publisher copy because it
+has the abstract.
 
-**Cost.** The triage backend is [OpenRouter](https://openrouter.ai), whose free tier
-needs no payment information. A full weekly run is roughly six API requests against a
-50-requests-per-day free allowance.
+PubMed also covers journals whose publishers block GitHub runners. Wiley, Taylor &
+Francis, and psychiatryonline.org all return 403 from Actions, so those journals live in
+`pubmed_queries.txt` as `"J Abbrev"[Journal]` searches.
 
----
+A full run is about six API requests against a 50-per-day free allowance.
 
-## Configuration
+Triage tries each model in `MODEL_CHAIN` in order. Per model it asks for strict
+`json_schema` output first, then falls back to plain JSON and digs the object out of the
+response if the model ignores the schema. Timeouts and rate limits back off. The run only
+fails if every model fails.
 
-Everything you would normally want to change is plain text. No Python edits required.
-
-| File | Controls |
-|---|---|
-| `interests.md` | Keywords, narrative statement, section definitions |
-| `prompt.txt` | The triage rubric — what gets up- and down-weighted |
-| `feeds.txt` | RSS feeds, one per line as `Name \| URL` |
-| `pubmed_queries.txt` | PubMed queries, one per line as `Name \| query` |
-
-Score thresholds and result caps are environment variables set in
-`.github/workflows/weekly-digest.yml`: `MIN_SCORE_SUICIDE`, `MIN_SCORE_SENSING`,
-`MIN_SCORE_METHODS`, `MIN_SCORE_ADJACENT`, and the matching `MAX_*` caps.
-
-### Feeds rot — check them periodically
-
-**Actions → Validate feeds → Run workflow.** It fetches every feed URL and runs every
-PubMed query, then prints a status report to the run summary. No API key needed. It
-also runs automatically on the 1st of each month.
-
-Fix or delete anything reported `EMPTY` or `FETCH_FAIL`. `STALE` means the feed works
-but has published nothing in 120 days.
-
----
-
-## Local use
-
-```bash
-pip install -r requirements.txt
-
-python digest.py --dry-run             # keyword-only scoring, no API calls
-python digest.py --list-free-models    # what's free on OpenRouter right now
-python digest.py --limit 40            # small live test
-python validate_feeds.py               # feed health report
-
-export OPENROUTER_API_KEY=sk-or-v1-...
-python digest.py                       # full run
-quarto preview                         # view the site locally
-```
-
-`--list-free-models` matters because OpenRouter's free roster changes. It prints which
-free models support strict JSON schema output; put working ones in `MODEL_CHAIN`.
-
-### Graceful degradation
-
-`MODEL_CHAIN` is tried in order. For each model the pipeline first requests strict
-`json_schema` structured output; if the model doesn't support it, it retries in plain
-JSON mode and recovers the object from the response, including markdown-fenced or
-prose-wrapped output. Rate limits and timeouts back off exponentially. The run only
-fails if every model in the chain fails. This matters on a free tier where model
-availability isn't guaranteed.
-
----
-
-## Fork this for your own field
-
-Nothing here is specific to suicide research except the text files. To retarget it:
-
-1. **Fork the repo**, then rewrite `interests.md` — the narrative paragraph does most
-   of the work, so describe what you actually care about in prose.
-2. **Rewrite `prompt.txt`**, especially the section definitions and the up-weight /
-   down-weight lists. Redefine the four sections for your field, keeping the IDs in
-   `interests.md` and `digest.py` in sync.
-3. **Replace `feeds.txt` and `pubmed_queries.txt`** with your journals and queries,
-   then run **Validate feeds** before your first real run.
-4. **Add an `OPENROUTER_API_KEY` secret** and enable Pages (see below).
-5. **Run with `--dry-run` first.** It exercises fetching, deduplication, filtering, and
-   rendering without spending an API request, which is the cheapest way to find a
-   broken feed list.
-
-Start with thresholds set high. Broad sections are how these digests become unreadable
-and get abandoned.
-
----
-
-## Setup
-
-### 1. Add your OpenRouter API key
-
-**Settings → Secrets and variables → Actions → New repository secret**
-
-- Name: `OPENROUTER_API_KEY`
-- Secret: your key from <https://openrouter.ai/keys>
-
-Repository secrets are encrypted and are never readable from the repository, the Actions
-logs, or the published site — including when the repo is public. GitHub masks the value
-in logs automatically. Never put the key in a file in the repo.
-
-Optional extras:
+## Optional settings
 
 | Type | Name | Purpose |
 |---|---|---|
-| Secret | `NCBI_API_KEY` | Raises the PubMed rate limit from 3/s to 10/s. Free from your NCBI account |
-| Variable | `CONTACT_EMAIL` | Polite identifier sent to NCBI E-utilities |
+| Secret | `NCBI_API_KEY` | Raises PubMed rate limit from 3/s to 10/s. Free from your NCBI account |
+| Variable | `CONTACT_EMAIL` | Identifies you to NCBI E-utilities |
 | Variable | `MODEL_CHAIN` | Comma-separated model override |
 
-### 2. Enable GitHub Pages
+Secrets are encrypted. They never appear in the repo, the logs, or the published site,
+including on a public repo. Do not commit the key to a file.
 
-**Settings → Pages → Build and deployment → Source: `GitHub Actions`**
+## Retargeting this to your field
 
-Not "Deploy from a branch" — the workflow uploads a Pages artifact directly.
+Nothing here is specific to suicide research except the text files.
 
-### 3. Run it
+1. Rewrite `interests.md`. Describe what you care about in prose.
+2. Rewrite the section definitions and the up/down-weight lists in `prompt.txt`. Keep the
+   section IDs in sync with `interests.md` and `digest.py`.
+3. Replace `feeds.txt` and `pubmed_queries.txt`. Run Validate feeds before your first real
+   run.
+4. Start with high thresholds. Broad sections make the digest unreadable and you stop
+   reading it.
 
-**Actions → Weekly ToC Digest → Run workflow**, with *dry run* ticked the first time.
-Then run it for real. After that it runs every Monday at 15:00 UTC (08:00 PDT / 07:00
-PST — GitHub cron does not observe daylight saving).
+## Feeds break constantly
 
----
+Run Validate feeds monthly. It runs automatically on the 1st. The report uses five
+statuses:
+
+| Status | Meaning | What to do |
+|---|---|---|
+| `OK` | Parsed, has entries, recent | Nothing |
+| `STALE` | Works, nothing in 120 days | Probably discontinued. Drop it |
+| `BLOCKED` | 403, or an HTML challenge page | Publisher refuses runner IPs. Delete the feed and add `"J Abbrev"[Journal]` to `pubmed_queries.txt` |
+| `EMPTY` | Parsed, no entries, twice | Fine if the journal is quiet |
+| `FETCH_FAIL` | 404, DNS failure, timeout | Wrong URL or dead host. Find the real one or drop it |
+
+The validator fetches one URL at a time per host with a delay between them. Without that,
+sites like nature.com return an HTML challenge page and a working feed looks dead. Tune
+with `HOST_DELAY` and `HOST_WORKERS` if you still see false failures.
+
+Two patterns worth knowing. ScienceDirect feeds work from Actions, so use
+`https://rss.sciencedirect.com/publication/science/{ISSN}` for Elsevier titles rather than
+the journal-branded sites like thelancet.com or cell.com, which return 403. And no amount
+of URL fixing gets past a `BLOCKED` result, so go to PubMed instead of retrying.
+
+## Troubleshooting
+
+**`deploy` fails with 404.** Pages is not enabled. Settings, then Pages, then Source,
+then GitHub Actions. Re-run.
+
+**Render fails.** Quarto renders every `.qmd` and `.md` in the project unless you list
+files explicitly. The `render:` list in `_quarto.yml` exists to stop that. Add new pages
+there.
+
+**Digest is empty or thin.** Run Validate feeds. Feeds die quietly.
+
+**Node.js 20 deprecation warnings.** Cosmetic. They come from GitHub's own Pages actions
+and will go away when GitHub ships updated versions.
+
+## Credit
+
+Forked from [voytek/tocify](https://github.com/voytek/tocify) by Bradley Voytek, with
+earlier work by [Renee (Hui Xin) Ng](https://github.com/nghuixin). The original idea and
+scaffolding are theirs. This fork swaps in different interests, sources, scoring, and
+model backend.
+
+Maintained by Sam Sievertsen.
 
 ## License
 

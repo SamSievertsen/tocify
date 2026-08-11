@@ -50,6 +50,7 @@ SUMMARY_MAX_CHARS    = _env_int("SUMMARY_MAX_CHARS", 500)
 PREFILTER_KEEP_TOP   = _env_int("PREFILTER_KEEP_TOP", 220)
 BATCH_SIZE           = _env_int("BATCH_SIZE", 40)
 FEED_TIMEOUT         = _env_int("FEED_TIMEOUT", 45)
+HOST_DELAY           = _env_float("HOST_DELAY", 1.5)   # min seconds between same-host hits
 PUBMED_RETMAX        = _env_int("PUBMED_RETMAX", 60)
 PUBMED_ENABLED       = os.getenv("PUBMED_ENABLED", "1") not in ("0", "false", "False")
 NCBI_API_KEY         = os.getenv("NCBI_API_KEY", "").strip()   # optional, raises rate limit
@@ -165,21 +166,49 @@ def parse_date(entry):
                 pass
     return None
 
+_last_hit = {}
+
+def _throttle(url):
+    """Space out requests to the same host. Publishers serve an HTML challenge page
+    instead of the feed when hit too fast, which silently looks like a dead feed."""
+    host = urllib.parse.urlparse(url).netloc
+    wait = HOST_DELAY - (time.monotonic() - _last_hit.get(host, 0))
+    if wait > 0:
+        time.sleep(wait)
+    _last_hit[host] = time.monotonic()
+
+
+def _get(url):
+    _throttle(url)
+    req = urllib.request.Request(url, headers={
+        "User-Agent": UA,
+        "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
+        "Accept-Language": "en-US,en;q=0.9",
+    })
+    return urllib.request.urlopen(req, timeout=FEED_TIMEOUT).read()
+
+
 def fetch_one_feed(feed, cutoff):
     url, out = feed["value"], []
-    try:
-        req = urllib.request.Request(url, headers={
-            "User-Agent": UA,
-            "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
-        })
-        raw = urllib.request.urlopen(req, timeout=FEED_TIMEOUT).read()
+    label = feed.get("name") or url
+    d = None
+    for attempt in range(2):
+        try:
+            raw = _get(url)
+        except Exception as e:
+            print(f"  ! {label}: fetch failed ({type(e).__name__}: {str(e)[:60]})")
+            return out
         d = feedparser.parse(raw)
-    except Exception as e:
-        print(f"  ! {feed.get('name') or url}: fetch failed ({type(e).__name__}: {str(e)[:70]})")
-        return out
+        if d.entries:
+            break
+        head = raw[:400].decode("utf-8", "ignore").lower()
+        if attempt == 0 and ("<html" in head or "<!doctype html" in head):
+            time.sleep(4)   # probably a rate-limit challenge page; back off once
+            continue
+        break
 
-    if not d.entries:
-        print(f"  ! {feed.get('name') or url}: 0 entries (feed may be dead — run Validate feeds)")
+    if not d or not d.entries:
+        print(f"  ! {label}: 0 entries (run Validate feeds)")
         return out
 
     source = (feed.get("name") or d.feed.get("title") or url).strip()

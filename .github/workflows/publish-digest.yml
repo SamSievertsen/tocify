@@ -35,6 +35,14 @@ jobs:
         with:
           ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_sha || github.ref }}
 
+      # Turns Pages on via the API if it is not already on, and creates the
+      # github-pages environment. Without this, deploy-pages fails with a bare
+      # 404 whenever Pages has not been enabled by hand in Settings -> Pages.
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 

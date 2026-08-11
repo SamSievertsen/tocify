@@ -25,3 +25,17 @@ Dynamical systems + psychopathology | ("dynamical system"[tiab] OR "dynamical sy
 JITAI + adaptive trials | ("just-in-time adaptive intervention"[tiab] OR "just in time adaptive"[tiab] OR JITAI[tiab] OR "micro-randomized"[tiab] OR microrandomized[tiab] OR "sequential multiple assignment randomized"[tiab])
 
 Computational Psychiatry journal | "Comput Psychiatr"[Journal]
+
+# --- Journal coverage for publishers that block GitHub runners (403) ---
+# These replace RSS feeds that cannot be fetched. Journal names use NLM title
+# abbreviations. Verify one at https://pubmed.ncbi.nlm.nih.gov before adding more.
+
+# Small, entirely on-topic journals: take everything they publish.
+Core suicide journals | "Suicide Life Threat Behav"[Journal] OR "Arch Suicide Res"[Journal] OR "Crisis"[Journal] OR "Death Stud"[Journal]
+
+# Quantitative methods journals: small enough to take whole, and method papers often
+# never mention a clinical population, so topic filters would miss them.
+Quant methods journals | "Behav Res Methods"[Journal] OR "Psychometrika"[Journal] OR "Multivariate Behav Res"[Journal] OR "Psychol Methods"[Journal] OR "Struct Equ Modeling"[Journal]
+
+# Large general psychiatry journals: filtered, or they would swamp the digest.
+Blocked psychiatry journals | ("J Child Psychol Psychiatry"[Journal] OR "World Psychiatry"[Journal] OR "Am J Psychiatry"[Journal] OR "Psychiatr Serv"[Journal] OR "J Am Med Inform Assoc"[Journal]) AND (suicid*[tiab] OR "self-harm"[tiab] OR "self-injury"[tiab] OR adolescen*[tiab] OR youth[tiab] OR "machine learning"[tiab] OR "ecological momentary"[tiab] OR "digital phenotyping"[tiab] OR wearable*[tiab] OR predict*[tiab] OR longitudinal[tiab])

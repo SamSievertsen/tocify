@@ -1,21 +1,34 @@
 """
 Validate every URL in feeds.txt and every query in pubmed_queries.txt.
 
-Run locally:            python validate_feeds.py
-Run on GitHub:          Actions -> Validate feeds -> Run workflow
+Run locally:   python validate_feeds.py
+On GitHub:     Actions -> Validate feeds -> Run workflow
 
-Publisher feed URLs rot constantly. Run this whenever the digest looks thin.
-Anything reported EMPTY or FETCH_FAIL should be fixed or deleted from feeds.txt.
+Publishers rate-limit and bot-block. This script fetches one URL at a time per host,
+with a delay between hits on the same host, and retries once before calling a feed
+dead. Without that, sites like nature.com return an HTML challenge page and the feed
+looks broken when it is fine.
+
+Statuses:
+  OK          feed parsed, has entries, published something recently
+  STALE       feed works but nothing new in STALE_DAYS
+  BLOCKED     403, or an HTML challenge page. The publisher is refusing GitHub runners.
+              Do not retry your way out of this. Use a PubMed [Journal] query instead.
+  EMPTY       parsed but no entries, twice
+  FETCH_FAIL  404, DNS failure, timeout. The URL is wrong or the host is gone.
 """
-import os, sys, json, time, urllib.parse, urllib.request
+import os, sys, json, time, random, urllib.parse, urllib.request
 import concurrent.futures as cf
+from collections import defaultdict
 from datetime import datetime, timezone
 
 import feedparser
 
-UA = "tocify-validator/2.0 (+https://github.com/SamSievertsen/tocify)"
+UA = "tocify-validator/2.1 (+https://github.com/SamSievertsen/tocify)"
 TIMEOUT = int(os.getenv("FEED_TIMEOUT", "45"))
 STALE_DAYS = int(os.getenv("STALE_DAYS", "120"))
+HOST_DELAY = float(os.getenv("HOST_DELAY", "1.5"))   # seconds between hits on one host
+HOST_WORKERS = int(os.getenv("HOST_WORKERS", "6"))   # distinct hosts in parallel
 
 
 def load_pairs(path):
@@ -48,81 +61,134 @@ def newest(d):
     return best
 
 
-def check_feed(pair):
-    name, url = pair
-    try:
-        req = urllib.request.Request(url, headers={
-            "User-Agent": UA,
-            "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
-        })
-        raw = urllib.request.urlopen(req, timeout=TIMEOUT).read()
-    except Exception as e:
-        return (name, url, "FETCH_FAIL", 0, None, f"{type(e).__name__}: {str(e)[:80]}")
-
-    d = feedparser.parse(raw)
-    if not d.entries:
-        head = raw[:300].decode("utf-8", "ignore").lower()
-        why = "returned an HTML page, not a feed" if "<html" in head or "<!doctype html" in head else "parsed but 0 entries"
-        return (name, url, "EMPTY", 0, None, why)
-
-    nd = newest(d)
-    age = (datetime.now(timezone.utc) - nd).days if nd else None
-    status = "STALE" if (age is not None and age > STALE_DAYS) else "OK"
-    sample = (d.entries[0].get("title") or "")[:64].replace("\n", " ")
-    return (name, url, status, len(d.entries), age, sample)
+def looks_like_html(raw):
+    head = raw[:400].decode("utf-8", "ignore").lower()
+    return "<html" in head or "<!doctype html" in head
 
 
-def check_pubmed(pair):
-    name, term = pair
-    params = {"db": "pubmed", "term": term, "retmode": "json", "retmax": 1, "reldate": 365, "datetype": "edat", "tool": "tocify"}
+def fetch(url):
+    req = urllib.request.Request(url, headers={
+        "User-Agent": UA,
+        "Accept": "application/rss+xml, application/atom+xml, application/xml, text/xml, */*",
+        "Accept-Language": "en-US,en;q=0.9",
+    })
+    return urllib.request.urlopen(req, timeout=TIMEOUT).read()
+
+
+def check_feed(name, url):
+    last_err = None
+    for attempt in range(2):
+        if attempt:
+            time.sleep(3 + random.random() * 2)
+        try:
+            raw = fetch(url)
+        except urllib.error.HTTPError as e:
+            if e.code in (401, 403, 429):
+                return (name, url, "BLOCKED", 0, None, f"HTTP {e.code} — publisher refuses runner IPs")
+            last_err = f"HTTP {e.code}"
+            continue
+        except Exception as e:
+            last_err = f"{type(e).__name__}: {str(e)[:60]}"
+            continue
+
+        d = feedparser.parse(raw)
+        if d.entries:
+            nd = newest(d)
+            age = (datetime.now(timezone.utc) - nd).days if nd else None
+            status = "STALE" if (age is not None and age > STALE_DAYS) else "OK"
+            sample = (d.entries[0].get("title") or "")[:60].replace("\n", " ")
+            return (name, url, status, len(d.entries), age, sample)
+
+        if looks_like_html(raw):
+            last_err = "HTML page, not a feed"
+        else:
+            last_err = "parsed but 0 entries"
+
+    if last_err == "HTML page, not a feed":
+        return (name, url, "BLOCKED", 0, None, "HTML challenge page after retry")
+    if last_err == "parsed but 0 entries":
+        return (name, url, "EMPTY", 0, None, "0 entries after retry")
+    return (name, url, "FETCH_FAIL", 0, None, last_err or "unknown")
+
+
+def check_host_group(item):
+    """Feeds sharing a host are fetched one at a time, spaced out."""
+    _host, pairs = item
+    rows = []
+    for i, (name, url) in enumerate(pairs):
+        if i:
+            time.sleep(HOST_DELAY + random.random() * 0.5)
+        rows.append(check_feed(name, url))
+    return rows
+
+
+def check_pubmed(name, term):
+    params = {"db": "pubmed", "term": term, "retmode": "json", "retmax": 1,
+              "reldate": 365, "datetype": "edat", "tool": "tocify"}
     url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?" + urllib.parse.urlencode(params)
     try:
         raw = urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": UA}), timeout=TIMEOUT).read()
         res = json.loads(raw).get("esearchresult", {})
-        if res.get("errorlist") or res.get("warninglist"):
-            detail = json.dumps({k: v for k, v in res.items() if k in ("errorlist", "warninglist")})[:80]
-            return (name, term[:60], "WARN", int(res.get("count", 0)), None, detail)
+        warn = res.get("errorlist") or res.get("warninglist")
         count = int(res.get("count", 0))
-        status = "OK" if count else "EMPTY"
-        return (name, term[:60], status, count, None, f"{count} hits in last 365d")
+        if warn:
+            bad = json.dumps(warn)[:70]
+            return (name, term[:60], "WARN", count, None, f"{count} hits; check terms: {bad}")
+        return (name, term[:60], "OK" if count else "EMPTY", count, None, f"{count} hits in last 365d")
     except Exception as e:
-        return (name, term[:60], "FETCH_FAIL", 0, None, f"{type(e).__name__}: {str(e)[:80]}")
+        return (name, term[:60], "FETCH_FAIL", 0, None, f"{type(e).__name__}: {str(e)[:60]}")
 
 
-def report(title, rows, order):
-    print(f"\n{'=' * 118}\n{title}\n{'=' * 118}")
+ORDER = {"OK": 0, "STALE": 1, "WARN": 2, "BLOCKED": 3, "EMPTY": 4, "FETCH_FAIL": 5}
+
+
+def report(title, rows):
+    print(f"\n{'=' * 112}\n{title}\n{'=' * 112}")
     print(f"{'STATUS':<12}{'N':>6}{'AGEd':>6}  {'NAME':<32} DETAIL")
-    print("-" * 118)
-    rows.sort(key=lambda r: (order.get(r[2], 9), r[0].lower()))
+    print("-" * 112)
+    rows.sort(key=lambda r: (ORDER.get(r[2], 9), r[0].lower()))
     for name, _u, status, n, age, detail in rows:
         print(f"{status:<12}{n:>6}{(str(age) if age is not None else '-'):>6}  {name[:32]:<32} {detail}")
-    counts = {}
+    counts = defaultdict(int)
     for r in rows:
-        counts[r[2]] = counts.get(r[2], 0) + 1
-    print(f"\nSUMMARY: {counts}")
+        counts[r[2]] += 1
+    print(f"\nSUMMARY: {dict(counts)}")
     return counts
 
 
 def main():
-    order = {"OK": 0, "STALE": 1, "WARN": 2, "EMPTY": 3, "FETCH_FAIL": 4}
-
     feeds = load_pairs("feeds.txt")
-    print(f"Checking {len(feeds)} RSS feeds…")
-    with cf.ThreadPoolExecutor(max_workers=8) as ex:
-        feed_rows = list(ex.map(check_feed, feeds))
-    fc = report("RSS FEEDS", feed_rows, order)
+    groups = defaultdict(list)
+    for name, url in feeds:
+        groups[urllib.parse.urlparse(url).netloc].append((name, url))
+    print(f"Checking {len(feeds)} RSS feeds across {len(groups)} hosts "
+          f"({HOST_WORKERS} hosts in parallel, {HOST_DELAY}s between same-host requests)…")
+
+    feed_rows = []
+    with cf.ThreadPoolExecutor(max_workers=HOST_WORKERS) as ex:
+        for rows in ex.map(check_host_group, groups.items()):
+            feed_rows.extend(rows)
+    fc = report("RSS FEEDS", feed_rows)
 
     queries = load_pairs("pubmed_queries.txt")
     print(f"\nChecking {len(queries)} PubMed queries…")
     q_rows = []
-    for q in queries:
-        q_rows.append(check_pubmed(q))
+    for name, term in queries:
+        q_rows.append(check_pubmed(name, term))
         time.sleep(0.4)
-    qc = report("PUBMED QUERIES", q_rows, order)
+    qc = report("PUBMED QUERIES", q_rows)
 
-    bad = fc.get("EMPTY", 0) + fc.get("FETCH_FAIL", 0) + qc.get("EMPTY", 0) + qc.get("FETCH_FAIL", 0)
-    print(f"\n{bad} entries need attention. Edit feeds.txt / pubmed_queries.txt and re-run.")
-    # Exit 0 regardless: this is a report, not a gate.
+    print("\n" + "=" * 112)
+    print("WHAT TO DO")
+    print("=" * 112)
+    print("BLOCKED     Publisher refuses GitHub runner IPs. Deleting the feed is correct.")
+    print("            Replace it with a PubMed query: \"J Abbrev Name\"[Journal]")
+    print("FETCH_FAIL  Wrong URL or dead host. Find the real feed URL, or drop it.")
+    print("EMPTY       Feed is real but had nothing. Fine if the journal is quiet.")
+    print("STALE       Works, but nothing published recently. Probably discontinued.")
+    bad = sum(fc[k] for k in ("BLOCKED", "EMPTY", "FETCH_FAIL")) + \
+          sum(qc[k] for k in ("EMPTY", "FETCH_FAIL", "WARN"))
+    print(f"\n{bad} entries need attention.")
     return 0
 
 

@@ -1,29 +1,26 @@
 # tocify feed list
-# Format:  Name | URL     (the "Name |" prefix is optional)
-# Lines starting with # are ignored.
+# Format:  Name | URL     ("Name |" is optional). Lines starting with # are ignored.
 #
-# IMPORTANT: publisher feed URLs rot constantly. Run the "Validate feeds" workflow
-# (Actions -> Validate feeds -> Run workflow) to see which of these actually return
-# entries from a GitHub runner, then prune. Entries below marked UNVERIFIED are
-# best-effort URL patterns that have not been confirmed.
+# Revised after the 2026-08-11 validation run. Two things that run taught us:
 #
-# Journals whose feeds are unreliable (e.g. Computational Psychiatry, which changed
-# publishers) are covered instead by pubmed_queries.txt, which is publisher-agnostic.
+# 1. rss.sciencedirect.com works from GitHub runners. Publisher-branded Elsevier sites
+#    (thelancet.com, cell.com, jaacap.org, jahonline.org) return 403. So every Elsevier
+#    title below uses the ScienceDirect ISSN pattern:
+#        https://rss.sciencedirect.com/publication/science/{ISSN without hyphen}
+#
+# 2. Wiley, Taylor & Francis, and psychiatryonline.org block runner IPs outright.
+#    No URL fixes that. Those journals moved to pubmed_queries.txt instead.
+#
+# Re-run Actions -> Validate feeds after editing.
 
-# === SUICIDE-SPECIFIC ===
-Suicide Life Threat Behav | https://onlinelibrary.wiley.com/feed/1943278x/most-recent
-Archives of Suicide Research | https://www.tandfonline.com/feed/rss/usui20
-Crisis | https://econtent.hogrefe.com/action/showFeed?type=etoc&feed=rss&jc=crisis
-
-# === DIGITAL HEALTH / SENSING (JMIR family — Atom, reliable) ===
+# === DIGITAL HEALTH / SENSING ===
 JMIR | https://www.jmir.org/feed/atom
 JMIR Mental Health | https://mental.jmir.org/feed/atom
 JMIR mHealth uHealth | https://mhealth.jmir.org/feed/atom
 JMIR Formative Res | https://formative.jmir.org/feed/atom
 JMIR Public Health Surveill | https://publichealth.jmir.org/feed/atom
 npj Digital Medicine | https://www.nature.com/npjdigitalmed.rss
-Lancet Digital Health | https://www.thelancet.com/rssfeed/landig_current.xml
-J Am Med Inform Assoc | https://academic.oup.com/rss/site_5344/3211.xml
+Lancet Digital Health | https://rss.sciencedirect.com/publication/science/25897500
 
 # === PSYCHIATRY / MENTAL HEALTH ===
 Translational Psychiatry | https://www.nature.com/tp.rss
@@ -35,37 +32,32 @@ Nature Human Behaviour | https://www.nature.com/nathumbehav.rss
 JAMA Psychiatry | https://jamanetwork.com/rss/site_14/70.xml
 JAMA Network Open | https://jamanetwork.com/rss/site_214/187.xml
 JAMA Pediatrics | https://jamanetwork.com/rss/site_19/75.xml
-Lancet Psychiatry | https://www.thelancet.com/rssfeed/lanpsy_current.xml
-Lancet Child Adolesc Health | https://www.thelancet.com/rssfeed/lanchi_current.xml
-Am J Psychiatry | https://psychiatryonline.org/action/showFeed?type=etoc&feed=rss&jc=ajp
-Psychiatric Services | https://psychiatryonline.org/action/showFeed?type=etoc&feed=rss&jc=ps
-World Psychiatry | https://onlinelibrary.wiley.com/feed/20515545/most-recent
+Lancet Psychiatry | https://rss.sciencedirect.com/publication/science/22150366
 
 # === CHILD & ADOLESCENT ===
-JCPP | https://acamh.onlinelibrary.wiley.com/feed/14697610/most-recent
-JAACAP | https://www.jaacap.org/current.rss
-J Adolescent Health | https://www.jahonline.org/current.rss
+JAACAP | https://rss.sciencedirect.com/publication/science/08908567
+J Adolescent Health | https://rss.sciencedirect.com/publication/science/1054139X
+Lancet Child Adolesc Health | https://rss.sciencedirect.com/publication/science/23524642
 
 # === CLINICAL PSYCHOLOGY / AFFECTIVE ===
 J Affective Disorders | https://rss.sciencedirect.com/publication/science/01650327
 Behaviour Research and Therapy | https://rss.sciencedirect.com/publication/science/00057967
 Psychiatry Research | https://rss.sciencedirect.com/publication/science/01651781
-Biol Psychiatry CNNI | https://www.bpscnni.org/current.rss
-Biol Psychiatry GOS | https://www.bpsgos.org/current.rss
+Clinical Psychological Science | https://journals.sagepub.com/action/showFeed?ui=0&mi=ehikzz&ai=2b4&jc=cpxa&type=etoc&feed=rss
+Adv Methods Pract Psych Sci | https://journals.sagepub.com/action/showFeed?ui=0&mi=ehikzz&ai=2b4&jc=ampa&type=etoc&feed=rss
+Biol Psychiatry CNNI | https://rss.sciencedirect.com/publication/science/24519022
+Biol Psychiatry GOS | https://rss.sciencedirect.com/publication/science/26671743
 
 # === METHODS / QUANTITATIVE ===
 Behavior Research Methods | https://link.springer.com/search.rss?facet-journal-id=13428&channel-name=Behavior+Research+Methods
 Psychometrika | https://link.springer.com/search.rss?facet-journal-id=11336&channel-name=Psychometrika
-Multivariate Behav Res | https://www.tandfonline.com/feed/rss/hmbr20
-Clinical Psychological Science | https://journals.sagepub.com/action/showFeed?ui=0&mi=ehikzz&ai=2b4&jc=cpxa&type=etoc&feed=rss
-Adv Methods Pract Psych Sci | https://journals.sagepub.com/action/showFeed?ui=0&mi=ehikzz&ai=2b4&jc=ampa&type=etoc&feed=rss
 
 # === ML / COMPUTATIONAL ===
 Nature Machine Intelligence | https://www.nature.com/natmachintell.rss
 Nature Computational Science | https://www.nature.com/natcomputsci.rss
-Patterns | https://www.cell.com/patterns/inpress.rss
-Trends Cogn Sci | https://www.cell.com/trends/cognitive-sciences/inpress.rss
 Nature Reviews Psychology | https://www.nature.com/nrpsychol.rss
+Patterns | https://rss.sciencedirect.com/publication/science/26663899
+Trends Cogn Sci | https://rss.sciencedirect.com/publication/science/13646613
 
 # === GENERAL / HIGH IMPACT ===
 Nature | https://www.nature.com/nature.rss
@@ -81,12 +73,18 @@ medRxiv Pediatrics | http://connect.medrxiv.org/medrxiv_xml.php?subject=pediatri
 arXiv stat.ME | http://export.arxiv.org/rss/stat.ME
 arXiv cs.LG | http://export.arxiv.org/rss/cs.LG
 
-# === REMOVED (were in the old feeds.txt, and were wrong) ===
-# Trends Neurosci   -> URL used jc=stm, which is Science Translational Medicine
-# Lancet Neurol     -> URL pointed at landig (Digital Health); the two were swapped
-# J Cogn Neurosci   -> URL pointed at an IEEE Xplore feed
-# Science Advances  -> URL was an HTML help page with a #:~:text= fragment
-# NeuroImage        -> journals.elsevier.com feed retired
-# JAD Reports       -> URL was the journal homepage, not a feed
-# Cerebral Cortex   -> cercor.oxfordjournals.org retired years ago
-# Nature (old)      -> /nature/current_issue/rss legacy path
+# === REMOVED, AND WHY ===
+# Blocked by publisher (403 from GitHub runners). Now covered by pubmed_queries.txt:
+#   Suicide Life Threat Behav, Archives of Suicide Research  (Wiley, Taylor & Francis)
+#   JCPP, World Psychiatry                                   (Wiley)
+#   Am J Psychiatry, Psychiatric Services                    (psychiatryonline.org)
+#   Multivariate Behav Res                                   (Taylor & Francis)
+# Dead URLs:
+#   Crisis        econtent.hogrefe.com jc=crisis -> 404. Covered by PubMed instead.
+#   J Am Med Inform Assoc  academic.oup.com site_5344 -> 404. OUP rotates site IDs.
+#   Biol Psychiatry CNNI   bpscnni.org does not resolve. Replaced with ScienceDirect.
+# Wrong journal entirely (inherited from the original feed list):
+#   Trends Neurosci (was jc=stm, Science Translational Medicine)
+#   Lancet Neurol / Lancet Digital Health (URLs were swapped)
+#   J Cogn Neurosci (pointed at an IEEE Xplore feed)
+#   NeuroImage, Cerebral Cortex, JAD Reports (retired or not feeds)
