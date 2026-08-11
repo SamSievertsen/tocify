@@ -451,6 +451,10 @@ def list_free_models():
     print("Set MODEL_CHAIN (comma-separated) to override the default chain.")
 
 
+class ModelUnavailable(RuntimeError):
+    """The provider accepted the request but returned no usable completion."""
+
+
 def extract_json(text):
     """Models sometimes wrap JSON in prose or fences. Recover it."""
     text = (text or "").strip()
@@ -487,45 +491,92 @@ def call_model(client, model, prompt, use_schema=True):
             "json_schema": {"name": "weekly_toc_digest", "strict": True, "schema": SCHEMA},
         }
     resp = client.chat.completions.create(**kwargs)
-    return extract_json(resp.choices[0].message.content)
+
+    # OpenRouter returns errors with HTTP 200 and an error object in the body. The SDK
+    # parses that into a response whose .choices is None, so indexing it blows up with
+    # a TypeError far from the real cause. Surface the actual message instead.
+    if not getattr(resp, "choices", None):
+        err = getattr(resp, "error", None)
+        if err is None and getattr(resp, "model_extra", None):
+            err = resp.model_extra.get("error")
+        raise ModelUnavailable(f"{model}: no choices returned. Provider said: {err!r}")
+
+    content = resp.choices[0].message.content
+    if not content or not content.strip():
+        raise ModelUnavailable(f"{model}: returned empty content")
+    return extract_json(content)
+
+
+# Remembers the first model that actually worked. Without this, every batch re-tries
+# the dead entries at the front of the chain, which wastes free-tier requests.
+_working = {"model": None, "schema": None}
 
 
 def triage_batch(client, prompt):
-    """Try each model in the chain; for each, try schema mode then plain-JSON mode."""
-    last = None
+    """Try each model in the chain. For each, try schema mode then plain-JSON mode."""
+    plan = []
+    if _working["model"]:
+        plan.append((_working["model"], _working["schema"]))
     for model in MODEL_CHAIN:
         for use_schema in (True, False):
-            for attempt in range(3):
-                try:
-                    out = call_model(client, model, prompt, use_schema)
-                    if attempt or not use_schema or model != MODEL_CHAIN[0]:
-                        print(f"    (via {model}, schema={use_schema})")
-                    return out
-                except (APITimeoutError, APIConnectionError, RateLimitError) as e:
-                    last = e
-                    time.sleep(min(45, 3 * 2 ** attempt))
-                except (APIStatusError, ValueError, KeyError) as e:
-                    last = e
-                    break  # schema unsupported or bad output. Change mode or model.
-    raise RuntimeError(f"All models in MODEL_CHAIN failed. Last error: {last}")
+            if (model, use_schema) != (_working["model"], _working["schema"]):
+                plan.append((model, use_schema))
+
+    last = None
+    for model, use_schema in plan:
+        for attempt in range(3):
+            try:
+                out = call_model(client, model, prompt, use_schema)
+                if (model, use_schema) != (_working["model"], _working["schema"]):
+                    print(f"    (via {model}, schema={use_schema})")
+                    _working.update(model=model, schema=use_schema)
+                return out
+            except (APITimeoutError, APIConnectionError, RateLimitError) as e:
+                last = e
+                time.sleep(min(45, 3 * 2 ** attempt))
+            except Exception as e:
+                # Model missing, schema unsupported, bad JSON, empty choices. All mean
+                # "try something else" rather than "crash the run".
+                last = e
+                if _working["model"] == model:
+                    _working.update(model=None, schema=None)
+                break
+    raise RuntimeError(f"All models failed for this batch. Last error: "
+                       f"{type(last).__name__}: {last}")
 
 
 def triage(client, interests, items, template):
     total = math.ceil(len(items) / BATCH_SIZE)
     ranked, notes = [], []
+    failed = 0
     for i in range(0, len(items), BATCH_SIZE):
         batch = items[i:i + BATCH_SIZE]
-        print(f"  Triage batch {i // BATCH_SIZE + 1}/{total} ({len(batch)} items)")
+        n = i // BATCH_SIZE + 1
+        print(f"  Triage batch {n}/{total} ({len(batch)} items)")
         lean = [{"id": it["id"], "source": it["source"], "title": it["title"],
                  "summary": it["summary"][:SUMMARY_MAX_CHARS]} for it in batch]
         prompt = (template
                   .replace("{{KEYWORDS}}", json.dumps(interests["keywords"], ensure_ascii=False))
                   .replace("{{NARRATIVE}}", interests["narrative"])
                   .replace("{{ITEMS}}", json.dumps(lean, ensure_ascii=False)))
-        res = triage_batch(client, prompt)
+        try:
+            res = triage_batch(client, prompt)
+        except RuntimeError as e:
+            # A partial digest beats no digest. Skip this batch and keep going.
+            failed += 1
+            print(f"    ! batch {n} failed, skipping: {e}")
+            continue
         if res.get("notes", "").strip():
             notes.append(res["notes"].strip())
         ranked.extend(res.get("ranked", []))
+
+    if failed == total:
+        raise RuntimeError(f"All {total} triage batches failed. Check the errors above, "
+                           f"then run `python digest.py --list-free-models` and set the "
+                           f"MODEL_CHAIN repository variable to a model that works.")
+    if failed:
+        notes.append(f"{failed} of {total} triage batches failed, so roughly "
+                     f"{failed * BATCH_SIZE} items were not scored this week.")
 
     best = {}
     for r in ranked:

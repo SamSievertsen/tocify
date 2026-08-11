@@ -30,6 +30,16 @@ jobs:
         run: |
           python validate_feeds.py 2>&1 | tee report.txt
 
+      # OpenRouter's free model roster changes, and dead IDs in MODEL_CHAIN waste
+      # free-tier requests on every run. The /models endpoint needs no API key, so
+      # this runs here rather than in the digest workflow.
+      - name: List free OpenRouter models
+        if: always()
+        continue-on-error: true
+        run: |
+          echo "" >> report.txt
+          python digest.py --list-free-models 2>&1 | tee -a report.txt
+
       - name: Publish report to summary
         if: always()
         run: |

@@ -164,6 +164,19 @@ there.
 
 **Digest is empty or thin.** Run Validate feeds. Feeds die quietly.
 
+**Triage batches fail, or the log shows `via openrouter/free`.** The named models in
+`MODEL_CHAIN` are dead. OpenRouter retires free model IDs regularly. Run Validate feeds
+and read the model list at the bottom of the report, then set the `MODEL_CHAIN`
+repository variable to an ID marked `yes` under JSON-SCHEMA.
+
+Pinning a specific model matters for more than speed. `openrouter/free` is an auto-router
+that picks a different model per request, so scores are not comparable across batches and
+your section thresholds stop meaning one thing. Pin a model once you find one that works.
+
+**A batch fails but the digest still publishes.** That is intended. A failed batch is
+skipped, a note goes at the top of the digest saying how many items went unscored, and
+the run continues. Only a total failure of every batch stops the run.
+
 **Node.js 20 deprecation warnings.** Cosmetic. They come from GitHub's own Pages actions
 and will go away when GitHub ships updated versions.
 
