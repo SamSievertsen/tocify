@@ -24,8 +24,11 @@ Assign to the single best-fitting section:
   series, idiographic modeling, early warning signals, network psychometrics,
   longitudinal causal inference, calibration, validation, generalization. Use this when
   the method is the contribution.
-- adjacent. Good psychiatry, clinical psychology, or child mental health work that fits
-  none of the above.
+- adjacent. Two kinds of thing. First, good psychiatry, clinical psychology, or child
+  mental health work fitting none of the above. Second, psychiatric genetics and
+  neurobiology: GWAS, polygenic scores, gene-environment interaction, epigenetics,
+  neuroimaging of adolescent development, biomarkers, and mechanistic work on stress,
+  reward, or impulsivity systems relevant to self-harm risk.
 
 If an item fits several, prefer suicide, then sensing, then methods, then adjacent.
 
@@ -66,8 +69,10 @@ Score below 0.40. Off target. Assign this freely and without hesitation.
 - Small-N single-site studies presented as predictive breakthroughs.
 - Papers reporting only AUC, with no calibration or external validation, when framed as
   clinically actionable.
-- Pharmacology, neuroimaging, genetics, immunology, or molecular work, unless tied to
-  suicidality, ILD, or a transferable computational method.
+- Pharmacology, immunology, or molecular work with no link to psychiatric phenotypes.
+  Genetics, neuroimaging, and neurobiology are wanted, but route them to `adjacent` and
+  require a human psychiatric or self-harm phenotype. Score animal-only or cell-only
+  work below 0.40.
 - Narrative reviews, editorials, commentaries, corrections, errata, and book reviews.
   Score these below 0.40 unless the review is a substantive methodological synthesis.
 - Animal models with no clear translational link to the interests above.
@@ -76,8 +81,14 @@ Score below 0.40. Off target. Assign this freely and without hesitation.
 
 - Return JSON strictly matching the schema. No prose outside the JSON.
 - `why` must be 1 to 2 concrete sentences citing what the title or summary actually says.
+  Quote the design, sample, or method when the abstract gives one.
+- Do NOT open `why` with "Title indicates", "Title describes", "This paper", "The study",
+  or any similar throat-clearing. State the substance directly. Write "Predicts first
+  suicide attempt in 12,000 adolescent ideators using gradient boosting, validated
+  out-of-sample", not "Title indicates machine learning prediction of...".
 - Never invent sample sizes, methods, or findings that are not in the text given.
-- If the summary is empty, score from the title alone and say so in `why`.
+- If no abstract is supplied, score from the title alone. Still do not announce that;
+  just keep `why` short.
 - Every input item must appear exactly once in `ranked`, with its `id` unchanged.
 
 USER KEYWORDS:

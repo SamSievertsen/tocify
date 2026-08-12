@@ -108,7 +108,11 @@ Each item is assigned to exactly one section. IDs must match `digest.py`.
   validation and generalization. Include strong methods papers even when the application
   sits outside psychiatry, if the method plausibly transfers to ILD or risk prediction.
 
-- **adjacent**, Adjacent mental health.
-  Good psychiatry, clinical psychology, or child and adolescent mental health work that
-  does not fit the above but is close enough to be worth a glance. Keep this section small
-  and selective.
+- **adjacent**, Adjacent mental health, genetics & neurobiology.
+  Two kinds of thing land here. First, good psychiatry, clinical psychology, or child and
+  adolescent mental health work that does not fit the sections above. Second, psychiatric
+  genetics and neurobiology: GWAS and polygenic scores for psychiatric or suicide-related
+  phenotypes, gene-environment interaction, epigenetics, neuroimaging of adolescent
+  development, biomarkers, and mechanistic work on stress, reward, or impulsivity systems
+  relevant to self-harm risk. Prefer human studies and large or consortium samples. Keep
+  this section selective.

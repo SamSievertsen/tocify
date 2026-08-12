@@ -92,17 +92,19 @@ SECTIONS = [
      "min": _env_float("MIN_SCORE_SENSING", 0.60), "max": _env_int("MAX_SENSING", 15)},
     {"id": "methods",  "title": "ML & dynamical systems methods",
      "min": _env_float("MIN_SCORE_METHODS", 0.65), "max": _env_int("MAX_METHODS", 15)},
-    {"id": "adjacent", "title": "Adjacent mental health",
-     "min": _env_float("MIN_SCORE_ADJACENT", 0.75), "max": _env_int("MAX_ADJACENT", 8)},
+    {"id": "adjacent", "title": "Adjacent mental health, genetics & neurobiology",
+     "min": _env_float("MIN_SCORE_ADJACENT", 0.62), "max": _env_int("MAX_ADJACENT", 8)},
 ]
 SECTION_IDS = [s["id"] for s in SECTIONS]
 UA = "tocify/2.0 (+https://github.com/SamSievertsen/tocify)"
 
+# No "notes" field. Asking the model for free-text notes produced a repetitive wall of
+# text that restated the rubric, and concatenating it across six batches then truncating
+# made it worse. The digest header is written from the run's own statistics instead.
 SCHEMA = {
     "type": "object",
     "additionalProperties": False,
     "properties": {
-        "notes": {"type": "string"},
         "ranked": {
             "type": "array",
             "items": {
@@ -119,7 +121,7 @@ SCHEMA = {
             },
         },
     },
-    "required": ["notes", "ranked"],
+    "required": ["ranked"],
 }
 
 
@@ -137,6 +139,32 @@ def clean(s, limit=None):
     if limit and len(s) > limit:
         s = s[:limit].rsplit(" ", 1)[0] + "…"
     return s
+
+
+# ScienceDirect and Wiley put publication metadata in <description> instead of an
+# abstract, so the "Abstract snippet" block was showing author lists. Strip the
+# metadata; whatever prose survives is the real abstract, and often nothing does.
+_BOILERPLATE = re.compile(
+    r"(publication date\s*:|source\s*:|author\(s\)\s*:|«|abstract\s*$)", re.I)
+
+def clean_rss_summary(s, limit=None):
+    s = clean(s)
+    if not s:
+        return ""
+    if re.match(r"^\s*publication date\s*:", s, re.I):
+        # Format is: "Publication date: X Source: Y Author(s): names[. Abstract...]"
+        tail = re.split(r"author\(s\)\s*:", s, flags=re.I)
+        if len(tail) < 2:
+            return ""
+        rest = tail[1]
+        # Author lists have no sentence structure. The abstract, if present, starts at
+        # the first sentence long enough to be prose.
+        sentences = re.split(r"(?<=[.!?])\s+", rest)
+        prose = [x for x in sentences if len(x) > 80 and x.count(",") < len(x) / 25]
+        s = " ".join(prose).strip()
+    if _BOILERPLATE.fullmatch(s.strip()):
+        return ""
+    return clean(s, limit)
 
 def load_pairs(path):
     """Parse 'Name | value' lines, skipping blanks and # comments."""
@@ -258,7 +286,7 @@ def fetch_one_feed(feed, cutoff):
             "title": title,
             "link": link,
             "published_utc": dt.isoformat() if dt else None,
-            "summary": clean(e.get("summary") or e.get("description") or "", SUMMARY_MAX_CHARS),
+            "summary": clean_rss_summary(e.get("summary") or e.get("description") or "", SUMMARY_MAX_CHARS),
         })
         kept += 1
     print(f"  · {source}: {kept} new / {len(d.entries)} in feed")
@@ -312,6 +340,60 @@ def _eutils(endpoint, params):
     req = urllib.request.Request(url, headers={"User-Agent": UA})
     return urllib.request.urlopen(req, timeout=FEED_TIMEOUT).read()
 
+def parse_pubmed_xml(raw):
+    """Pull title, abstract, journal and date out of an efetch PubmedArticleSet."""
+    out = []
+    try:
+        root = ET.fromstring(raw)
+    except ET.ParseError as e:
+        print(f"  ! PubMed XML parse failed: {e}")
+        return out
+
+    for art in root.findall(".//PubmedArticle"):
+        pmid = art.findtext(".//MedlineCitation/PMID")
+        title_el = art.find(".//Article/ArticleTitle")
+        if pmid is None or title_el is None:
+            continue
+        title = clean("".join(title_el.itertext()))
+        if not title:
+            continue
+
+        # Structured abstracts split into labelled sections. Keep the labels, they
+        # tell the model which part is Methods and which is Results.
+        parts = []
+        for ab in art.findall(".//Article/Abstract/AbstractText"):
+            text = "".join(ab.itertext()).strip()
+            if not text:
+                continue
+            label = (ab.get("Label") or "").strip()
+            parts.append(f"{label}: {text}" if label else text)
+        summary = clean(" ".join(parts), SUMMARY_MAX_CHARS)
+
+        journal = (art.findtext(".//Journal/ISOAbbreviation")
+                   or art.findtext(".//Journal/Title") or "PubMed")
+
+        pub = None
+        y = art.findtext(".//Article/ArticleDate/Year") or art.findtext(".//JournalIssue/PubDate/Year")
+        m = art.findtext(".//Article/ArticleDate/Month") or art.findtext(".//JournalIssue/PubDate/Month") or "1"
+        dday = art.findtext(".//Article/ArticleDate/Day") or "1"
+        if y:
+            try:
+                pub = dtparser.parse(f"{y}-{m}-{dday}").replace(tzinfo=timezone.utc).isoformat()
+            except Exception:
+                pass
+
+        link = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
+        out.append({
+            "id": sha1(f"{title}|{link}"),
+            "source": f"{journal} (PubMed)",
+            "title": title,
+            "link": link,
+            "published_utc": pub,
+            "summary": summary,
+        })
+    return out
+
+
 def fetch_pubmed(queries):
     """Run each saved query against PubMed, restricted to the lookback window."""
     if not queries:
@@ -330,60 +412,63 @@ def fetch_pubmed(queries):
                 print(f"  · PubMed: {name}: 0 hits")
                 continue
             time.sleep(0.4)  # respect NCBI rate limits (3/s without a key)
-            raw = _eutils("esummary.fcgi", {
-                "db": "pubmed", "id": ",".join(ids), "retmode": "json",
+            # efetch, not esummary. esummary carries no abstract, which forced the model
+            # to score from titles alone and produced "Title indicates..." for everything.
+            raw = _eutils("efetch.fcgi", {
+                "db": "pubmed", "id": ",".join(ids), "retmode": "xml",
             })
-            res = json.loads(raw).get("result", {})
-            n = 0
-            for pmid in ids:
-                rec = res.get(pmid)
-                if not isinstance(rec, dict):
-                    continue
-                title = clean(rec.get("title", ""))
-                if not title:
-                    continue
-                pub = None
-                for key in ("sortpubdate", "epubdate", "pubdate"):
-                    if rec.get(key):
-                        try:
-                            dt = dtparser.parse(rec[key])
-                            pub = (dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)).isoformat()
-                            break
-                        except Exception:
-                            pass
-                journal = rec.get("fulljournalname") or rec.get("source") or "PubMed"
-                link = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
-                items.append({
-                    "id": sha1(f"{title}|{link}"),
-                    "source": f"{journal} (PubMed)",
-                    "title": title,
-                    "link": link,
-                    "published_utc": pub,
-                    "summary": "",  # esummary has no abstract; title-only triage
-                })
-                n += 1
-            print(f"  · PubMed: {name}: {n} hits")
+            got = parse_pubmed_xml(raw)
+            items.extend(got)
+            with_abs = sum(1 for g in got if g["summary"])
+            print(f"  · PubMed: {name}: {len(got)} hits ({with_abs} with abstracts)")
             time.sleep(0.4)
         except Exception as e:
             print(f"  ! PubMed query '{name}' failed ({type(e).__name__}: {str(e)[:70]})")
     return items
 
 
+def title_key(title):
+    """Normalised prefix used to spot the same paper arriving from two sources.
+
+    PubMed keeps the full subtitle where a publisher feed often drops it, so
+    "Preventing Firearm-Related Suicide Deaths Among Youth" and
+    "Preventing Firearm-Related Suicide Deaths Among Youth-Action Is the Antidote to
+    Despair." are one paper. Comparing whole titles missed that. A 40-character
+    normalised prefix catches it and is still specific enough to avoid collisions.
+    """
+    return re.sub(r"[^a-z0-9]+", "", title.lower())[:40]
+
+
+def merge_records(a, b):
+    """Combine two records for the same paper, keeping the best field from each."""
+    pubmed_a, pubmed_b = "(PubMed)" in a["source"], "(PubMed)" in b["source"]
+    # Prefer the publisher record for link and source: it goes to the article itself.
+    primary, other = (b, a) if (pubmed_a and not pubmed_b) else (a, b)
+    merged = dict(primary)
+    # But take whichever abstract is actually longer. PubMed usually wins here, because
+    # publisher feeds often carry only "Publication date... Author(s)..." boilerplate.
+    if len(other.get("summary") or "") > len(merged.get("summary") or ""):
+        merged["summary"] = other["summary"]
+    merged["published_utc"] = merged.get("published_utc") or other.get("published_utc")
+    if primary is not other and pubmed_a != pubmed_b:
+        merged["source"] = f"{primary['source']} / PubMed"
+    return merged
+
+
 def dedupe(items):
-    """Collapse duplicates by id, then by normalised title (same paper, two sources)."""
+    """Collapse duplicates by id, then by normalised title prefix, merging fields."""
     by_id, by_title = {}, {}
     for it in items:
         if it["id"] in by_id:
             continue
-        key = re.sub(r"[^a-z0-9]+", "", it["title"].lower())[:120]
+        key = title_key(it["title"])
         if key in by_title:
-            # keep the non-PubMed record (has a summary and a publisher link)
-            if "(PubMed)" in it["source"] and "(PubMed)" not in by_title[key]["source"]:
-                continue
-            if "(PubMed)" not in it["source"] and "(PubMed)" in by_title[key]["source"]:
-                by_id.pop(by_title[key]["id"], None)
-            else:
-                continue
+            prev = by_title[key]
+            merged = merge_records(prev, it)
+            by_id.pop(prev["id"], None)
+            by_id[merged["id"]] = merged
+            by_title[key] = merged
+            continue
         by_id[it["id"]] = it
         by_title[key] = it
     out = list(by_id.values())
@@ -402,19 +487,67 @@ def keyword_hits(it, kws):
     text = (it.get("title", "") + " " + it.get("summary", "")).lower()
     return sum(1 for k in kws if k in text)
 
+# Terms that mark an item as a candidate for each section. Used to give every section a
+# guaranteed share of the prefilter, and to fake scores in --dry-run.
+SECTION_KEYWORDS = {
+    "suicide": ["suicid", "self-harm", "self harm", "self-injur", "nssi", "crisis",
+                "overdose", "means safety"],
+    "sensing": ["ecological momentary", "ema ", "experience sampling", "digital phenotyp",
+                "passive sensing", "wearable", "actigraph", "smartphone", "sensor",
+                "just-in-time", "micro-randomiz", "intensive longitudinal",
+                "real-time", "measurement burst"],
+    "methods": ["machine learning", "deep learning", "dynamical", "time series",
+                "prediction model", "predictive model", "network analysis", "idiographic",
+                "person-specific", "state space", "early warning", "calibration",
+                "external validation", "neural network", "algorithm", "bayesian"],
+    "adjacent": ["gwas", "polygenic", "genome-wide", "epigenet", "methylation",
+                 "neuroimaging", "mri", "biomarker", "heritab", "gene-environment",
+                 "cortical", "amygdala", "hpa axis"],
+}
+
+# Share of the prefilter budget reserved for each section. Without this the budget goes
+# almost entirely to `suicide`, because the keyword list is suicide-heavy, and the other
+# three sections come back empty. Weights need not sum to 1; leftovers go to the general
+# pool ranked purely by keyword hits.
+SECTION_QUOTA = {"suicide": 0.40, "sensing": 0.15, "methods": 0.20, "adjacent": 0.10}
+
+
 def prefilter(items, keywords, keep_top):
     kws = [k.lower().strip() for k in keywords if k.strip()]
     live = [it for it in items if not JUNK.match(it["title"])]
     dropped = len(items) - len(live)
     if dropped:
         print(f"Dropped {dropped} editorial/correction items")
-    scored = sorted(((keyword_hits(it, kws), it) for it in live), key=lambda p: p[0], reverse=True)
-    matched = [it for h, it in scored if h > 0]
-    if len(matched) >= keep_top:
-        return matched[:keep_top]
-    # top up with unmatched-but-recent items so we don't miss novel phrasing
-    rest = [it for h, it in scored if h == 0]
-    return (matched + rest)[:keep_top]
+
+    scored = sorted(((keyword_hits(it, kws), it) for it in live),
+                    key=lambda p: p[0], reverse=True)
+
+    chosen, seen = [], set()
+
+    def take(pool, n):
+        got = 0
+        for it in pool:
+            if got >= n:
+                break
+            if it["id"] in seen:
+                continue
+            seen.add(it["id"])
+            chosen.append(it)
+            got += 1
+        return got
+
+    # Reserved slots first, so a quiet section still reaches the model.
+    for sec, share in SECTION_QUOTA.items():
+        terms = SECTION_KEYWORDS[sec]
+        pool = [it for _h, it in scored
+                if any(t in (it["title"] + " " + it["summary"]).lower() for t in terms)]
+        n = take(pool, int(keep_top * share))
+        print(f"  prefilter: {sec} reserved {n}/{int(keep_top * share)} "
+              f"({len(pool)} candidates)")
+
+    # Then fill the remainder by raw keyword rank.
+    take([it for _h, it in scored], keep_top - len(chosen))
+    return chosen[:keep_top]
 
 
 # ---------------------------------------------------------------- LLM
@@ -558,7 +691,7 @@ def triage_batch(client, prompt):
 
 def triage(client, interests, items, template):
     total = math.ceil(len(items) / BATCH_SIZE)
-    ranked, notes = [], []
+    ranked, warnings = [], []
     failed = 0
     for i in range(0, len(items), BATCH_SIZE):
         batch = items[i:i + BATCH_SIZE]
@@ -577,8 +710,6 @@ def triage(client, interests, items, template):
             failed += 1
             print(f"    ! batch {n} failed, skipping: {e}")
             continue
-        if res.get("notes", "").strip():
-            notes.append(res["notes"].strip())
         ranked.extend(res.get("ranked", []))
 
     if failed == total:
@@ -586,8 +717,8 @@ def triage(client, interests, items, template):
                            f"then run `python digest.py --list-free-models` and set the "
                            f"MODEL_CHAIN repository variable to a model that works.")
     if failed:
-        notes.append(f"{failed} of {total} triage batches failed, so roughly "
-                     f"{failed * BATCH_SIZE} items were not scored this week.")
+        warnings.append(f"{failed} of {total} triage batches failed, so about "
+                        f"{failed * BATCH_SIZE} items went unscored this week.")
 
     best = {}
     for r in ranked:
@@ -602,21 +733,13 @@ def triage(client, interests, items, template):
             r["section"] = "adjacent"
         if rid not in best or r["score"] > best[rid]["score"]:
             best[rid] = r
-    return {"notes": " ".join(dict.fromkeys(notes))[:800], "ranked": list(best.values())}
+    return {"warnings": warnings, "ranked": list(best.values())}
 
 
 def dry_run_triage(interests, items):
     """Keyword-only scoring so the pipeline can be tested with no API key."""
     kws = [k.lower() for k in interests["keywords"]]
-    sec_kw = {
-        "suicide": ["suicid", "self-harm", "self harm", "self-injur", "nssi", "crisis"],
-        "sensing": ["ecological momentary", "ema", "experience sampling", "digital phenotyp",
-                    "passive sensing", "wearable", "actigraph", "smartphone", "sensor",
-                    "just-in-time", "micro-randomiz", "intensive longitudinal"],
-        "methods": ["machine learning", "deep learning", "dynamical", "time series",
-                    "prediction model", "predictive model", "network analysis",
-                    "idiographic", "state space", "early warning", "calibration"],
-    }
+    sec_kw = SECTION_KEYWORDS
     ranked = []
     for it in items:
         text = (it["title"] + " " + it["summary"]).lower()
@@ -630,14 +753,15 @@ def dry_run_triage(interests, items):
                        "score": round(min(0.99, 0.30 + 0.12 * h), 2),
                        "why": f"DRY RUN. Keyword-only score, {h} keyword matches. No model was called.",
                        "tags": ["dry-run"]})
-    return {"notes": "**DRY RUN**. Scores are keyword counts, not model judgements.", "ranked": ranked}
+    return {"warnings": ["DRY RUN. Scores are keyword counts, not model judgements."],
+            "ranked": ranked}
 
 
 # ---------------------------------------------------------------- render
 def render(result, items_by_id, stats):
     week_of = datetime.now(timezone.utc).date().isoformat()
     ranked = result.get("ranked", [])
-    notes = result.get("notes", "").strip()
+    warnings = result.get("warnings", [])
 
     buckets = {s["id"]: [] for s in SECTIONS}
     for r in ranked:
@@ -650,15 +774,30 @@ def render(result, items_by_id, stats):
         kept[s["id"]] = [r for r in rows if r["score"] >= s["min"]][:s["max"]]
 
     total_kept = sum(len(v) for v in kept.values())
+    kept_items = [items_by_id[r["id"]] for v in kept.values() for r in v]
+    with_abstract = sum(1 for it in kept_items if it.get("summary"))
+    journals = len({it["source"].replace(" / PubMed", "") for it in kept_items})
+
     L = [f"# Weekly ToC Digest, week of {week_of}", ""]
-    if notes:
-        L += [f"> {notes}", ""]
+    L += [
+        "New papers on suicidality, intensive longitudinal data, and computational "
+        "methods, scanned automatically each Monday and ranked against the "
+        "[interests](interests.html) that drive this digest. Scores are a language "
+        "model's judgement from the title and abstract only, so read them as triage "
+        "and not as appraisal.",
+        "",
+    ]
+    for w in warnings:
+        L += [f"> {w}", ""]
     L += ["| Section | Kept | Threshold |", "|---|---:|---:|"]
     for s in SECTIONS:
         L.append(f"| {s['title']} | {len(kept[s['id']])} | ≥ {s['min']:.2f} |")
-    L += ["", f"*{total_kept} items kept from {stats['scored']} scored "
-              f"({stats['fetched']} fetched across {stats['feeds']} feeds "
-              f"and {stats['queries']} PubMed queries, {LOOKBACK_DAYS}-day window).*", "", "---", ""]
+    L += ["",
+          f"*{total_kept} kept from {stats['scored']} scored, out of {stats['fetched']} "
+          f"gathered across {stats['feeds']} journal feeds and {stats['queries']} PubMed "
+          f"queries in the last {LOOKBACK_DAYS} days. "
+          f"Spanning {journals} sources; {with_abstract} of {total_kept} include an abstract.*",
+          "", "---", ""]
 
     if total_kept == 0:
         L += ["_Nothing met threshold this week._", ""]
@@ -720,13 +859,16 @@ def main():
         print("No items; wrote digest.md")
         return
 
+    gathered = len(items)   # count before the prefilter, so the header is honest
     items = prefilter(items, interests["keywords"], PREFILTER_KEEP_TOP)
     if args.limit:
         items = items[:args.limit]
-    print(f"{len(items)} items to triage\n")
+    have_abs = sum(1 for it in items if it["summary"])
+    print(f"{len(items)} items to triage ({have_abs} with an abstract, "
+          f"{len(items) - have_abs} title-only)\n")
 
     items_by_id = {it["id"]: it for it in items}
-    stats = {"fetched": len(items_by_id), "scored": len(items),
+    stats = {"fetched": gathered, "scored": len(items),
              "feeds": len(feeds), "queries": len(queries)}
 
     if args.dry_run:

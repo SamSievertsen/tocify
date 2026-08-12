@@ -49,7 +49,7 @@ jobs:
           CONTACT_EMAIL: ${{ vars.CONTACT_EMAIL }}
           MODEL_CHAIN: ${{ vars.MODEL_CHAIN }}
           LOOKBACK_DAYS: ${{ inputs.lookback_days || '7' }}
-          PREFILTER_KEEP_TOP: "220"
+          PREFILTER_KEEP_TOP: "280"
           BATCH_SIZE: "40"
         run: |
           if [ "${{ inputs.dry_run }}" = "true" ]; then
