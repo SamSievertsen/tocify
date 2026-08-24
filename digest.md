@@ -1,61 +1,59 @@
-# Weekly ToC Digest, week of 2026-08-17
+# Weekly ToC Digest, week of 2026-08-24
 
 New papers on suicidality, intensive longitudinal data, and computational methods, scanned automatically each Monday and ranked against the [interests](interests.html) that drive this digest. Scores are a language model's judgement from the title and abstract only, so read them as triage and not as appraisal.
 
 | Section | Kept | Threshold |
 |---|---:|---:|
-| Pediatric neurotrauma & concussion | 4 | ≥ 0.55 |
-| Neurocritical & hospital care outcomes | 9 | ≥ 0.58 |
+| Pediatric neurotrauma & concussion | 3 | ≥ 0.55 |
+| Neurocritical & hospital care outcomes | 7 | ≥ 0.58 |
 | Neuropsychological assessment & methods | 11 | ≥ 0.58 |
 | Adjacent developmental neuroscience | 0 | ≥ 0.65 |
 
-*24 kept from 280 scored, out of 646 gathered across 18 journal feeds and 7 PubMed queries in the last 7 days. Spanning 15 sources; 13 of 24 include an abstract.*
+*21 kept from 280 scored, out of 636 gathered across 18 journal feeds and 7 PubMed queries in the last 7 days. Spanning 19 sources; 17 of 21 include an abstract.*
 
 ---
 
 ## Pediatric neurotrauma & concussion
 
-### [Distinct Five-Year Latent Class Trajectories and Predictors of Functional Cognitive Independence Following Traumatic Brain Injury: A TBI Model Systems Study.](https://pubmed.ncbi.nlm.nih.gov/42572534/)
+### [Biomarker-informed prediction of neurosurgical intervention in pediatric traumatic brain injury: a proof-of-concept study.](https://pubmed.ncbi.nlm.nih.gov/42628128/)
 
-*Neurotrauma Rep (PubMed)* · **0.85** · 2026-08-08
+*J Neurosurg Pediatr (PubMed)* · **0.70** · 2026-08-21
 
-`TBI` `longitudinal` `cognitive independence` `latent class` `multicenter`
+`pediatric TBI` `biomarker` `prospective cohort` `neurosurgical intervention`
 
-Five-year latent class trajectories of functional cognitive independence after TBI using TBI Model Systems data; longitudinal, multicenter, cognitive outcome.
+Prospective cohort of 425 children aged 0-17 with TBI evaluating a blood-based biomarker panel for predicting neurosurgical intervention.
 
 <details><summary>Abstract snippet</summary>
 
-Early prediction of short- and long-term health outcomes remains a significant medical challenge for clinicians providing care for the traumatic brain injury (TBI) population. In the context of an acute trauma care center, accurate and early prediction of patient outcomes from discharge is critical to better plan for services required by patients with TBI. We aimed to identify the heterogeneous longitudinal recovery trajectories of functional cognitive independence during 5 years post-injury…
+OBJECTIVE: Emerging traumatic brain injury (TBI) guidelines increasingly recognize the role of blood-based biomarkers in improving diagnostic and triage accuracy, yet their integration into pediatric care remains limited and underexplored. This study examined the performance of a blood-based biomarker panel in predicting which pediatric patients with TBI received neurosurgical intervention (NSI). METHODS: This was a prospective cohort study of 425 children (aged 0-17 years) treated at a…
 
 </details>
 
-### [Does Mild Head Injury in Childhood Affect Later School Performance? A Sibling Comparison Cohort Study](https://www.sciencedirect.com/science/article/pii/S002234762600243X?dgcid=rss_sd_all)
+### [A Six-Day Window: Tracheostomy Timing and Short-Term Outcomes in Severe Pediatric Traumatic Brain Injury.](https://pubmed.ncbi.nlm.nih.gov/42632411/)
 
-*J Pediatrics* · **0.85**
+*J Pediatr Surg (PubMed)* · **0.65** · 2026-08-22
 
-`mild TBI` `childhood` `school performance` `sibling comparison` `cohort`
+`pediatric TBI` `tracheostomy` `critical care outcomes` `retrospective cohort`
 
-Sibling comparison cohort assessing whether childhood mild head injury affects later school performance; longitudinal design with academic outcome.
-
-### [Long-Term Outcome of Patients With Posterior Predominant Gliosis Secondary to Perinatal Insult: An Ambispective Cohort Study](https://www.sciencedirect.com/science/article/pii/S0887899426002213?dgcid=rss_sd_all)
-
-*Pediatric Neurology* · **0.70**
-
-`perinatal insult` `gliosis` `long-term outcome` `cohort`
-
-Ambispective cohort study examines long-term outcomes of patients with posterior predominant gliosis following perinatal insult, likely assessing neurodevelopmental or functional outcomes.
-
-### [Time-Domain HRV Metrics as Predictors of Concussion Recovery in Adolescents: A Boosted Tree Approach.](https://pubmed.ncbi.nlm.nih.gov/42576778/)
-
-*Neurorehabil Neural Repair (PubMed)* · **0.55** · 2026-08-11
-
-`concussion` `adolescents` `HRV` `prediction` `machine learning`
-
-Uses time-domain HRV metrics to predict concussion recovery in adolescents via boosted tree model; focuses on adolescent sample.
+Retrospective cohort using national trauma database examining tracheostomy timing and critical care outcomes in children with severe TBI.
 
 <details><summary>Abstract snippet</summary>
 
-BACKGROUND: Concussions in adolescents, especially in sports, represent a major public health issue due to prolonged recovery and diagnostic challenges compared to adults. Current clinical assessments often underestimate the true burden and recovery course, highlighting the need for objective physiological biomarkers. OBJECTIVE: To investigate heart rate variability (HRV) as a potential biomarker for monitoring concussion recovery in adolescents through both traditional statistics and machine…
+BACKGROUND: Early tracheostomy in pediatric patients with severe traumatic brain injury (TBI) is associated with reduced ventilator dependence and complications. However, the optimal timing of tracheostomy remains poorly defined. This study utilized a national trauma database to examine how the timing of tracheostomy is associated with critical care outcomes in children with severe TBI. METHODS: We performed a retrospective cohort study using the Trauma Quality Improvement Program (TQIP)…
+
+</details>
+
+### [Association Between Intracranial Pressure Monitoring and Discharge Outcome in Pediatric Severe Traumatic Brain Injury.](https://pubmed.ncbi.nlm.nih.gov/42615794/)
+
+*Pediatr Crit Care Med (PubMed)* · **0.65** · 2026-08-19
+
+`pediatric TBI` `ICP monitoring` `discharge outcome` `retrospective cohort`
+
+Retrospective cohort of pediatric severe TBI patients from Virtual Pediatric Systems database assessing ICP monitoring association with discharge outcome.
+
+<details><summary>Abstract snippet</summary>
+
+OBJECTIVE: To determine whether intracranial pressure (ICP) monitoring is associated with decreased mortality among pediatric severe traumatic brain injury (TBI) patients. DESIGN: Retrospective cohort study of the Virtual Pediatric Systems database. PATIENTS: Patients younger than 18 years with diagnosis codes for TBI and Glasgow Coma Scale (GCS) of less than or equal to 8 between 2010 and 2024 from centers submitting ICP monitor data. MEASUREMENTS: ICP monitoring practices were described using…
 
 </details>
 
@@ -63,234 +61,236 @@ BACKGROUND: Concussions in adolescents, especially in sports, represent a major 
 
 ## Neurocritical & hospital care outcomes
 
-### [Does Timing Matter? A Clinical Trial of Supporting Play Exploration and Early Development Intervention (SPEEDI) for Infants Born Preterm in the First Months of Life](https://www.sciencedirect.com/science/article/pii/S0022347626002945?dgcid=rss_sd_all)
+### [Dynamic multimodal brain function monitoring enables quantitative severity grading and prognostic prediction in pediatric neurocritical care.](https://pubmed.ncbi.nlm.nih.gov/42608005/)
 
-*J Pediatrics / PubMed* · **0.92** · 2026-08-13
+*J Pediatr (Rio J) (PubMed)* · **0.80** · 2026-08-17
 
-`preterm infants` `SPEEDI` `Bayley scales` `multisite RCT` `developmental outcome`
+`multimodal monitoring` `pediatric neurocritical care` `prognostic prediction` `prospective cohort`
 
-A multisite, three‑arm RCT evaluates the SPEEDI intervention for preterm infants, measuring development with the Bayley Scales of Infant and Toddler Development, providing longitudinal neurodevelopmental outcomes.
+Prospective cohort of 120 pediatric patients evaluating multimodal brain function monitoring for severity grading and prognostic prediction in neurocritical care.
 
 <details><summary>Abstract snippet</summary>
 
-OBJECTIVES: To evaluate the efficacy of an early delivered physical therapy intervention and to determine if timing of the intervention affects developmental outcomes. STUDY DESIGN: This multisite, three-arm, intervention-controlled trial compared the efficacy of SPEEDI Early (NICU start), SPEEDI_Late (starting 15 weeks later), and usual care (UC) to improve development, measured with the Bayley Scales of Infant and Toddler Development, 3rd edition, and parent-child dyadic interaction on the…
+OBJECTIVE: Multimodal Brain Function Monitoring (MBFM) enables simultaneous assessment of cerebral blood flow, intracranial pressure (ICP), and brain tissue oxygenation, providing dynamic evaluation for pediatric neurocritical care. This study evaluated MBFM-derived parameters, including perturbation factor (PF), edema factor (EF), ICP, and regional cerebral oxygen saturation (rSO₂), for disease severity stratification and prognostic prediction. METHODS: We prospectively enrolled 120 pediatric…
 
 </details>
 
 ### [Perioperative Brain Damage Biomarkers Predict Neurodevelopmental Delay After Infant Cardiac Surgery: A Multicenter Study](https://www.sciencedirect.com/science/article/pii/S0887899426002535?dgcid=rss_sd_all)
 
-*Pediatric Neurology* · **0.88**
+*Pediatric Neurology* · **0.78**
 
-`infant cardiac surgery` `biomarkers` `neurodevelopmental delay` `multicenter` `critcare`
+`infant cardiac surgery` `biomarkers` `neurodevelopmental delay` `multicenter` `perioperative`
 
-multicenter study examines perioperative brain damage biomarkers as predictors of neurodevelopmental delay after infant cardiac surgery
+Multicenter study links perioperative brain damage biomarkers to neurodevelopmental delay after infant cardiac surgery.
 
-### [Surveillance for neurodevelopmental impairment (NDI) in high-risk neonates: a cohort study at a tertiary care hospital in Pakistan.](https://pubmed.ncbi.nlm.nih.gov/42586724/)
+### [Case fatality of critically ill children treated in pediatric versus adult intensive care units in Germany: a nationwide cohort study](https://www.medrxiv.org/content/10.64898/2026.08.14.26360448v1?rss=1)
 
-*BMJ Open (PubMed)* · **0.85** · 2026-08-12
+*medRxiv Pediatrics* · **0.70** · 2026-08-19
 
-`neonates` `neurodevelopmental impairment` `longitudinal` `NICU` `Pakistan`
+`PICU` `AICU` `case fatality` `nationwide cohort` `critically ill children`
 
-Two-year longitudinal cohort tracking neurodevelopmental impairment in high-risk neonates at a Pakistani tertiary hospital; focuses on NDI outcome.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: High-risk neonates are at greater risk for neurodevelopmental impairment (NDI) despite improved neonatal survival. In low-income and middle-income countries, including Pakistan, developmental trajectories across infancy and toddlerhood of high-risk neonates are not well studied, especially when the survival is improving. METHODS: This 2-year longitudinal cohort study was performed at the neonatal intensive care unit and Child Development and Rehabilitation Centre of Aga Khan…
-
-</details>
-
-### [Blood-Based Biomarkers Predict Cerebral Palsy and Cognitive Delay in Hypoxic-Ischemic Encephalopathy: A Secondary Analysis of the High-Dose Erythropoietin for Asphyxia and Encephalopathy Randomized Controlled Trial](https://www.sciencedirect.com/science/article/pii/S0022347626002441?dgcid=rss_sd_all)
-
-*J Pediatrics* · **0.75**
-
-`hypoxic-ischemic encephalopathy` `biomarkers` `cognitive delay` `RCT secondary analysis`
-
-Blood-based biomarkers are evaluated for predicting cerebral palsy and cognitive delay in children with hypoxic-ischemic encephalopathy in a secondary analysis of a high-dose erythropoietin RCT.
-
-### [Parenteral Lipid Dose and Bilirubin Neurotoxicity in Extremely Preterm Infants: A Factorial Randomized Trial](https://www.sciencedirect.com/science/article/pii/S0022347626002532?dgcid=rss_sd_all)
-
-*J Pediatrics* · **0.72**
-
-`preterm infants` `lipid dose` `bilirubin` `neurotoxicity` `RCT`
-
-factorial randomized trial evaluates parenteral lipid dose and bilirubin neurotoxicity in extremely preterm infants
-
-### [Prevalence and Risk Factors of Adverse Events in Procedural Sedation Outside the Operating Room for Pediatric Dental Procedures.](https://pubmed.ncbi.nlm.nih.gov/42584192/)
-
-*Pediatr Crit Care Med (PubMed)* · **0.70** · 2026-08-12
-
-`procedural sedation` `adverse events` `pediatric dental` `multicenter`
-
-Multicenter retrospective analysis of prospectively collected data from the Pediatric Sedation Research Consortium examines adverse event prevalence and risk factors in pediatric dental procedural sedation outside the OR.
+Nationwide cohort study comparing case fatality of critically ill children in pediatric versus adult intensive care units in Germany.
 
 <details><summary>Abstract snippet</summary>
 
-OBJECTIVES: To determine the prevalence and risk factors of adverse events (AE) in pediatric patients undergoing procedural sedation outside of the operating room (PSOOR) for dental procedures. DESIGN: A retrospective analysis of prospectively collected data using the Pediatric Sedation Research Consortium database, which collects multicenter, quality-controlled data on pediatric sedations. SETTING: Twenty-five participating hospitals across the United States, with data collected from July 1,…
+PurposeOutcome consequences of critically ill children treated outside of pediatric intensive care units (PICU) are unknown. We assessed case fatality of children receiving complex intensive care treatment (CICT) by treating department in Germany and explored reasons for admission to adult intensive care units (AICU). MethodsRetrospective study using the German nationwide hospital discharge dataset 2016 to 2023. Cases aged [≥] 28 days and < 18 years receiving CICT were classified as PICU, AICU,…
 
 </details>
 
-### [Changes of motor nerve membrane excitability during the acute phase of critical illness](https://www.sciencedirect.com/science/article/pii/S1388245726008461?dgcid=rss_sd_all)
+### [Adherence to Sedative Weaning Opportunities and Length of Stay for Critically Ill Children.](https://pubmed.ncbi.nlm.nih.gov/42627664/)
 
-*Clinical Neurophysiology* · **0.70**
+*JAMA Netw Open (PubMed)* · **0.68** · 2026-08-03
 
-`critical illness` `motor nerve excitability` `acute phase` `PICU`
+`sedation weaning` `PICU` `delirium` `neurodevelopmental impairment` `length of stay`
 
-Examines changes of motor nerve membrane excitability during the acute phase of critical illness, linking physiological alterations to critical illness pathophysiology.
-
-### [Study protocol of the Speech of children After Neonatal Encephalopathy (SANE): a single-centre prospective cohort study.](https://pubmed.ncbi.nlm.nih.gov/42575547/)
-
-*BMJ Open (PubMed)* · **0.68** · 2026-08-10
-
-`neonatal encephalopathy` `language development` `prospective cohort` `therapeutic hypothermia`
-
-Long-term language developmental specificities and neonatal risk markers are investigated in a single-centre prospective cohort of children after neonatal encephalopathy treated with therapeutic hypothermia.
+Study assessing adherence to sedative weaning opportunities in pediatric ICU and its association with clinical outcomes including delirium and neurodevelopmental impairment.
 
 <details><summary>Abstract snippet</summary>
 
-INTRODUCTION: Language development is a key determinant of academic achievement and psychosocial outcome. Due to the therapeutic hypothermia procedure, 75% of children diagnosed with moderate to severe neonatal encephalopathy (E) survive without serious neurological sequelae. Several studies have already revealed the overall cognitive deficits of these infants; however, their long-term language developmental specificities and their attendant neonatal risk markers remain under-investigated.…
+IMPORTANCE: Prolonged sedative exposure in pediatric intensive care units (ICUs) is associated with adverse outcomes including delirium, withdrawal, and neurodevelopmental impairment. Clinical guidelines recommend timely weaning, but adherence to weaning opportunities and its association with clinical outcomes is unknown. OBJECTIVES: To evaluate adherence to sedative weaning opportunities and examine the association between weaning adherence and clinical outcomes among pediatric ICU patients.…
 
 </details>
 
-### [Exploring state changes/sleep-wake cycling in mechanically ventilated children using amplitude-integrated EEG](https://www.sciencedirect.com/science/article/pii/S138824572600828X?dgcid=rss_sd_all)
+### [Development and Validation of Temperature Trajectory-Based Phenotypes in Pediatric Sepsis: A Multicenter Retrospective Cohort Study, 2012-2018.](https://pubmed.ncbi.nlm.nih.gov/42635485/)
 
-*Clinical Neurophysiology* · **0.68**
+*Pediatr Crit Care Med (PubMed)* · **0.65** · 2026-08-24
 
-`PICU` `EEG` `sleep-wake` `mechanical ventilation` `delirium`
+`pediatric sepsis` `temperature phenotypes` `multicenter` `retrospective cohort`
 
-Uses amplitude-integrated EEG to explore sleep-wake state changes in mechanically ventilated children, informing delirium and sedation monitoring in the PICU.
+Multicenter retrospective cohort developing and validating temperature trajectory-based phenotypes in pediatric sepsis.
+
+<details><summary>Abstract snippet</summary>
+
+OBJECTIVES: Sepsis is a heterogeneous syndrome resulting from a complex interaction between the infectious agent and the host response. In adults with sepsis, longitudinal temperature measurements have been used to identify phenotypes with distinct clinical characteristics, immune profiles, and outcomes. Our objective was to develop and validate temperature trajectory-based phenotypes in critically ill children with sepsis. We hypothesized that the temperature trajectory-based phenotypes would…
+
+</details>
+
+### [Long-Term Outcome of Patients With Posterior Predominant Gliosis Secondary to Perinatal Insult: An Ambispective Cohort Study](https://www.sciencedirect.com/science/article/pii/S0887899426002213?dgcid=rss_sd_all)
+
+*Pediatric Neurology* · **0.65**
+
+`perinatal insult` `gliosis` `long-term outcome`
+
+Ambispective cohort study of long-term outcome after posterior predominant gliosis secondary to perinatal insult.
+
+### [Factors associated with delayed decannulation within 180 days after pediatric tracheostomy in the PICU: a retrospective cohort study.](https://pubmed.ncbi.nlm.nih.gov/42620907/)
+
+*Front Pediatr (PubMed)* · **0.60** · 2026-08-05
+
+`decannulation` `tracheostomy` `PICU` `retrospective cohort` `long-term outcomes`
+
+Retrospective cohort study of factors associated with delayed decannulation within 180 days after pediatric tracheostomy in the PICU.
+
+<details><summary>Abstract snippet</summary>
+
+INTRODUCTION: Long-term decannulation outcomes after pediatric tracheostomy, particularly among children discharged from the pediatric intensive care unit (PICU), remain poorly described. This study aimed to describe the long-term decannulation outcomes and factors associated with delayed decannulation within 180 days after hospital discharge. METHODS: We retrospectively reviewed children aged 29 days to 18 years who underwent first-time tracheostomy in the PICU of Beijing Children's Hospital…
+
+</details>
 
 ---
 
 ## Neuropsychological assessment & methods
 
+### [Predictive validity between early and middle childhood cognitive assessments in Ugandan children.](https://pubmed.ncbi.nlm.nih.gov/42635464/)
+
+*Child Neuropsychol (PubMed)* · **0.90** · 2026-08-24
+
+`longitudinal` `cognitive assessment` `predictive validity` `Ugandan children` `neuropsychological testing`
+
+Longitudinal study of 636 Ugandan children aged 18 months to 12 years assessing predictive validity between early and middle childhood cognitive test batteries following possible cerebral insults.
+
+<details><summary>Abstract snippet</summary>
+
+Longitudinal studies follow up children over years to assess their cognitive functioning following exposure to possible cerebral insults. Assessment of similar cognitive domains from early childhood onwards is essential in determining their cognitive developmental trajectory over time. This study measured the predictive validity between cognitive test batteries for early and middle childhood in Ugandan children. Six hundred and thirty-six children (males = 351; 55.2%) ages 18 months to 12 years…
+
+</details>
+
 ### [Effects of working memory and reward reactivity on externalizing behaviors in the ABCD study](https://www.sciencedirect.com/science/article/pii/S1878929326000800?dgcid=rss_sd_all)
 
-*Developmental Cognitive Neuroscience* · **0.82**
+*Developmental Cognitive Neuroscience* · **0.88**
 
-`ABCD study` `working memory` `reward reactivity` `externalizing behavior` `longitudinal`
+`ABCD study` `working memory` `reward reactivity` `externalizing behaviors` `longitudinal cohort`
 
-Analysis of ABCD study data examining how working memory and reward reactivity influence externalizing behaviors in children, using longitudinal neuropsychological and behavioral measures.
+Title investigates how working memory and reward reactivity influence externalizing behaviors in the ABCD study.
 
-### [Comparing scoring algorithms for NIH Toolbox executive function tasks in children with and without ADHD.](https://pubmed.ncbi.nlm.nih.gov/42592741/)
+### [Development and validation of the Pediatric Autoimmune encephalitis Severity Scale in children with autoimmune encephalitis.](https://pubmed.ncbi.nlm.nih.gov/42623513/)
 
-*Child Neuropsychol (PubMed)* · **0.75** · 2026-08-13
+*Dev Med Child Neurol (PubMed)* · **0.78** · 2026-08-20
 
-`NIH Toolbox` `executive function` `ADHD` `psychometrics` `children`
+`scale development` `validation` `autoimmune encephalitis` `prospective` `Pediatric QoL`
 
-Comparison of four scoring algorithms (Accuracy, Speed, RCS, LISAS) for NIH Toolbox executive function tasks in 51 children with ADHD and 102 matched controls.
-
-<details><summary>Abstract snippet</summary>
-
-Executive function (EF) supports goal-directed behavior, yet little is known about how different scoring algorithms influence the measurement of executive function performance in pediatric Attention-Deficit/Hyperactivity Disorder (ADHD) remains unclear. We compared four algorithms: Accuracy, Speed, Rate Corrected Score (RCS), and Linear Integrated Speed-Accuracy Score (LISAS) in 51 children with ADHD (23.5% female; Mage = 12.9, SDage = 2.8) and 102 matched controls (23.5% female; Mage = 12.8,…
-
-</details>
-
-### [Cumulative Opioid Exposures in the First Year of Life and Cognitive Neurodevelopment in High-Risk Infants.](https://pubmed.ncbi.nlm.nih.gov/42604745/)
-
-*Hosp Pediatr (PubMed)* · **0.74** · 2026-08-17
-
-`opioid exposure` `neurodevelopment` `high‑risk infants` `retrospective cohort`
-
-A retrospective cohort of high‑risk infants examines cumulative opioid exposures (MME) in the first year of life and their effect on neurodevelopment, linking neurotoxic sedation to cognitive outcomes.
+Prospective observational study developing and validating the Pediatric Autoimmune Encephalitis Severity Scale (PASS) with serial ratings and linking to clinical outcomes including Pediatric QoL.
 
 <details><summary>Abstract snippet</summary>
 
-BACKGROUND: High-risk infants with significant neonatal-perinatal morbidities often require opioids, but prolonged exposures can impair neurodevelopment. We evaluated the effect of cumulative opioid exposures in the first year of life, measured by morphine milligrams equivalents (MME), on neurodevelopment. METHODS: A retrospective cohort of high-risk infants younger than 1 year admitted to a tertiary children's hospital from 2010 to 2020 was identified. International Classification of Diseases,…
+AIM: To develop the Pediatric Autoimmune encephalitis Severity Scale (PASS) using expert consensus and the Delphi process, and validate it in children with autoimmune encephalitis. METHOD: This prospective observational study enrolled children who underwent serial rating with PASS, the Clinical Assessment Scale in Autoimmune Encephalitis (CASE), and the modified Rankin Scale, at eight time points until 6 months of presentation. Clinical outcomes included the Pediatric Quality of Life Inventory…
 
 </details>
 
-### [Tablet Assessment of Cognition in Down Syndrome: Comparison of Researcher and Caregiver Administration.](https://pubmed.ncbi.nlm.nih.gov/42596758/)
+### [Construct validity of performance validity tests across multiple mixed-clinical samples.](https://pubmed.ncbi.nlm.nih.gov/42619055/)
 
-*J Intellect Disabil Res (PubMed)* · **0.70** · 2026-08-14
+*Clin Neuropsychol (PubMed)* · **0.78** · 2026-08-19
 
-`tablet assessment` `Down syndrome` `caregiver administration` `cognitive measurement`
+`performance validity tests` `construct validity` `neuropsychological assessment` `mixed-clinical samples` `latent structure`
 
-Study compares tablet-based cognition administration by researchers versus caregivers in 24 children with Down syndrome aged 10-17, assessing consistency of measurement.
+Study evaluates construct validity of performance validity tests using retrospective data from multiple mixed-clinical samples (N=115, 297, …).
 
 <details><summary>Abstract snippet</summary>
 
-BACKGROUND: Identifying flexible and rigorous methods to administer assessments in Down syndrome research is critical for limiting participation burden. Tablet assessments have the potential to be presented remotely, but consistency between researcher and caregiver administrations is unknown. METHOD: Participants were 24 children with Down syndrome aged 10-17 years and their caregivers. Children completed two sessions: one administered by their caregiver and one administered by research staff.…
+OBJECTIVE: Few studies have systematically assessed construct validity across a diverse set of performance validity tests (PVTs). Clarifying whether PVTs measure a common construct or distinct aspects of performance validity has important clinical implications for neuropsychological data interpretation and PVT selection. METHODS: This study evaluated the latent structure of PVTs using retrospective data from multiple mixed-clinical samples (Sample 1: N = 115, Sample 2: N = 297; Sample 3: N =…
 
 </details>
 
-### [Associations of Eye-Tracking Metrics With Cognitive Outcomes in Children With Opsoclonus-Myoclonus Ataxia Syndrome](https://www.sciencedirect.com/science/article/pii/S0887899426001864?dgcid=rss_sd_all)
+### [A Meta-epidemiologic Analysis of Differences in Treatment-Effect Estimates According to Outcome Scale (GOS vs. GOSE) in Moderate-to-Severe Traumatic Brain Injury Trials.](https://pubmed.ncbi.nlm.nih.gov/42625005/)
 
-*Pediatric Neurology* · **0.70**
+*Neurocrit Care (PubMed)* · **0.75** · 2026-08-21
 
-`eye-tracking` `cognitive outcomes` `opsoclonus-myoclonus` `pediatric`
+`outcome scales` `GOS` `GOSE` `TBI trials` `meta-epidemiologic`
 
-Study examines associations between eye-tracking metrics and cognitive outcomes in children with opsoclonus-myoclonus ataxia syndrome, likely using neuropsychological testing.
-
-### [A Practical Guide to Mixed-Effects Models for Clustered Data in Pediatric Research.](https://pubmed.ncbi.nlm.nih.gov/42604753/)
-
-*Hosp Pediatr (PubMed)* · **0.68** · 2026-08-17
-
-`mixed‑effects models` `clustered data` `pediatric research` `statistical methods`
-
-This guide explains mixed‑effects models for clustered data in pediatric research, a statistical method relevant for longitudinal neuropsychological outcome analyses.
+Meta-epidemiologic analysis comparing treatment-effect estimates from GOS versus GOSE outcome scales in moderate-to-severe TBI trials.
 
 <details><summary>Abstract snippet</summary>
 
-Clustered data, in which observations are grouped within higher-level units, arise frequently in pediatric research. Common examples include repeated measures within patients and patients nested within hospitals. Observations within the same cluster tend to be correlated, and standard analytic methods that assume independence produce invalid SEs and misleading inference. Mixed-effects models account for this correlation by incorporating random effects that quantify variation between clusters.…
+BACKGROUND: Traumatic brain injury (TBI) trials commonly assess global functional outcome using the Glasgow Outcome Scale (GOS) or Extended Glasgow Outcome Scale (GOSE). Because GOS- and GOSE-based trials are often pooled or compared in evidence synthesis, whether treatment-effect estimates differ systematically by outcome scale remains unresolved. OBJECTIVE: We aim to estimate the between-trial contrast in treatment-effect estimates comparing GOSE-based with GOS-based randomized controlled…
 
 </details>
 
-### [Strategies for collection, management, and release of data for multi-site longitudinal studies: Lessons from the ABCD Data Analysis, Informatics, & Resource Center](https://www.sciencedirect.com/science/article/pii/S1878929326000915?dgcid=rss_sd_all)
+### [Introducing the D-DAND scale: Development of a comprehensive caregiver-administered tool for Dravet syndrome comorbidities.](https://pubmed.ncbi.nlm.nih.gov/42611685/)
 
-*Developmental Cognitive Neuroscience* · **0.66**
+*Epilepsia (PubMed)* · **0.75** · 2026-08-18
 
-`longitudinal` `multi-site` `data management` `ABCD` `methodology`
+`Dravet syndrome` `D-DAND scale` `caregiver-administered` `neuropsychiatric comorbidities` `psychometrics`
 
-Describes strategies for data collection, management, and sharing in multi-site longitudinal studies, drawing on ABCD consortium experience to support rigorous cohort research.
-
-### [Neurofibromatosis type 1 with comorbid optic pathway glioma does not confer additional cognitive sequelae.](https://pubmed.ncbi.nlm.nih.gov/42574743/)
-
-*Arch Clin Neuropsychol (PubMed)* · **0.65** · 2026-07-01
-
-`NF1` `optic pathway glioma` `cognition` `neuropsychological`
-
-Study compares cognition among children with NF1 and optic pathway glioma, NF1-only, and CNS visual system tumors without NF1 to assess whether OPG adds cognitive burden beyond NF1 genotype.
+Study develops and reports preliminary psychometric properties of the D-DAND scale, a caregiver-administered tool for assessing neuropsychiatric comorbidities in Dravet syndrome, based on 123 individuals with DS.
 
 <details><summary>Abstract snippet</summary>
 
-OBJECTIVE: Children with neurofibromatosis type 1 (NF1) are at risk for cognitive impairments. Optic pathway gliomas (OPGs) commonly occur in children with NF1, though whether OPG exacerbates cognitive vulnerabilities beyond the NF1 genotype remains unclear. This study compared cognition among children with NF1 and OPG (NF1 + OPG), children with NF1 without OPG (NF1-only), and children with central nervous system (CNS) tumors of the visual system without NF1 (CNS-V), to evaluate whether OPG…
+OBJECTIVE: The Dravet Disease-Associated Neuropsychiatric Disorders (D-DAND) scale is a new caregiver-administered interview designed to assess the wide range of developmental and behavioral comorbidities in Dravet syndrome (DS) beyond seizures. D-DAND's preliminary psychometric properties in a large patient sample are reported. METHODS: D-DAND was developed by a panel of experts and later standardized with caregivers of 123 individuals with DS (age = 3-41 years); a subsample of 43 caregivers…
 
 </details>
 
-### [Cognitive Index Differences on the WISC-IV Among Children with Specific Learning Disorder, Attention-Deficit/Hyperactivity Disorder, and a Clinically Evaluated Comparison Group: A Cross-Sectional Evaluation.](https://pubmed.ncbi.nlm.nih.gov/42573982/)
+### [Development of a Cognitive Assessment Battery for Adolescents and Adults with Kabuki Syndrome Type 1.](https://pubmed.ncbi.nlm.nih.gov/42620437/)
 
-*Dev Neuropsychol (PubMed)* · **0.60** · 2026-08-10
+*Res Sq (PubMed)* · **0.65** · 2026-08-03
 
-`WISC-IV` `SLD` `ADHD` `cognitive indices` `cross-sectional`
+`Kabuki syndrome` `cognitive assessment battery` `visuospatial` `validity` `reliability`
 
-Cross-sectional evaluation of WISC-IV index scores in 130 children with SLD, ADHD, and a comparison group, examining associations with parental education.
+Study evaluates validity and reliability of a cognitive assessment battery for adolescents and adults with Kabuki syndrome type 1.
 
 <details><summary>Abstract snippet</summary>
 
-Children with specific learning disorder (SLD) and attention-deficit/hyperactivity disorder (ADHD) may show cognitive differences. We compared WISC-IV scores in 130 children aged 7-13 years (32 SLD, 56 ADHD, 42 comparison) and examined associations with parental education. Groups differed in Verbal Comprehension, Working Memory, Processing Speed, and Full Scale IQ, but not Perceptual Reasoning. The SLD group scored lowest, the ADHD group showed an intermediate pattern, and the comparison group…
+BACKGROUND: Kabuki syndrome type 1 (KS1) is a rare genetic neurodevelopmental disability syndrome characterized by significant weaknesses in visuospatial cognitive processes in comparison to other cognitive domains. There is a great unmet need for validated and specific cognitive outcome measures for clinical trials in patients with KS1. This study evaluated the validity and reliability of a Kabuki Syndrome Cognitive Assessment Battery (KS-CAB), a visuospatial assessment that is specific to…
 
 </details>
 
-### [Executive function in adolescents with obesity: A systematic review and meta-analysis](https://www.sciencedirect.com/science/article/pii/S014976342600285X?dgcid=rss_sd_all)
+### [Extending the Fear-Avoidance Model of pain to youth: Psychometric evaluation of the 11-item Tampa Scale of Kinesiophobia in children and adolescents.](https://pubmed.ncbi.nlm.nih.gov/42633809/)
 
-*Neuroscience & Biobehavioral Rev* · **0.60**
+*J Pain (PubMed)* · **0.65** · 2026-08-23
 
-`executive function` `obesity` `adolescents` `systematic review` `meta-analysis`
+`kinesiophobia` `Tampa Scale` `psychometrics` `pediatric pain` `fear-avoidance model`
 
-Systematic review and meta-analysis of executive function performance in adolescents with obesity.
-
-### [Self-Assessment of Social-Emotional Skills in Primary Students: Psychometric Evaluation of the Digital Screening Instrument GraSEF.](https://pubmed.ncbi.nlm.nih.gov/42587216/)
-
-*Child Psychiatry Hum Dev (PubMed)* · **0.60** · 2026-08-12
-
-`social-emotional skills` `digital screening` `primary students` `psychometrics` `behavior`
-
-Psychometric evaluation of the GraSEF digital screening instrument for assessing social-emotional skills in primary students using situational judgment and self-reports.
+Study evaluates psychometric properties of the 11-item Tampa Scale of Kinesiophobia in children and adolescents to extend the fear-avoidance model of pain to youth.
 
 <details><summary>Abstract snippet</summary>
 
-Early assessment of social-emotional skills is crucial for identifying children at risk and implementing targeted interventions. To address the scarcity of reliable self-reports for young children, we developed the GraSEF, a digital screening instrument for primary students. GraSEF utilizes a situational judgment format to assess internalizing/externalizing behavior, social withdrawal, problem-solving, alongside self-reports for prosocial behavior and emotion regulation strategies. This study…
+Kinesiophobia plays a central role in understanding adult pain mechanisms, yet its assessment and theoretical relevance in pediatric pain remain poorly understood. Research to clarify the role of kinesiophobia in pediatric populations requires a valid and reliable measure of the construct. The most commonly used measure is the Tampa Scale of Kinesiophobia (TSK). Unfortunately, prior research in pediatric populations with different TSK versions has shown suboptimal psychometric performance,…
 
 </details>
+
+### [Foundation Model Forecasting of Headache Days in People With Persisting Postconcussion Symptoms.](https://pubmed.ncbi.nlm.nih.gov/42611195/)
+
+*J Head Trauma Rehabil (PubMed)* · **0.60** · 2026-08-18
+
+`postconcussion` `headache` `forecasting` `machine learning` `longitudinal`
+
+Machine learning analysis forecasting headache days in individuals with persisting postconcussion symptoms using daily symptom registrations and biofeedback data.
+
+<details><summary>Abstract snippet</summary>
+
+OBJECTIVES: We aimed to forecast headache in individuals with persisting postconcussion symptoms using foundation machine learning (ML) models and multimodal longitudinal data. METHODS: This was an ML analysis of data from the Digital Solutions for Concussion (DiSCo) study, a research project assessing the usability and feasibility of 2 mobile health apps for individuals with persisting postconcussion symptoms. The participants completed daily symptom registrations and daily biofeedback…
+
+</details>
+
+### [Derivation and Validation of Subtypes of Concussion: A Systematic Review.](https://pubmed.ncbi.nlm.nih.gov/42621199/)
+
+*Neurotrauma Rep (PubMed)* · **0.60** · 2026-08-17
+
+`concussion subtypes` `systematic review` `validation` `derivation`
+
+Systematic review summarizing literature on derivation and validation of concussion subtypes.
+
+<details><summary>Abstract snippet</summary>
+
+Concussion is a highly prevalent and heterogeneous injury. Subtyping has been increasingly used to parse this heterogeneity by identifying clinically meaningful subgroups of individuals with concussion. Despite several concussion subtyping studies published in recent years, no consistent findings have emerged, largely due to variation in samples, injury contexts, and subtyping approaches. This systematic review aims to summarize literature concerning the derivation of patient subtypes of…
+
+</details>
+
+### [Prognostic Utility of the NEOS Score in Pediatric Antibody-Negative Encephalitis: A Cohort Study](https://www.sciencedirect.com/science/article/pii/S1090379826000942?dgcid=rss_sd_all)
+
+*Eur J Paediatric Neurology* · **0.60**
+
+`NEOS score` `encephalitis` `prognostic` `cohort` `pediatric`
+
+Cohort study evaluating the prognostic utility of the NEOS score in children with antibody-negative encephalitis.
 
 ---
