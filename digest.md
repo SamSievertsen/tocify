@@ -1,87 +1,129 @@
-# Weekly ToC Digest, week of 2026-08-31
+# Weekly ToC Digest, week of 2026-09-07
 
 New papers on suicidality, intensive longitudinal data, and computational methods, scanned automatically each Monday and ranked against the [interests](interests.html) that drive this digest. Scores are a language model's judgement from the title and abstract only, so read them as triage and not as appraisal.
 
 | Section | Kept | Threshold |
 |---|---:|---:|
-| Pediatric neurotrauma & concussion | 5 | ≥ 0.55 |
-| Neurocritical & hospital care outcomes | 7 | ≥ 0.58 |
-| Neuropsychological assessment & methods | 4 | ≥ 0.58 |
-| Adjacent developmental neuroscience | 0 | ≥ 0.65 |
+| Pediatric neurotrauma & concussion | 8 | ≥ 0.55 |
+| Neurocritical & hospital care outcomes | 1 | ≥ 0.58 |
+| Neuropsychological assessment & methods | 8 | ≥ 0.58 |
+| Adjacent developmental neuroscience | 2 | ≥ 0.65 |
 
-*16 kept from 280 scored, out of 616 gathered across 18 journal feeds and 7 PubMed queries in the last 7 days. Spanning 14 sources; 14 of 16 include an abstract.*
+*19 kept from 280 scored, out of 637 gathered across 18 journal feeds and 7 PubMed queries in the last 7 days. Spanning 16 sources; 13 of 19 include an abstract.*
 
 ---
 
 ## Pediatric neurotrauma & concussion
 
-### [Longitudinal assessment of fluid cognitive function and cognitive fatigue in adolescents with concussion and orthopedic injury: A Pediatric Assessment of Rest and Exertion (PedCARE) study.](https://pubmed.ncbi.nlm.nih.gov/42658578/)
+### [Abnormal Structural Covariance Networks and Impaired Executive Function in Adolescents with Mild Traumatic Brain Injury.](https://pubmed.ncbi.nlm.nih.gov/42701047/)
 
-*Neuropsychology (PubMed)* · **0.88** · 2026-08-27
+*Acad Radiol (PubMed)* · **0.90** · 2026-09-05
 
-`concussion` `adolescents` `fluid cognition` `cognitive fatigue` `longitudinal` `PedCARE`
+`adolescents` `mTBI` `structural covariance` `executive function` `ABCD study`
 
-Longitudinal assessment of fluid cognition and cognitive fatigue in adolescents with concussion versus orthopedic injury at 72‑hour and 4‑week postinjury.
+Finds abnormal structural covariance networks and impaired executive function in adolescents with mild traumatic brain injury using data from the Adolescent Brain Cognitive Development Study comprising 450 mTBI cases and 450 matched controls.
 
 <details><summary>Abstract snippet</summary>
 
-UNLABELLED: Objective: Examine differences in fluid cognition and multidimensional fatigue between youth with concussion and orthopedic injury (OI) at 72-hr and 4-week postinjury and explore the association between fatigue and fluid cognition and cognitive symptoms in each group. METHOD: This secondary analysis of the Pediatric Concussion Assessment of Rest and Exertion randomized controlled trial of children aged 10-17.99 years who presented to the emergency department ≤48 hr of a concussion…
+RATIONALE AND OBJECTIVES: Overwhelming evidence found that adolescents with mild traumatic brain injury (mTBI) exhibit structural brain alterations. The influence of mTBI on the adolescents' structural covariance networks (SCNs) remains unexplored. MATERIALS AND METHODS: In this study, data from the Adolescent Brain Cognitive Development Study were adopted, comprising 450 adolescents with mTBI and 450 matched controls for clinical behavior analysis. After structural magnetic resonance imaging…
 
 </details>
 
-### [Genomic Signature Associated with Postconcussive Symptoms in Pediatric Mild Traumatic Brain Injury.](https://pubmed.ncbi.nlm.nih.gov/42655926/)
+### [Acute Emotional Symptoms Predict Emotional Functioning Up to 6 Months After Pediatric Concussion: An A-CAP Study](https://www.sciencedirect.com/science/article/pii/S0022347626003392?dgcid=rss_sd_all)
 
-*J Neurotrauma (PubMed)* · **0.75** · 2026-08-26
+*J Pediatrics / PubMed* · **0.78** · 2026-09-03
 
-`mTBI` `genomics` `postconcussive symptoms` `pediatric` `prospective cohort`
+`pediatric concussion` `emotional symptoms` `longitudinal` `A-CAP` `emergency departments`
 
-Genomic signature analysis linked to postconcussive symptoms in a prospective cohort of children aged 8‑16.99 with mild traumatic brain injury or orthopedic injury.
+In a prospective longitudinal observational study of children aged 8-17 years with concussion or mild orthopedic injury, finds that acute emotional symptoms predict emotional functioning up to six months postinjury.
 
 <details><summary>Abstract snippet</summary>
 
-Genetic contributions to the outcomes of pediatric mild traumatic brain injury (mTBI) are unclear. The current study applied a genomic signature approach to characterize biological processes critical to variation in persisting symptoms after concussion (PSaC). This planned substudy used data from a prospective cohort observational study, Advancing Concussion Assessment in Pediatrics. Participants aged 8-16.99 years with mTBI or orthopedic injury (OI) were recruited from five emergency…
+OBJECTIVE: To determine whether acute emotional symptoms were elevated and associated with subsequent emotional functioning after concussion in children and adolescents. STUDY DESIGN: This prospective, longitudinal observational study consecutively recruited children (ages 8-17 years) with concussion or mild orthopedic injury (OI) who presented acutely (≤48 hours) to 5 pediatric emergency departments. Acute emotional symptoms were rated using the Acute Concussion Evaluation. Pre- and…
 
 </details>
 
-### [Psychological Resilience and Adolescent Sport-Related Concussion.](https://pubmed.ncbi.nlm.nih.gov/42663538/)
+### [Acute interleukin-10 predicts persistent post-concussion symptoms in children with mild traumatic brain injury: exploratory findings from the t-BIOMAP study.](https://pubmed.ncbi.nlm.nih.gov/42682381/)
 
-*J Head Trauma Rehabil (PubMed)* · **0.70** · 2026-08-28
+*Front Neurol (PubMed)* · **0.72** · 2026-08-18
 
-`adolescent concussion` `resilience` `sport‑related` `longitudinal` `SHRed Concussions`
+`mTBI` `interleukin-10` `biomarker` `post-concussion symptoms` `children`
 
-Investigation of psychological resilience trajectory from preinjury to acute post‑concussion and return to play in adolescents, examining links to symptom burden and recovery length.
+Reports that acute interleukin-10 levels predict persistent post-concussion symptoms in children with mild traumatic brain injury, based on exploratory findings from the t-BIOMAP study.
 
 <details><summary>Abstract snippet</summary>
 
-OBJECTIVES: Our primary objective was to investigate the trajectory of resilience from preinjury to acutely after sport-related concussion (SRC; within 10 days of injury) and to time of return to play (RTP) in adolescents. We further sought to determine whether this trajectory differed between sexes. Secondarily, we investigated the associations between resilience and post-SRC symptom burden and length of recovery. SETTING: A substudy of the multicenter pan-Canadian SHRed Concussions…
+BACKGROUND: Children are a vulnerable population for mild traumatic brain injury (mTBI), accounting for a high burden of emergency department (ED) visits. A significant and unpredictable subset will develop persistent post-concussion symptoms (P-PCS), with consequences for daily quality of life. At ED discharge, no reliable tool exists to identify children requiring neuropsychological follow-up. Acute blood biomarkers represent a promising approach for early risk stratification. METHODS: In…
 
 </details>
 
-### [Disparities in Pediatric Concussion Outcomes and Family Burden by Neighborhood Opportunity.](https://pubmed.ncbi.nlm.nih.gov/42651464/)
+### [Health-Related Quality of Life 5 to 15 Years Following Adolescent Sport-Related Injury: The SHRed Consequences of Injury Study.](https://pubmed.ncbi.nlm.nih.gov/42696730/)
 
-*Behav Sci (Basel) (PubMed)* · **0.60** · 2026-07-28
+*Clin J Sport Med (PubMed)* · **0.70** · 2026-09-03
 
-`pediatric concussion` `family burden` `neighborhood opportunity` `disparities` `socioeconomic`
+`adolescent` `sport-related concussion` `HRQoL` `longitudinal` `SHRed`
 
-Investigation of disparities in pediatric concussion outcomes and family burden using the Child Opportunity Index as a neighborhood‑level socioeconomic measure.
+Examines the association between adolescent sport-related concussion or musculoskeletal injury and long-term (5-15 years postinjury) health-related quality of life in a historical cohort study of individuals who participated in adolescent sport 5 to 15 years before assessment.
 
 <details><summary>Abstract snippet</summary>
 
-Mild traumatic brain injury (mTBI) is a common cause for pediatric emergency department visits and can impose substantial burdens on families, including missed work and childcare needs. Socioeconomic context may influence both healthcare use and these downstream impacts. This study examined the association between Child Opportunity Index (COI), a neighborhood-level measure of socioeconomic status, and healthcare utilization and indirect costs following pediatric concussion. In a secondary…
+OBJECTIVES: This study examined the association between adolescent (aged 11-18 years) sport-related concussion (SRC) or musculoskeletal (MSK) injury and long-term (ie, 5-15 years postinjury) health-related quality of life (HRQoL). DESIGN: This was a substudy of a historical cohort study. SETTING: This study was conducted in a university setting. PARTICIPANTS: Individuals who participated in adolescent sport 5 to 15 years before assessment were included in this study. ASSESSMENT OF RISK FACTORS…
 
 </details>
 
-### [Early Psychological Intervention Embedded in a Pediatric Concussion Program: A Retrospective Cohort Study.](https://pubmed.ncbi.nlm.nih.gov/42647184/)
+### [Neuropsychological Profile of Autopsy-Confirmed Chronic Traumatic Encephalopathy](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2853513)
 
-*J Child Neurol (PubMed)* · **0.55** · 2026-08-26
+*JAMA Network Open* · **0.65** · 2026-09-02
 
-`pediatric concussion` `psychological intervention` `retrospective cohort` `PCS` `early intervention`
+`CTE` `TBI` `neuropsychology` `pathology`
 
-Retrospective cohort study comparing early embedded psychological intervention versus usual care in 56 children with post‑concussion syndrome at a pediatric concussion clinic.
+Case series of NFL players linking antemortem neuropsychological performance to CTE tau pathology; adult sample but high relevance to TBI outcomes.
 
 <details><summary>Abstract snippet</summary>
 
-ObjectiveTo compare outcomes among children and youth (3-21 years) with post-concussion syndrome (PCS) who received early (≤8 days) embedded psychological intervention (EI) after the index visit with those who received usual care (UC) in a pediatric concussion program.MethodsRetrospective cohort study at the Boston Medical Center Concussion Clinic (2015-2024) including 56 patients (EI n = 28; UC n = 28). Outcomes were follow-up time and recovery status at last follow-up. Mann-Whitney U and…
+This case series study characterizes antemortem neuropsychological test performance of National Football League players and examines associations between neuropsychological scores and chronic traumatic encephalopathy phosphorylated tau pathology.
+
+</details>
+
+### [Sleep Management and Recovery After TBI in Kids (SMART-Kids): Pilot Trial Using Melatonin.](https://pubmed.ncbi.nlm.nih.gov/42686209/)
+
+*Hosp Pediatr (PubMed)* · **0.62** · 2026-09-03
+
+`pediatric TBI` `melatonin` `sleep` `RCT` `pilot`
+
+Conducts a pilot randomized, double-blinded placebo-controlled trial of melatonin for 30 days versus placebo in children aged more than 6 to 18 years with traumatic brain injury to assess feasibility and acceptability of an early melatonin and sleep education intervention.
+
+<details><summary>Abstract snippet</summary>
+
+OBJECTIVE: Sleep disturbances after pediatric traumatic brain injury (TBI) occur in more than 50% of survivors and portend worse cognitive and psychosocial outcomes. We aimed to determine feasibility and acceptability of an early melatonin and sleep education intervention study after TBI. PATIENTS AND METHODS: We conducted a pilot randomized, double-blinded placebo-controlled trial of melatonin for 30 days vs placebo in children aged more than 6 to 18 years started within 72 hours of TBI…
+
+</details>
+
+### [Multidimensional sleep health and serious cognitive difficulty among US adolescents.](https://pubmed.ncbi.nlm.nih.gov/42675200/)
+
+*J Clin Sleep Med (PubMed)* · **0.58** · 2026-08-31
+
+`adolescents` `sleep health` `cognitive difficulty` `concussion history` `National Survey`
+
+Examines associations among concussion history, multidimensional sleep health, physical activity, and serious cognitive difficulty in a nationally representative sample of US adolescents aged 12-17 years.
+
+<details><summary>Abstract snippet</summary>
+
+PURPOSE: This study examined associations among concussion history, multidimensional sleep health, physical activity, and serious cognitive difficulty in a nationally representative sample of US adolescents. METHODS: Cross-sectional data from adolescents aged 12-17 years participating in the 2022-2024 National Survey of Children's Health were analyzed. Sequential multivariable models accounting for complex sampling examined associations among concussion history, short sleep duration, bedtime…
+
+</details>
+
+### [Feasibility and Clinical Utility of a Modified Step Test for Evaluating Exercise Intolerance After Pediatric and Adolescent Concussion in the Ambulatory Setting.](https://pubmed.ncbi.nlm.nih.gov/42703626/)
+
+*Sports Health (PubMed)* · **0.55** · 2026-09-07
+
+`exercise intolerance` `step test` `pediatric concussion` `feasibility` `ambulatory`
+
+Evaluates the feasibility and clinical utility of a modified step test to assess exercise intolerance in youth with concussion for predicting prolonged recovery in an ambulatory setting.
+
+<details><summary>Abstract snippet</summary>
+
+BACKGROUND: Exercise intolerance (EI) is an important component of concussion pathophysiology, serving as a predictor for persisting symptoms, as well as a therapeutic target. It traditionally requires bulky, expensive equipment such as a treadmill to assess. PURPOSE: To evaluate the feasibility of a modified step test to assess EI in youth with concussion and determine its clinical utility for predicting prolonged recovery. STUDY DESIGN: Observational. LEVEL OF EVIDENCE: Level 2. METHODS: A…
 
 </details>
 
@@ -89,150 +131,130 @@ ObjectiveTo compare outcomes among children and youth (3-21 years) with post-con
 
 ## Neurocritical & hospital care outcomes
 
-### [A Multimodal Model Integrating Early Clinical and Biomarker Data to Predict 1-Year Outcomes after Pediatric Cardiac Arrest.](https://pubmed.ncbi.nlm.nih.gov/42637215/)
-
-*Resuscitation (PubMed)* · **0.88** · 2026-08-24
-
-`pediatric cardiac arrest` `biomarkers` `neurofilament light` `ICU` `1-year outcomes`
-
-Multimodal model integrating early clinical and biomarker data (neurofilament light, ubiquitin) to predict 1-year outcomes after pediatric cardiac arrest in the POCCA study.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Shared decision-making after pediatric cardiac arrest (CA) requires early, accurate prognostication. We analyzed whether adding brain injury biomarkers and neuroimaging findings to clinical models increased prognostic accuracy after pediatric CA. METHODS: This planned analysis of the POCCA study included children aged 48 hours to 17 years with ICU admission after CA. Clinical predictors included demographic, CA, and resuscitation variables. Blood neurofilament light, ubiquitin…
-
-</details>
-
 ### [Perioperative Brain Damage Biomarkers Predict Neurodevelopmental Delay After Infant Cardiac Surgery: A Multicenter Study](https://www.sciencedirect.com/science/article/pii/S0887899426002535?dgcid=rss_sd_all)
 
-*Pediatric Neurology* · **0.86**
+*Pediatric Neurology* · **0.92**
 
-`cardiac surgery` `biomarkers` `neurodevelopmental delay` `multicenter`
+`cardiac surgery` `biomarkers` `neurodevelopmental outcome` `multicenter` `infant`
 
-Multicenter study reporting that perioperative brain damage biomarkers predict neurodevelopmental delay after infant cardiac surgery.
-
-### [Genetic Variation and Association with Post-Operative Outcomes for Neonates and Infants in the Cardiac Intensive Care Unit.](https://pubmed.ncbi.nlm.nih.gov/42650102/)
-
-*Genes (Basel) (PubMed)* · **0.78** · 2026-07-31
-
-`genetic variation` `copy number variants` `neurocognitive outcomes` `cardiac ICU` `neonates`
-
-Genome-wide study linking large copy number variants to neurocognitive outcomes in neonates and infants with congenital heart disease treated in the cardiac ICU.
-
-<details><summary>Abstract snippet</summary>
-
-INTRODUCTION: Congenital heart defects (CHD) occur in 1% of live births, with an estimated at least 33% of affected infants having genetic defects. It has become standard to screen children with CHD for genetic findings that could aid clinical decision-making, yet modern testing yields large volumes of information without understanding clinical utility. Genome-wide studies have identified associations between large copy number variants and neurocognitive outcomes in patients with CHD. Still,…
-
-</details>
-
-### [Prognostic utility of the NEOS score in pediatric antibody-negative encephalitis: A cohort study](https://www.sciencedirect.com/science/article/pii/S1090379826000942?dgcid=rss_sd_all)
-
-*Eur J Paediatric Neurology* · **0.72**
-
-`encephalitis` `NEOS score` `prognostic utility` `pediatric cohort` `antibody-negative`
-
-Cohort study assessing the prognostic utility of the NEOS score in pediatric antibody-negative encephalitis, likely relating to neurological outcomes.
-
-### [Collaborative General Practitioner Shared Care Versus Self-Directed Care Following Critical Illness in Young Children: A Pilot Hybrid Effectiveness-Implementation Randomized Controlled Trial.](https://pubmed.ncbi.nlm.nih.gov/42644841/)
-
-*Pediatr Crit Care Med (PubMed)* · **0.70** · 2026-08-26
-
-`PICU` `follow-up` `developmental outcomes` `psychologic distress` `RCT`
-
-Pilot hybrid effectiveness-implementation RCT assessing feasibility of collaborative GP shared-care follow-up for young PICU survivors experiencing developmental or psychologic challenges.
-
-<details><summary>Abstract snippet</summary>
-
-OBJECTIVES: Up to one in three PICU survivors experience persistent developmental or psychologic challenges, and parents often report significant psychologic distress. Current health systems lack standardized pathways to support children and families after PICU. We aimed to assess the feasibility of a randomized controlled trial (RCT) of a collaborative general practitioner (GP) shared-care follow-up model of care intervention and the feasibility, acceptability, and appropriateness of the…
-
-</details>
-
-### [Comparison of a Cardiac Specific Versus a General Instrument to Assess Health-Related Quality of Life 4-5 Years After Cardiac Surgery in Early Infancy.](https://pubmed.ncbi.nlm.nih.gov/42666944/)
-
-*CJC Pediatr Congenit Heart Dis (PubMed)* · **0.70** · 2026-02-18
-
-`cardiac surgery` `HRQoL` `PedsQL` `early infancy`
-
-Prospective inception cohort of children with early infant cardiac surgery assessed HRQoL at 4-5 years using disease-specific and generic PedsQL instruments.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: We aimed to compare health-related quality of life (HRQL) using a disease-specific and a generic instrument in children after complex cardiac surgery in early infancy. METHODS: A prospectively followed inception cohort of children having complex cardiac surgery at age ≤6 weeks had HRQL assessed at age 4-5 years using Pediatric Quality of Life Inventory (PedsQL) 3.0 Cardiac Module. Scores were compared with the PedsQL Generic Core Scales in the same population. Predictors of Cardiac…
-
-</details>
-
-### [Beginning Restorative Activities Very Early: A Quality Improvement Project to Advance ABCDEF Bundle Practice in a Pediatric Oncology Intensive Care Unit.](https://pubmed.ncbi.nlm.nih.gov/42646644/)
-
-*Pediatr Rep (PubMed)* · **0.60** · 2026-07-22
-
-`PICU` `ABCDEF bundle` `PICS‑p` `quality improvement` `pediatric oncology`
-
-Quality improvement project implementing the BRAVE (Beginning Restorative Activities Very Early) initiative to advance ABCDEF bundle practice in a pediatric oncology intensive care unit, aiming to reduce post‑intensive care syndrome in pediatrics.
-
-<details><summary>Abstract snippet</summary>
-
-Background/Objectives: Children with cancer admitted to the pediatric intensive care unit (PICU) are at increased risk for post-intensive care syndrome (PICS-p) due to prolonged immobility, deep sedation, and severe illness. The ABCDEF bundle offers a framework for enhancing ICU care and patient recovery, but implementing all components in pediatric oncology patients is challenging. This study assesses the development and implementation of the BRAVE (Beginning Restorative Activities Very Early)…
-
-</details>
+Multicenter study linking perioperative brain-damage biomarkers to neurodevelopmental delay after infant cardiac surgery — directly targets neurocognitive outcomes following pediatric critical illness with cardiopulmonary bypass, a core PICS-p population.
 
 ---
 
 ## Neuropsychological assessment & methods
 
-### [Predictive validity between early and middle childhood cognitive assessments in Ugandan children.](https://pubmed.ncbi.nlm.nih.gov/42635464/)
+### [Modeling uncertainty in performance validity testing with Bayesian logistic regression.](https://pubmed.ncbi.nlm.nih.gov/42683530/)
 
-*Child Neuropsychol (PubMed)* · **0.75** · 2026-08-24
+*Clin Neuropsychol (PubMed)* · **0.92** · 2026-09-02
 
-`predictive validity` `cognitive assessment` `Ugandan children` `longitudinal`
+`performance validity` `PVT` `Bayesian` `psychometrics`
 
-Title indicates a study measuring predictive validity between early and middle childhood cognitive test batteries in 636 Ugandan children aged 18 months to 12 years, focusing on longitudinal cognitive trajectories.
-
-<details><summary>Abstract snippet</summary>
-
-Longitudinal studies follow up children over years to assess their cognitive functioning following exposure to possible cerebral insults. Assessment of similar cognitive domains from early childhood onwards is essential in determining their cognitive developmental trajectory over time. This study measured the predictive validity between cognitive test batteries for early and middle childhood in Ugandan children. Six hundred and thirty-six children (males = 351; 55.2%) ages 18 months to 12 years…
-
-</details>
-
-### [The Affective Reactivity Index in Australian children: Psychometric properties and measurement invariance across clinical and community samples.](https://pubmed.ncbi.nlm.nih.gov/42636082/)
-
-*Psychol Assess (PubMed)* · **0.70** · 2026-08-24
-
-`Affective Reactivity Index` `psychometrics` `measurement invariance` `Australian children`
-
-Title evaluates psychometric properties and measurement invariance of the Affective Reactivity Index-Parent Version in Australian children aged 4-12 years, including community and clinic-referred samples.
+Evaluates Bayesian logistic regression for aggregating continuous embedded PVT scores to improve validity determinations.
 
 <details><summary>Abstract snippet</summary>
 
-Irritability is a common transdiagnostic feature of child psychopathology, often first emerging in early to middle childhood. This study investigated the psychometric properties of the Affective Reactivity Index-Parent Version, a widely used measure of irritability, in Australian children aged 4-12 years. Participants were a community sample broadly representative of the general population on key demographic characteristics (n = 1,371; 47.05% female) and a clinic-referred sample of children…
+Objective: The aggregation of multiple performance validity tests (PVTs) into a summary validity determination is an established challenge in neuropsychology. The standard dichotomous accumulation approach relies upon binary recoding of continuous PVT scores and yields ambiguous outcomes in a sizable proportion of cases. This study evaluated Bayesian logistic regression as a framework for estimating the posterior probability of an invalid profile from continuous embedded PVT scores. Method: A…
 
 </details>
 
-### [Fronto-central N200 lateralization during cue-dependent attentional orienting and response control in children with developmental dyscalculia.](https://pubmed.ncbi.nlm.nih.gov/42640197/)
+### [Development and validation of the Pediatric Autoimmune encephalitis Severity Scale in children with autoimmune encephalitis.](https://pubmed.ncbi.nlm.nih.gov/42691334/)
 
-*Child Neuropsychol (PubMed)* · **0.68** · 2026-08-25
+*Dev Med Child Neurol (PubMed)* · **0.85** · 2026-09-03
 
-`EEG` `attention` `dyscalculia` `children`
+`validation` `autoimmune encephalitis` `pediatric` `severity scale`
 
-Study of 143 children aged 6-11, including 71 with developmental dyscalculia and 72 typically developing, measuring fronto-central N200 lateralization during cue-dependent attentional orienting and response control.
+Development and validation of a severity scale specifically for children with autoimmune encephalitis.
+
+### [Design and preliminary validation of a comprehensive Azerbaijani-Turkish language development test (ATLDT) for children aged 3-7 years: A methodological study.](https://pubmed.ncbi.nlm.nih.gov/42703632/)
+
+*Appl Neuropsychol Child (PubMed)* · **0.82** · 2026-09-07
+
+`validation` `language development` `pediatric` `equity`
+
+Preliminary validation of a language development test for children aged 3-7 in a specific linguistic group (Azerbaijani-Turkish).
 
 <details><summary>Abstract snippet</summary>
 
-Developmental dyscalculia (DD) is characterized by persistent mathematical learning difficulty and may also involve weaknesses in domain-general cognitive control. We examined whether children with DD differed from typically developing (TD) children in the fronto-central hemispheric patterns of cue-related attention and response control. The sample comprised 143 children aged 6-11 years, including 71 with DD and 72 TD children. During a cue-dependent continuous performance task, cue-phase…
+Currently, no comprehensive language development test exists for Azerbaijani-Turkish, a widely spoken Turkic language in Iran. This study describes the development and initial content and face validation of the first Azerbaijani-Turkish Language Development Test (ATLDT) designed for children aged 3 to 7 years. The ATLDT is introduced as a preliminary instrument that requires further psychometric evaluation before any clinical application. A methodological design was employed, combining expert…
 
 </details>
 
-### [Adapting the ECLECTIC framework for intellectual disability assessment: an ethical and cross-cultural approach.](https://pubmed.ncbi.nlm.nih.gov/42636037/)
+### [Measurement Properties of Delirium Tools in Pediatric Intensive Care: A Systematic Review.](https://pubmed.ncbi.nlm.nih.gov/42680167/)
 
-*Child Neuropsychol (PubMed)* · **0.65** · 2026-08-24
+*Pediatrics (PubMed)* · **0.78** · 2026-09-02
 
-`intellectual disability` `assessment framework` `cross-cultural` `ethical`
+`delirium` `PICU` `measurement properties` `systematic review` `assessment`
 
-Describes adapting the ECLECTIC framework for intellectual disability assessment with ethical and cross-cultural considerations.
+Systematic review evaluating measurement properties of delirium tools used in pediatric intensive care units.
 
 <details><summary>Abstract snippet</summary>
 
-Child and Adolescent Mental Health Services (CAMHS) clinicians increasingly conduct cognitive assessments with culturally and linguistically diverse children and young people, often using tools and diagnostic pathways developed within narrow cultural, linguistic, and educational contexts. In intellectual disability (ID) assessment, this can generate interpretive and ethical uncertainty, particularly when differences in language exposure, schooling histories, migration experiences, and…
+CONTEXT: Delirium is common in pediatric intensive care units. Reliable tools are needed, but evidence on measurement properties remains fragmented. OBJECTIVES: To identify pediatric delirium tools and evaluate their measurement properties and certainty of evidence. DATA SOURCES: MEDLINE, EMBASE, PsycINFO, CINAHL, Cochrane Library, and Web of Science were searched without language or date restrictions. STUDY SELECTION: Original observational, cross-sectional, and validation studies evaluating…
 
 </details>
+
+### [Development and psychometric evaluation of the illustrated hospital fear scale for preschool children.](https://pubmed.ncbi.nlm.nih.gov/42693589/)
+
+*J Health Psychol (PubMed)* · **0.78** · 2026-09-03
+
+`psychometrics` `hospitalization` `preschool` `PROMs`
+
+Psychometric evaluation of a hospital fear scale for 300 preschool children aged 4-6.
+
+<details><summary>Abstract snippet</summary>
+
+Hospital-related fear is a significant source of distress for preschool children, yet existing assessment tools are not adequately suited to their developmental level. This methodological study aimed to develop the Illustrated Hospital Fear Scale for Preschool Children and evaluate its psychometric properties. The study was conducted with 300 preschool children aged 4-6 attending educational institutions in western Türkiye. Scale development proceeded through four stages: item generation,…
+
+</details>
+
+### [Identification of the Minimal Clinically Important Difference (MCID) for Childhood Autism Rating Scale Second Edition (CARS2) in children with ASD](https://www.medrxiv.org/content/10.64898/2026.08.31.26361823v1?rss=1)
+
+*medRxiv Pediatrics* · **0.70** · 2026-09-04
+
+`MCID` `CARS2` `ASD` `measurement validation`
+
+Identification of the Minimal Clinically Important Difference (MCID) for Childhood Autism Rating Scale Second Edition (CARS2) in children with ASD.
+
+<details><summary>Abstract snippet</summary>
+
+PurposeIn clinical trials, treatment efficacy is commonly assessed by comparing control and treatment groups. However, in large samples, even small and clinically trivial differences may achieve statistical significance. Accordingly, the Minimal Clinically Important Difference (MCID) is used as a threshold to determine whether statistically-significant effects are also clinically meaningful to patients. The objective of this study was to estimate the MCID for the Childhood Autism Rating Scale…
+
+</details>
+
+### [Rethinking memory assessment in pediatric neurofibromatosis type 1.](https://pubmed.ncbi.nlm.nih.gov/42691245/)
+
+*Dev Med Child Neurol (PubMed)* · **0.68** · 2026-09-03
+
+`memory assessment` `neurofibromatosis type 1` `neuropsychology` `pediatric` `cognitive testing`
+
+rethinks memory assessment strategies in pediatric neurofibromatosis type 1, aiming to improve neuropsychological measurement in this population
+
+### [Attention-deficit/hyperactivity disorder symptom heterogeneity in neurofibromatosis type 1: Beyond symptom burden.](https://pubmed.ncbi.nlm.nih.gov/42691018/)
+
+*Dev Med Child Neurol (PubMed)* · **0.66** · 2026-09-03
+
+`ADHD` `neurofibromatosis type 1` `symptom heterogeneity` `pediatric` `neuropsychological assessment`
+
+examines ADHD symptom heterogeneity in neurofibromatosis type 1 to refine neuropsychological characterization of the condition
+
+---
+
+## Adjacent developmental neuroscience
+
+### [Untangling relationships between cognitive development and child and adolescent mental health: Findings from the ABCD Study](https://www.sciencedirect.com/science/article/pii/S1878929326001143?dgcid=rss_sd_all)
+
+*Developmental Cognitive Neuroscience* · **0.68**
+
+`cognitive development` `mental health` `ABCD` `longitudinal`
+
+Untangling relationships between cognitive development and child and adolescent mental health: Findings from the ABCD Study.
+
+### [Cognitive ability in childhood predicts adolescent structural and functional brain development: A longitudinal study](https://www.sciencedirect.com/science/article/pii/S1878929326001106?dgcid=rss_sd_all)
+
+*Developmental Cognitive Neuroscience* · **0.66**
+
+`cognitive ability` `brain development` `longitudinal` `childhood adolescence`
+
+Cognitive ability in childhood predicts adolescent structural and functional brain development: A longitudinal study.
 
 ---
