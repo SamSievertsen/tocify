@@ -1,8 +1,6 @@
-# Weekly ToC Digest, week of 2026-09-07
+# Weekly ToC Digest, week of 2026-09-14
 
 New papers on suicidality, intensive longitudinal data, and computational methods, scanned automatically each Monday and ranked against the [interests](interests.html) that drive this digest. Scores are a language model's judgement from the title and abstract only, so read them as triage and not as appraisal.
-
-> 1 of 7 triage batches failed, so about 40 items went unscored this week.
 
 | Section | Kept | Threshold |
 |---|---:|---:|
@@ -11,7 +9,7 @@ New papers on suicidality, intensive longitudinal data, and computational method
 | ML & dynamical systems methods | 15 | ≥ 0.65 |
 | Adjacent mental health, genetics & neurobiology | 0 | ≥ 0.62 |
 
-*45 kept from 280 scored, out of 1158 gathered across 42 journal feeds and 11 PubMed queries in the last 7 days. Spanning 25 sources; 31 of 45 include an abstract.*
+*45 kept from 280 scored, out of 1091 gathered across 42 journal feeds and 11 PubMed queries in the last 7 days. Spanning 26 sources; 28 of 45 include an abstract.*
 
 ---
 
@@ -19,19 +17,77 @@ New papers on suicidality, intensive longitudinal data, and computational method
 
 ### [Using ecological momentary assessment to investigate short-term risk factors of suicidal ideation among adolescents](https://www.sciencedirect.com/science/article/pii/S0165032726012450?dgcid=rss_sd_all)
 
-*J Affective Disorders* · **0.95**
+*J Affective Disorders* · **0.92**
 
-`EMA` `adolescent` `suicidal ideation` `short‑term risk`
+`adolescent` `suicidal ideation` `EMA` `short-term risk factors`
 
-Uses ecological momentary assessment to investigate short‑term risk factors of suicidal ideation among adolescents.
+Uses ecological momentary assessment to probe short-term risk factors of suicidal ideation in adolescents.
+
+### [INSIGHTFUL: insight generation through clinical annotation, analysis and modelling of suicide-related factors towards understanding and lifesaving.](https://pubmed.ncbi.nlm.nih.gov/42712291/)
+
+*BMJ Digit Health Ai (PubMed)* · **0.92** · 2025-09-08
+
+`AI` `machine learning` `suicide` `clinical notes` `insight generation`
+
+Uses clinical annotation and AI modelling of suicide‑related factors in psychiatric safety‑net data to generate insights.
+
+<details><summary>Abstract snippet</summary>
+
+OBJECTIVE: Suicide and self-injury identification remain a medical and public health priority, particularly among underserved populations receiving care in safety-net psychiatric hospitals. However, clinical data are not readily available to support the rapid advancement of research leveraging artificial intelligence (AI) methods for insights generation. To further our understanding of suicidal events and related factors documented in clinical notes within the context of psychiatric safety-net…
+
+</details>
+
+### [Machine Learning Prediction of First Suicide Attempts in Early Adolescence Among Child Ideators](https://www.sciencedirect.com/science/article/pii/S0890856726015650?dgcid=rss_sd_all)
+
+*JAACAP* · **0.90**
+
+`machine learning` `suicide attempt` `adolescent` `prediction` `child ideators`
+
+Predicts first suicide attempts in early adolescence among child ideators using machine learning.
+
+### [Temporal and cross-site validation of an AI system for self-harm detection.](https://pubmed.ncbi.nlm.nih.gov/42726793/)
+
+*PLOS Digit Health (PubMed)* · **0.90** · 2026-09-11
+
+`AI` `self-harm detection` `external validation` `temporal validation` `emergency department`
+
+Prospectively and externally validates an AI system for self-harm detection across emergency department sites.
+
+<details><summary>Abstract snippet</summary>
+
+Adequate self-harm surveillance is a key part of suicide prevention. Our previous research demonstrated that an artificial intelligence (AI)-based system could effectively detect self-harm in emergency department triage notes. However, the system was developed using data from a single hospital, raising concerns about its generalisability. Here, we aim to validate the system prospectively and externally to better understand its portability across hospitals. We leveraged emergency department data…
+
+</details>
+
+### [Emotionally engaged speech reveals acoustic markers of depression and suicide risk](https://www.sciencedirect.com/science/article/pii/S0165032726012929?dgcid=rss_sd_all)
+
+*J Affective Disorders* · **0.90**
+
+`speech` `acoustic markers` `suicide risk` `depression` `sensing`
+
+Identifies acoustic markers in emotionally engaged speech that indicate depression and suicide risk.
+
+### [A Clinical Prediction Model for Self-Harm After Adolescent Traumatic Brain Injury.](https://pubmed.ncbi.nlm.nih.gov/42717295/)
+
+*J Neuropsychiatry Clin Neurosci (PubMed)* · **0.88** · 2026-09-10
+
+`self-harm` `TBI` `adolescent` `prediction model` `validation`
+
+Develops and validates a clinical prediction model for self-harm after adolescent traumatic brain injury using a Welsh population-linked dataset.
+
+<details><summary>Abstract snippet</summary>
+
+OBJECTIVE: Few prognostic models are available to assess risks of adverse outcomes among traumatic brain injury (TBI) patients beyond acute care. Self-harm is an important adverse outcome with modifiable risk factors. The authors developed and validated a risk model for self-harm after TBI in adolescence. METHODS: In this retrospective cohort study, the authors utilized a population-linked dataset based in Wales (the Secure Anonymised Information Linkage Databank). It included adolescents ages…
+
+</details>
 
 ### [Prevalence of Adverse Childhood Experiences and Suicidal Ideation Among Bhutanese Adolescents.](https://pubmed.ncbi.nlm.nih.gov/42703236/)
 
-*J Child Adolesc Trauma (PubMed)* · **0.90** · 2026-03-07
+*J Child Adolesc Trauma (PubMed)* · **0.88** · 2026-03-07
 
 `adolescent` `ACEs` `suicidal ideation` `Random Forest` `logistic regression`
 
-Builds Random Forest and logistic regression models to identify ACEs influencing suicidal ideation in Bhutanese adolescents aged 13‑21.
+Uses Random Forest and logistic regression to model suicidal ideation from ACEs in Bhutanese adolescents.
 
 <details><summary>Abstract snippet</summary>
 
@@ -39,81 +95,105 @@ Adverse Childhood Experiences (ACEs) refer to stressful or potentially traumatic
 
 </details>
 
-### [Inferring suicidal ideation without direct questions: A network-augmented machine learning analysis of depression screening data](https://www.sciencedirect.com/science/article/pii/S0165178126004488?dgcid=rss_sd_all)
-
-*Psychiatry Research* · **0.90**
-
-`suicidal ideation` `machine learning` `network analysis` `depression screening`
-
-Applies network‑augmented machine learning to depression screening data to infer suicidal ideation without direct questioning.
-
-### [The Association Between Suicidal Ideation Trajectories and Later Academic Attitude and Career Adaptability Among South Korean Adolescents.](https://pubmed.ncbi.nlm.nih.gov/42695804/)
-
-*Arch Suicide Res (PubMed)* · **0.80** · 2026-09-04
-
-`suicidal ideation trajectories` `LCGA` `adolescent` `academic attitude` `career adaptability`
-
-Models suicidal ideation trajectories with latent class growth analysis and links them to academic attitude and career adaptability in South Korean adolescents.
-
-<details><summary>Abstract snippet</summary>
-
-OBJECTIVE: This study investigated how adolescents' experience of suicidal ideation over time relates to academic and career development, both of which are regarded as critical areas of development. Specifically, we examined how latent trajectories of suicidal ideation are associated with academic engagement, academic helplessness, and career adaptability. METHOD: Latent class growth analysis (LCGA) and regression analyses were conducted using six waves of data from the middle school panel of…
-
-</details>
-
 ### [Network analysis of the link between depressive symptoms and risk of suicidal behavior at three years: A national prospective study](https://www.sciencedirect.com/science/article/pii/S0165032726012760?dgcid=rss_sd_all)
 
-*J Affective Disorders* · **0.78**
+*J Affective Disorders* · **0.88**
 
 `network analysis` `depressive symptoms` `suicidal behavior` `prospective` `national`
 
-Conducts a national prospective network analysis linking depressive symptoms to suicidal behavior risk at three‑year follow‑up.
+Uses network analysis to examine how depressive symptoms relate to suicidal behavior risk over three years in a national prospective cohort.
+
+### [Shared and distinct psychosocial network patterns of suicidal ideation across four countries](https://www.sciencedirect.com/science/article/pii/S0165032726013285?dgcid=rss_sd_all)
+
+*J Affective Disorders* · **0.88**
+
+`suicidal ideation` `network analysis` `cross‑country` `psychosocial`
+
+Compares psychosocial network patterns of suicidal ideation in four countries using network analysis.
+
+### [Ketamine: from anesthesia to pediatric suicidal crisis.](https://pubmed.ncbi.nlm.nih.gov/42722964/)
+
+*CJEM (PubMed)* · **0.78** · 2026-09-01
+
+`ketamine` `pediatric` `suicidal crisis` `suicide`
+
+Examines ketamine’s role in pediatric suicidal crisis.
+
+### [Typologies and Phenotypes of Youth Suicide Decedents](https://www.sciencedirect.com/science/article/pii/S0890856725022397?dgcid=rss_sd_all)
+
+*JAACAP* · **0.78**
+
+`youth` `suicide decedents` `typologies` `phenotypes`
+
+Examines typologies and phenotypes of youth who died by suicide.
 
 ### [Predicting the First Onset of Suicidal Thoughts and Behaviors in Adolescents Using Multimodal Risk Factors: A 4-Year Longitudinal Study](https://www.sciencedirect.com/science/article/pii/S0890856725003363?dgcid=rss_sd_all)
 
-*JAACAP* · **0.75**
+*JAACAP* · **0.78**
 
 `suicide prediction` `adolescents` `longitudinal` `multimodal risk factors`
 
-Predicts first onset of suicidal thoughts and behaviors in adolescents over four years using multimodal risk factors.
+Uses multimodal risk factors to predict the first onset of suicidal thoughts and behaviors in adolescents over four years.
 
-### [When to Quit: Calibration of Voluntary Persistence and Attempted Suicide in Depression](https://www.sciencedirect.com/science/article/pii/S0005796726002019?dgcid=rss_sd_all)
+### [Social disconnection integrates genetic and proteomic risks in suicidal ideation and depression.](https://pubmed.ncbi.nlm.nih.gov/42706232/)
 
-*Behaviour Research and Therapy* · **0.70**
+*Transl Psychiatry (PubMed)* · **0.75** · 2026-09-07
 
-`calibration` `attempted suicide` `depression` `voluntary persistence`
+`suicidal ideation` `genetic` `proteomic` `longitudinal` `modeling`
 
-Examines calibration of voluntary persistence and attempted suicide in depression.
-
-### [A Prospective Examination of the Predictive Validity of Three Transdiagnostic Assessments of Risk for Suicidal Behavior: Psychache, the Interpersonal Theory of Suicide, and Reasons for Living](https://www.sciencedirect.com/science/article/pii/S0890856725021914?dgcid=rss_sd_all)
-
-*JAACAP* · **0.70**
-
-`suicidal behavior` `predictive validity` `Psychache` `Interpersonal Theory of Suicide` `Reasons for Living`
-
-Prospectively evaluates the predictive validity of Psychache, the Interpersonal Theory of Suicide, and Reasons for Living for suicidal behavior.
-
-### [Predictive linguistic markers of suicidal ideation in autobiographical memory narratives](https://www.sciencedirect.com/science/article/pii/S0165178126004567?dgcid=rss_sd_all)
-
-*Psychiatry Research / PubMed* · **0.68** · 2026-08-15
-
-`suicidal ideation` `linguistic analysis` `autobiographical memory` `prediction`
-
-Predicts suicidal ideation using linguistic analysis of autobiographical memory narratives in 190 participants.
+Integrates genetic and proteomic data with social disconnection to model suicidal ideation and depression using longitudinal multi-modal data.
 
 <details><summary>Abstract snippet</summary>
 
-BACKGROUND: Suicide claims approximately 700,000 lives annually, yet risk identification remains challenging due to reliance on self-disclosure and limitations of current assessment methods. This study examined whether linguistic analysis of autobiographical memory narratives could predict suicidal ideation. METHODS: In total, 190 participants (137 clinical, 53 community) provided autobiographical memories to twelve emotionally evocative Turkish cue words, analyzed with Linguistic Inquiry and…
+Suicidal ideation (SI) and major depressive disorder (MDD) are complex psychiatric conditions arising from the interplay of genetic liability, molecular processes, and psychosocial factors. While these dimensions have been extensively studied in isolation, their joint contribution to SI and MDD remains unclear. This study integrates multi-modal data to elucidate these synergistic effects and develop robust models for individual-level risk stratification. Leveraging longitudinal multi-modal data…
+
+</details>
+
+### [Suicide Rates by Gender Among 10- to 14-Year-Olds.](https://pubmed.ncbi.nlm.nih.gov/42709461/)
+
+*JAMA Pediatr (PubMed)* · **0.75** · 2026-09-08
+
+`suicide rates` `gender` `10‑14 years` `pediatric`
+
+Reports gender differences in suicide rates among children aged 10‑14.
+
+### [Suicidal ideation at psychiatric emergency presentation predicts trajectories of functional disability and symptom burden in mood and anxiety disorders: A prospective cohort study](https://www.sciencedirect.com/science/article/pii/S0165032726013248?dgcid=rss_sd_all)
+
+*J Affective Disorders* · **0.73**
+
+`suicidal ideation` `psychiatric emergency` `prognosis` `mood disorders`
+
+Shows that suicidal ideation at psychiatric emergency presentation predicts functional disability and symptom burden over time in mood/anxiety disorders.
+
+### [Combined effects of traditional and cyberbullying victimization on adolescent non-suicidal self-injury: The buffering role of family and peer support](https://www.sciencedirect.com/science/article/pii/S0165178126004580?dgcid=rss_sd_all)
+
+*Psychiatry Research* · **0.73**
+
+`bullying` `cyberbullying` `NSSI` `adolescents` `family support`
+
+Shows that traditional and cyberbullying victimization increase adolescent NSSI, buffered by family and peer support.
+
+### [Understanding suicidality among sexual and gender minority youth: Applying the interpersonal psychological theory of suicide.](https://pubmed.ncbi.nlm.nih.gov/42728765/)
+
+*J Res Adolesc (PubMed)* · **0.72** · 2026-09-01
+
+`LGBTQ+ youth` `suicidality` `longitudinal` `SEM` `interpersonal theory`
+
+Three-wave longitudinal study of 662 LGBTQ+ youth testing interpersonal psychological theory of suicide with latent SEM.
+
+<details><summary>Abstract snippet</summary>
+
+The Interpersonal Psychological Theory of Suicide (IPTS) has been widely applied in suicide research, including studies involving LGBTQ+ people. However, longitudinal tests of the theory, particularly those integrating the moderating role of acquired capability for suicide, remain limited. The present study evaluated the IPTS using a three-wave longitudinal design with data from 662 LGBTQ+ youth ages 15-21 at baseline located in two major U.S. regions. Latent structural equation modeling was…
 
 </details>
 
 ### [Trauma and suicidality in adolescents with substance use disorders.](https://pubmed.ncbi.nlm.nih.gov/42702712/)
 
-*Child Adolesc Psychiatry Ment Health (PubMed)* · **0.68** · 2026-08-30
+*Child Adolesc Psychiatry Ment Health (PubMed)* · **0.72** · 2026-08-30
 
-`adolescent` `substance use` `trauma` `suicidality`
+`trauma` `suicidality` `adolescents` `substance use`
 
-Investigates trauma and suicidality in a clinical sample of 342 adolescents with substance use disorder.
+Investigates trauma and suicidality in 342 adolescents with substance use disorder.
 
 <details><summary>Abstract snippet</summary>
 
@@ -121,113 +201,25 @@ BACKGROUND: Substance use and traumatic experiences have been identified as risk
 
 </details>
 
-### [Typologies and Phenotypes of Youth Suicide Decedents](https://www.sciencedirect.com/science/article/pii/S0890856725022397?dgcid=rss_sd_all)
+### [A Prospective Examination of the Predictive Validity of Three Transdiagnostic Assessments of Risk for Suicidal Behavior: Psychache, the Interpersonal Theory of Suicide, and Reasons for Living](https://www.sciencedirect.com/science/article/pii/S0890856725021914?dgcid=rss_sd_all)
 
-*JAACAP* · **0.68**
+*JAACAP* · **0.72**
 
-`youth suicide` `typologies` `phenotypes`
+`suicide prediction` `prospective` `Psychache` `ITS` `Reasons for Living`
 
-Describes typologies and phenotypes of youth suicide decedents.
+Prospectively tests Psychache, Interpersonal Theory of Suicide, and Reasons for Living as predictors of suicidal behavior.
 
-### [Nonfatal Drug Overdose in a National Sample of Adolescents by Intent and Substance, Medicaid 2016-2020](https://www.sciencedirect.com/science/article/pii/S0890856725022312?dgcid=rss_sd_all)
+### [Longitudinal Relationship between Shame, Loneliness, and Nonsuicidal Self-injury Among Chinese Adolescents.](https://pubmed.ncbi.nlm.nih.gov/42726359/)
 
-*JAACAP* · **0.68**
+*Res Child Adolesc Psychopathol (PubMed)* · **0.72** · 2026-09-11
 
-`adolescent` `overdose` `intent` `substance` `national sample`
+`shame` `loneliness` `NSSI` `longitudinal` `Chinese adolescents`
 
-Examines nonfatal drug overdose among adolescents, distinguishing intentional (suicidal) versus unintentional intent across substances using Medicaid data.
-
-### [Supporting Patients Who Self-Injure: A Youth-Centered Approach](https://www.sciencedirect.com/science/article/pii/S0890856725020118?dgcid=rss_sd_all)
-
-*JAACAP* · **0.68**
-
-`self-injury` `youth` `support` `intervention`
-
-Describes a youth-centered approach to support patients who engage in self-injury.
-
-### [School-Based Supportive Practices and High School Student Suicide Rates](https://www.sciencedirect.com/science/article/pii/S1054139X26001862?dgcid=rss_sd_all)
-
-*J Adolescent Health* · **0.68**
-
-`school-based` `suicide prevention` `high school`
-
-Examines association between school-based supportive practices and suicide rates among high school students.
-
-### [Suicidal ideation covaries with depressive severity during six-month real-world esketamine treatment in a cohort enriched for borderline personality disorder](https://www.sciencedirect.com/science/article/pii/S0165032726012589?dgcid=rss_sd_all)
-
-*J Affective Disorders* · **0.68**
-
-`suicidal ideation` `esketamine` `BPD` `longitudinal`
-
-Tracks suicidal ideation and depressive severity over six months of real-world esketamine treatment in a BPD-enriched cohort.
-
-### [Regional Disparities in Self-Harming Behaviour Among Indonesian Adolescents in Relation to Online Gaming Addiction and Cyberbullying Victimization.](https://pubmed.ncbi.nlm.nih.gov/42677222/)
-
-*J Multidiscip Healthc (PubMed)* · **0.66** · 2026-08-27
-
-`adolescent` `self‑harm` `online gaming addiction` `cyberbullying` `Indonesia`
-
-Examines regional disparities in self‑harming behaviour among Indonesian adolescents related to online gaming addiction and cyberbullying victimization.
+Tracks shame, loneliness, and NSSI over three waves in 664 Chinese adolescents using latent growth and cross‑lagged models.
 
 <details><summary>Abstract snippet</summary>
 
-INTRODUCTION: The rapid expansion of digital technology has increased adolescents' exposure to online risks, including cyberbullying victimization (CBV) and Online Gaming Addiction (OGA), which may be associated with self-harming behavior (SHB). This study examined regional disparities in digital risk exposure and SHB among Indonesian adolescents. METHODS: A cross-sectional study was conducted among 1742 adolescents aged 11-16 years from five regions of Indonesia: Sumatera, Java, Kalimantan,…
-
-</details>
-
-### [Psychological resilience partially mediates the relationship between negative life events and suicidal ideation in Chinese adolescents.](https://pubmed.ncbi.nlm.nih.gov/42694902/)
-
-*Front Psychiatry (PubMed)* · **0.66** · 2026-08-20
-
-`adolescent` `psychological resilience` `negative life events` `suicidal ideation` `China`
-
-Tests whether psychological resilience mediates the link between negative life events and suicidal ideation in Chinese adolescents.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Suicidal ideation is a significant public health concern among adolescents globally, with negative life events and psychological resilience identified as key risk and protective factors, respectively. OBJECTIVE: To explore the mediating effect of psychological resilience between negative life events and suicidal ideation in adolescents, and to analyze differences in related variables across demographic characteristics. METHODS: This cross-sectional study analyzed publicly available…
-
-</details>
-
-### [Rethinking responses to over-the-counter drug overdose among young people in Japan: Toward a low-threshold support architecture.](https://pubmed.ncbi.nlm.nih.gov/42670402/)
-
-*Glob Health Med (PubMed)* · **0.66** · 2026-08-01
-
-`OTC overdose` `young people` `Japan` `self‑harm` `suicidality`
-
-Reconsiders responses to over‑the‑counter drug overdose among young people in Japan, linking it to self‑harm, suicidality, and help‑seeking.
-
-<details><summary>Abstract snippet</summary>
-
-Over-the-counter (OTC) drug misuse and overdose among young people in Japan should be understood not only as a medication-safety issue but also as a public health and youth support issue situated at the intersection of psychological distress, self-harm, suicidality, help-seeking difficulties, digital environments, and fragmented care systems. Current responses, including emergency treatment for acute intoxication, psychiatric assessment, consultation services, school-based prevention, and…
-
-</details>
-
-### [Postmortem evidence of Babesia and Bartonella infections in chronically ill suicidal young people.](https://pubmed.ncbi.nlm.nih.gov/42681677/)
-
-*Parasit Vectors (PubMed)* · **0.66** · 2026-07-27
-
-`Babesia` `Bartonella` `suicidal young people` `postmortem` `infection`
-
-Reports postmortem evidence of Babesia and Bartonella infections in chronically ill suicidal young people.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Vector-borne diseases represent an emerging global threat to public health, yet the potential role of flea and tick-borne pathogens as a cause or cofactor in neuropsychiatric illnesses and suicidal ideation remains relatively uninvestigated. Co-infections with vector-borne Babesia and Bartonella spp., as well as infection with more than one Babesia species, may represent a more important cause of neurological and neuropsychiatric illnesses than is currently appreciated. METHODS:…
-
-</details>
-
-### [Negotiating Multiple Minoritised Identities: An Interpretative Phenomenological Analysis of Intersecting Sexual Orientation, Gender Identity, and Suicidal Thoughts and Behaviours Among Transgender and Gender-Diverse Young Adults.](https://pubmed.ncbi.nlm.nih.gov/42703301/)
-
-*J Child Adolesc Trauma (PubMed)* · **0.66** · 2026-04-21
-
-`transgender` `gender‑diverse` `suicidal thoughts` `IPA` `young adults`
-
-Uses interpretative phenomenological analysis to explore suicidal thoughts and behaviours among transgender and gender‑diverse young adults with intersecting minority identities.
-
-<details><summary>Abstract snippet</summary>
-
-UNLABELLED: Transgender and gender-diverse young adults, most of whom identify as lesbian, gay, bisexual, or queer, encounter considerable health, social, and systemic inequalities, leading to higher rates of trauma exposure, mental health difficulties, and suicidal thoughts and behaviours compared to their heterosexual and cisgender peers. The complex relationship between sexual orientation, gender identity, and suicide has received considerable attention, primarily from quantitative research…
+This study aimed to examine the longitudinal associations and co-developmental trajectories between shame, loneliness, and nonsuicidal self-injury, as well as the mediating role of loneliness in the relationship between shame and nonsuicidal self-injury among Chinese adolescents. A total of 664 adolescents (42.02% male; mean age 13.82 years) from Anhui Province, China, were assessed at three time points over 12 months. Latent growth modeling and cross-lagged panel model were employed to examine…
 
 </details>
 
@@ -235,137 +227,119 @@ UNLABELLED: Transgender and gender-diverse young adults, most of whom identify a
 
 ## Intensive longitudinal & sensing
 
-### [A Preliminary Evaluation of Daily and Momentary Variability in Parenting Practices During Adolescent Alcohol Use and Co-Occurring Disorders Treatment.](https://pubmed.ncbi.nlm.nih.gov/42683011/)
+### [Dissociation as a marker of emotion dysregulation: An examination in adolescent psychiatric inpatients using ecological momentary assessment](https://www.sciencedirect.com/science/article/pii/S0165032726012644?dgcid=rss_sd_all)
 
-*Subst Use (PubMed)* · **0.70** · 2026-08-31
+*J Affective Disorders* · **0.80**
 
-`EMA` `parenting practices` `adolescent` `alcohol use` `co-occurring disorders`
+`EMA` `dissociation` `emotion dysregulation` `adolescent psychiatric inpatients`
 
-Uses EMA to assess day-to-day and moment-to-moment variability in parenting practices during treatment for adolescent alcohol use and co-occurring disorders.
+EMA examination of adolescent psychiatric inpatients evaluates dissociation as a marker of emotion dysregulation.
 
-<details><summary>Abstract snippet</summary>
+### [Chronic sensing during subcallosal cingulate deep brain stimulation captures ketamine-associated changes in major depressive disorder](https://www.medrxiv.org/content/10.64898/2026.09.08.26362080v1?rss=1)
 
-BACKGROUND: Adolescents with co-occurring alcohol use and mental health disorders have better treatment outcomes when caregivers are involved in their treatment. Currently, little is known about why caregiver involvement improves outcomes. OBJECTIVES: To facilitate caregiver-involved treatment process research, this study preliminarily examined within- and between-person variability in ecological momentary assessment (EMA) items assessing caregiver-child communication (eg, warmth, conflict),…
+*medRxiv Psychiatry* · **0.80** · 2026-09-11
 
-</details>
+`deep brain stimulation` `sensing` `ketamine` `major depressive disorder` `longitudinal`
 
-### [Ecological momentary assessment of targeted and non-targeted symptom changes in clinical anxiety and irritability among children and adolescents receiving cognitive behavioral therapy.](https://pubmed.ncbi.nlm.nih.gov/42676659/)
-
-*JCPP Adv (PubMed)* · **0.70** · 2026-08-30
-
-`EMA` `anxiety` `irritability` `CBT` `children adolescents`
-
-Applies EMA to measure changes in both targeted and non-targeted anxiety and irritability symptoms in youth undergoing CBT.
+Chronic sensing of subcallosal cingulate activity during DBS captures ketamine‑linked changes in major depressive disorder, based on thousands of hours of physiological recordings.
 
 <details><summary>Abstract snippet</summary>
 
-BACKGROUND: Decades of youth psychotherapy research have demonstrated the efficacy of cognitive behavioral therapy (CBT) on targeted symptoms using standardized, retrospective clinician-, child-, and parent-report. Advancements in digital technologies can be leveraged to capture granular symptom change in patients' natural environments. While CBT is tailored to treat specific diagnosis-perpetuating mechanisms, it remains unknown whether such effects may carry over to non-targeted symptoms,…
-
-</details>
-
-### [Agreement between smartphone-based mobile sensing and actigraphy sleep metrics in young people with bipolar disorder](https://www.sciencedirect.com/science/article/pii/S0165178126004944?dgcid=rss_sd_all)
-
-*Psychiatry Research / PubMed* · **0.70** · 2026-09-01
-
-`mobile sensing` `actigraphy` `sleep metrics` `bipolar disorder` `youth`
-
-Compares smartphone-based mobile sensing estimates of sleep with actigraphy-derived metrics in youths diagnosed with bipolar disorder.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Sleep disturbance is a core feature of bipolar disorder (BD) and often precedes mood recurrence, particularly in youth. Smartphone-based mobile sensing offers a scalable alternative to objective sleep measurement via actigraphy, but its validity in youths with BD is unclear. METHODS: Analyses included adolescents and young adults (ages 14-25) with BD-I/II from the PROMPT-BD study with at least four days of concurrent actigraphy and mobile sensing. Actigraphy-derived sleep metrics…
-
-</details>
-
-### [Proximal Effects of a Transdiagnostic, Ecological Momentary Intervention for Enhancing Resilience in Help-Seeking Young People (EMIcompass): Findings From a Secondary Analysis of an Exploratory Randomized Controlled Trial](https://www.jmir.org/2026/1/e77150)
-
-*JMIR / PubMed / PubMed* · **0.70** · 2026-09-03
-
-`EMI` `EMA` `resilience` `young people` `RCT`
-
-Evaluates momentary effects of an ecological momentary intervention delivered via EMA to boost resilience in help-seeking young people.
-
-<details><summary>Abstract snippet</summary>
-
-Background: Ecological momentary interventions (EMIs) offer a promising strategy for targeting putative mechanisms of mental health problems by delivering real-time, tailored intervention components that adapt to person, moment, and context based on data collected using ecological momentary assessment (EMA). However, most research to date focuses on effects on distal outcomes, at the person level, whereas exploration of processes at the microlevel, that is, proximal effects of EMI components on…
+Ketamine and subcallosal cingulate (SCC) deep brain stimulation (DBS) have each shown antidepressant effects in treatment-resistant depression, yet how ketamine modulates SCC physiology during chronic stimulation remains poorly understood. We analyzed 5,907 hours of bilateral SCC sensing, 485 participant-triggered recordings across 193 days, 47 ketamine dosing episodes, and an in-clinic session. Across naturalistic and in-clinic recordings, ketamine was associated with a convergent bilateral…
 
 </details>
 
 ### [Reciprocal association between rest-activity rhythm and depression in young adults: An ecological momentary assessment study](https://www.sciencedirect.com/science/article/pii/S0165032726012905?dgcid=rss_sd_all)
 
-*J Affective Disorders / PubMed* · **0.70** · 2026-09-01
+*J Affective Disorders* · **0.78**
 
-`EMA` `rest-activity rhythm` `depression` `young adults`
+`EMA` `rest‑activity rhythm` `depression` `young adults`
 
-Uses EMA to test bidirectional, within-person links between daily rest-activity rhythm characteristics and depressive symptoms in young adults.
+EMA study of young adults finds a reciprocal association between rest‑activity rhythm and depression.
+
+### [Agreement between smartphone-based mobile sensing and actigraphy sleep metrics in young people with bipolar disorder](https://www.sciencedirect.com/science/article/pii/S0165178126004944?dgcid=rss_sd_all)
+
+*Psychiatry Research* · **0.78**
+
+`smartphone sensing` `actigraphy` `sleep` `bipolar disorder` `young people`
+
+Agreement study compares smartphone‑based mobile sensing and actigraphy sleep metrics in young people with bipolar disorder.
+
+### [On-screen ideals and off-screen ordeals: a daily diary study of the bidirectional links between short-video media use and eating disorder symptoms in college students.](https://pubmed.ncbi.nlm.nih.gov/42717483/)
+
+*Eat Disord (PubMed)* · **0.75** · 2026-09-09
+
+`daily diary` `short‑video` `eating disorder` `college students` `bidirectional`
+
+Daily diary study of 200 Chinese college students examines bidirectional links between short‑video media use and eating‑disorder symptoms over 21 days.
 
 <details><summary>Abstract snippet</summary>
 
-Depressive symptoms commonly increase during young adulthood and have been associated with disruptions in rest-activity rhythms (RAR), but prospective within-person associations between daily RAR characteristics and depressive symptoms remain unclear. This study examined reciprocal within-person associations between daily RAR parameters and depression among young adults. A total of 319 participants (mean age = 19.16 years; 78.1% female) contributed 3155 analytic person-days during a 14-day…
+With the rapid proliferation of short-video platforms, concerns about their impact on mental health-particularly eating disorders-have intensified. However, little is known about the bidirectional associations between short-video media use and eating disorder symptoms, or the emotional mechanisms underlying these links. Using an intensive longitudinal design, this study collected daily data over 21 consecutive days from 200 Chinese college students. Multilevel structural equation modeling…
 
 </details>
 
-### [Dissociation as a marker of emotion dysregulation: An examination in adolescent psychiatric inpatients using ecological momentary assessment](https://www.sciencedirect.com/science/article/pii/S0165032726012644?dgcid=rss_sd_all)
+### [Daily Language as an Objective Indicator of Depressive Affective States: A Two-Week Ecological Momentary Assessment Study in Emotional Labor Workers.](https://pubmed.ncbi.nlm.nih.gov/42732773/)
 
-*J Affective Disorders* · **0.70**
+*Psychiatry Investig (PubMed)* · **0.68** · 2026-09-01
 
-`EMA` `dissociation` `emotion dysregulation` `adolescent psychiatric inpatients`
+`EMA` `daily language` `depression` `emotional labor` `call center`
 
-Employs EMA to investigate dissociation as a real-time indicator of emotion dysregulation among adolescent psychiatric inpatients.
-
-### [Absolutist word usage in spoken language as a marker of depression: an ecological momentary assessment study.](https://pubmed.ncbi.nlm.nih.gov/42681626/)
-
-*BMC Psychiatry (PubMed)* · **0.68** · 2026-08-31
-
-`EMA` `absolutist word usage` `depression` `spoken language`
-
-Uses EMA to assess whether spoken absolutist word frequencies serve as a real-time marker of depressive symptoms.
+Two-week EMA study of 400 call center employees tests whether daily natural language can indicate depressive affective states and compares its temporal sensitivity to traditional self-report.
 
 <details><summary>Abstract snippet</summary>
 
-BACKGROUND: Cognitive distortions are central to the maintenance of depression, as they bias information processing and negatively impact adaptive emotion regulation. As one manifestation of cognitive distortions, usage of absolutist words (e.g., always, never, must, completely) in written texts has been found to be indicative of underlying depression. Since absolutist word usage may allow important insights into maladaptive thinking patterns, it could be a relevant target for both monitoring…
+OBJECTIVE: Workers performing emotional labor are at increased risk for depression, yet conventional self-report assessments often lack objectivity and temporal sensitivity. This study aimed to examine whether longitudinal analysis of daily natural language collected through ecological momentary assessment (EMA) can serve as an indicator of depressive affective states and to compare its temporal sensitivity with traditional self-report measures. METHODS: A total of 400 call center employees…
 
 </details>
 
-### [Ecological momentary insights into cannabis use and its contexts: a pre-post legalization study in Germany.](https://pubmed.ncbi.nlm.nih.gov/42701112/)
+### [Agreement Between Actigraphy-Based Sleep Measures and Routine Nursing Sleep Assessments in Acute Psychiatric Inpatient Care](https://www.medrxiv.org/content/10.64898/2026.09.08.26362317v1?rss=1)
 
-*Sci Rep (PubMed)* · **0.66** · 2026-09-05
+*medRxiv Psychiatry* · **0.68** · 2026-09-11
 
-`EMA` `cannabis` `legalization` `Germany`
+`actigraphy` `sleep` `psychiatric inpatient` `nursing assessment` `agreement`
 
-Employs EMA to examine how cannabis use patterns and contexts changed before and after recreational legalization in Germany.
+Agreement study compares actigraphy-based total sleep time with routine nursing sleep assessments in an acute psychiatric inpatient ward.
 
 <details><summary>Abstract snippet</summary>
 
-Globally, cannabis ranks third in psychoactive substance prevalence after nicotine and alcohol, with heavy use linked to psychosis, anxiety, and depression. However, real-time data on how legal reforms influence consumption remain scarce. This Ecological Momentary Assessment (EMA) study analyzed daily cannabis use patterns before and after Germany's recreational cannabis decriminalization in April 2024 in 49 individuals (34.7% women, age 33.8 ± 11 years). Following the legal reform, a selective…
+Introduction Sleep is routinely assessed by psychiatric mental health nurses in acute inpatient wards, where overnight observation forms part of everyday clinical care. These records are repeatedly collected, but observational assessment and activity-based monitoring capture different aspects of sleep and may not be interchangeable. Aim To examine the agreement between actigraphy-based total sleep time and routine nursing sleep assessments in an acute psychiatric inpatient ward. Method This…
+
+</details>
+
+### [Alexithymia and paradoxical regulatory success in posttraumatic stress: An ecological momentary assessment study.](https://pubmed.ncbi.nlm.nih.gov/42721324/)
+
+*Emotion (PubMed)* · **0.68** · 2026-09-10
+
+`EMA` `alexithymia` `PTSD` `emotion regulation` `trauma`
+
+EMA study of 49 trauma‑exposed participants tests whether alexithymia’s regulatory effects operate via disrupted emotion‑regulation monitoring or interoceptive deficits.
+
+<details><summary>Abstract snippet</summary>
+
+Alexithymia, difficulty identifying and describing feelings, is associated with posttraumatic stress symptomology, yet the underlying mechanisms remain unclear. We tested whether alexithymia's regulatory effects operate through disrupted emotion regulation monitoring, the capacity to accurately evaluate whether regulation has succeeded, or broader interoceptive deficits that compromise access to bodily emotional signals. Trauma-exposed participants (N = 49) completed baseline measures of…
 
 </details>
 
 ### [Emotion regulation and state body image during daily body-exposure situations: A pilot ecological momentary assessment study](https://www.sciencedirect.com/science/article/pii/S0165032726013005?dgcid=rss_sd_all)
 
-*J Affective Disorders / PubMed* · **0.66** · 2026-09-01
+*J Affective Disorders* · **0.68**
 
-`EMA` `emotion regulation` `body image` `body-exposure` `pilot`
+`EMA` `emotion regulation` `body image` `pilot` `daily body‑exposure`
 
-Pilot EMA study examining how emotion regulation strategies relate to momentary body image during everyday body-exposure contexts.
+Pilot EMA study examines emotion regulation and state body image during daily body‑exposure situations.
 
-<details><summary>Abstract snippet</summary>
+### [Spatiotemporal associations between PM2.5, greenspace, physical activity, and stress: a geographic ecological momentary assessment study in Hong Kong.](https://pubmed.ncbi.nlm.nih.gov/42716416/)
 
-BACKGROUND: Emotion regulation has been consistently associated with eating disorder psychopathology, yet most evidence comes from retrospective and cross-sectional studies. Ecological momentary assessment (EMA) allows these processes to be examined as they unfold during daily body-exposure situations. This pilot study investigated associations among emotion regulation strategies, affect, and state body image during naturally occurring body-exposure situations and explored whether average…
+*Environ Res (PubMed)* · **0.66** · 2026-09-09
 
-</details>
+`EMA` `environmental exposure` `stress` `adults` `Hong Kong`
 
-### [Psychobiological stress and premenstrual symptoms across the menstrual cycle: protocol for an ecological momentary assessment (ISSAC) study.](https://pubmed.ncbi.nlm.nih.gov/42680495/)
-
-*BMJ Open (PubMed)* · **0.65** · 2026-09-01
-
-`EMA` `psychobiological stress` `premenstrual symptoms` `menstrual cycle` `protocol`
-
-Outlines an EMA protocol to study temporal coupling between psychobiological stress and premenstrual symptom expression across the menstrual cycle.
+Geographic ecological momentary assessment (GEMA) of 800 adults examines spatiotemporal associations among PM2.5, greenspace, physical activity and perceived stress in Hong Kong.
 
 <details><summary>Abstract snippet</summary>
 
-INTRODUCTION: Premenstrual symptoms occur on a continuum from mild experiences to clinically significant, menstrual cycle-related mood disorders, including premenstrual dysphoric disorder (PMDD). Stress has been implicated as a key pathophysiological factor, yet the temporal coupling and dynamics between psychobiological stress patterns and premenstrual symptom expression across the menstrual cycle remain poorly characterised. The Interactions between premenstrual Symptoms and Stress Across the…
+Urban environmental health studies often use static residence-based exposures, overlooking how mobility, cumulative exposure, and activity-travel contexts shape environmental perceptions, behavior and mental health. We examined the temporal- and context-specific associations among PM2.5, eye-level greenspace, physical activity, environmental perceptions, and perceived stress in Hong Kong. A two-day geographic ecological momentary assessment (GEMA) of 800 adults integrated 1.7 million PM2.5…
 
 </details>
 
@@ -373,201 +347,207 @@ INTRODUCTION: Premenstrual symptoms occur on a continuum from mild experiences t
 
 ## ML & dynamical systems methods
 
-### [Resilience Beyond Stationary Client Unavailability: Unlocking Efficient and Unbiased Federated Learning](https://arxiv.org/abs/2609.04763)
+### [External validation of dynamic clinical states in acute stroke: transportability and independent rediscovery across 176 hospitals](https://www.medrxiv.org/content/10.64898/2026.09.07.26362407v1?rss=1)
 
-*arXiv cs.LG* · **0.72** · 2026-09-07
+*medRxiv Health Informatics* · **0.92** · 2026-09-08
 
-`federated learning` `client unavailability` `resilience` `machine learning`
+`dynamical systems` `external validation` `intensive longitudinal data` `clinical state transitions` `transportability`
 
-Proposes federated learning algorithms that remain efficient and unbiased despite intermittent client availability in dynamic environments.
+Externally validates dynamic clinical state models across 176 hospitals using 70,630 six-hour windows from ICU data, freezing phenotype rules before application to test transportability and independent rediscovery.
 
 <details><summary>Abstract snippet</summary>
 
-arXiv:2609.04763v1 Announce Type: new Abstract: Due to resource constraints or external and internal uncertainties, clients in real-world federated learning systems are often intermittently available edge devices. In highly dynamic environments, the parameter server lacks prior real-time knowledge of clients' availability, making it challenging to adapt traditional federated learning algorithms to be resilient to uncertainties in client availability. If not carefully addressed, complex client…
+ObjectiveFour dynamic clinical states were identified in the first 72 h of stroke intensive care in one centre. We tested whether this representation transports to an independent multicentre cohort, predicts the next state, and is independently recovered. Materials and Methods8279 adults in 176 hospitals (eICU-CRD v2.0) contributed 70 630 six-hour windows. Phenotype, dictionaries and eligibility rules were frozen before any state was assigned; the model was applied unchanged and judged against…
 
 </details>
 
-### [Quality beats quantity: Predicting affective states by different sleep indices in psychiatric patients with suicidal thoughts and behavior](https://www.sciencedirect.com/science/article/pii/S0005796726001968?dgcid=rss_sd_all)
+### [Development and external validation of a contrastive learning foundation model for ECG-based prediction of cardiovascular diseases and outcomes](https://www.sciencedirect.com/science/article/pii/S2589750026001159?dgcid=rss_sd_all)
 
-*Behaviour Research and Therapy* · **0.70**
+*Lancet Digital Health* · **0.88**
 
-`sleep indices` `prediction` `affective states` `suicidal thoughts` `psychiatric patients`
+`machine learning` `contrastive learning` `foundation model` `external validation` `clinical prediction`
 
-Predicts affective states using various sleep indices in psychiatric patients who also experience suicidal thoughts and behavior.
+Develops and externally validates a contrastive learning foundation model for ECG-based cardiovascular prediction, demonstrating a technical advance in self-supervised representation learning with out-of-sample testing.
 
-### [Effectiveness of a just-in-time adaptive intervention for improving pain catastrophising in patients with chronic back pain: protocol for a pragmatic randomised controlled trial.](https://pubmed.ncbi.nlm.nih.gov/42692508/)
+### [Structural, Functional and Cognitive Validation of a Deep-Learning MCI-to-AD Conversion Model in OASIS-3](https://www.medrxiv.org/content/10.64898/2026.09.05.26362318v1?rss=1)
 
-*BMJ Open (PubMed)* · **0.70** · 2026-09-02
+*medRxiv Health Informatics* · **0.85** · 2026-09-10
 
-`JITAI` `pain catastrophising` `chronic back pain` `protocol` `RCT`
+`deep learning` `external validation` `biological grounding` `generalizability` `clinical prediction`
 
-Describes a protocol for a pragmatic RCT testing a JITAI aimed at reducing pain catastrophising in chronic back pain patients.
+Applies an ADNI-trained deep learning model for MCI-to-AD conversion to an independent OASIS-3 cohort without retraining, evaluating structural, functional, and cognitive validation beyond discrimination metrics.
 
 <details><summary>Abstract snippet</summary>
 
-INTRODUCTION: Chronic back pain (CBP), defined as back pain persisting for more than 3 months, is highly prevalent and associated with substantial socioeconomic burden and impaired quality of life. Pain catastrophising is an important cognitive-affective factor in the maintenance of CBP and may fluctuate in daily life. Conventional treatment approaches often do not address these momentary dynamics. Just-in-time adaptive interventions (JITAIs) deliver tailored support at opportune moments based…
+Background. Deep-learning models predict mild cognitive impairment (MCI)-to-Alzheimer's disease (AD) conversion from structural MRI with high accuracy. However, they are typically validated within a single cohort and judged on discrimination alone. Whether their risk scores are biologically grounded, and whether they generalise to independent data, remains unclear. Methods. We applied the ADNI-trained Temporal Adaptive Fusion Network (TAF-Net), without retraining, to 101 MCI participants from…
 
 </details>
 
-### [Network analysis of autistic traits in children with autism and their parents: validation through follow-up data and eye-tracking technology](https://www.nature.com/articles/s41398-026-04432-5)
+### [An LLM-supported just-in-time adaptive intervention delivered by a socially assistive robot for cognitive training in mild cognitive impairment: study protocol for an assessor-blinded randomized controlled trial.](https://pubmed.ncbi.nlm.nih.gov/42729511/)
 
-*Translational Psychiatry* · **0.70** · 2026-09-04
+*Front Digit Health (PubMed)* · **0.80** · 2026-08-28
 
-`network analysis` `autism` `children` `eye-tracking` `validation`
+`LLM` `JITAI` `socially assistive robot` `cognitive training` `MCI`
 
-Network analysis of autistic traits in children and parents validated with follow-up data and eye-tracking.
+Study protocol for an assessor‑blinded RCT tests an LLM‑supported just‑in‑time adaptive intervention delivered by a socially assistive robot for cognitive training in mild cognitive impairment.
 
 <details><summary>Abstract snippet</summary>
 
-Translational Psychiatry, Published online: 04 September 2026; doi:10.1038/s41398-026-04432-5 Network analysis of autistic traits in children with autism and their parents: validation through follow-up data and eye-tracking technology
+BACKGROUND: Mild cognitive impairment (MCI) is a clinically important stage at which non-pharmacological interventions may help preserve cognitive function and daily functioning. Existing digital cognitive training programs are often limited by static task progression, declining engagement, and insufficient responsiveness to moment-to-moment cognitive and emotional states. OBJECTIVE: This study protocol describes a single-center, parallel-group, assessor-blinded randomized controlled trial…
 
 </details>
 
-### [Gender Differences in the Co-Occurrence Networks of Problematic Social Media Use and Depressive Symptoms in Adolescents: A Cross-Lagged Panel Network Analysis.](https://pubmed.ncbi.nlm.nih.gov/42695341/)
+### [Observation-Anchored Selective Assimilation for Longitudinal Tumor-State Proxy Forecasting in Post-Treatment Glioma](https://arxiv.org/abs/2609.12435)
 
-*J Adolesc (PubMed)* · **0.70** · 2026-09-04
+*arXiv cs.LG* · **0.80** · 2026-09-14
 
-`adolescents` `social media` `depression` `network analysis` `cross-lagged`
+`dynamical systems` `longitudinal forecasting` `digital twin` `state-space modeling` `clinical time series`
 
-Examines gender differences in co-occurrence networks of problematic social media use and depressive symptoms in 1068 Chinese adolescents using cross-lagged panel network analysis.
+Proposes an observation-anchored selective assimilation framework for longitudinal tumor-state forecasting in glioma, using a digital-twin update across 203 patients and 594 follow-up time points.
 
 <details><summary>Abstract snippet</summary>
 
-INTRODUCTION: Problematic social media use (PSMU) is a growing concern among adolescents, particularly among girls, and often co-occurs with depressive symptoms. This co-occurrence can worsen symptom severity and impair functioning. Early identification and gender-specific interventions are crucial. This study aimed to explore the interaction between PSMU and depressive symptoms and identify gender differences in Chinese adolescents. METHODS: A sample of 1068 Chinese adolescents (Mage = 14.28;…
+arXiv:2609.12435v1 Announce Type: new Abstract: Post-treatment MRI in patients with glioma provides serial observations for updating patient-specific tumor-state proxy estimates, but variable appearances and trajectories complicate forecasting. We formulate forecasting as an observation-aware digital-twin update in which an intermediate observation anchors the patient-specific state. Among 203 patients and 594 follow-up time points, a predefined no-new-treatment criterion retained 120 of 236…
 
 </details>
 
-### [Mental health and brain injury-related symptom overlap among women who have experienced intimate partner violence: a network analysis](https://www.sciencedirect.com/science/article/pii/S0165178126004804?dgcid=rss_sd_all)
+### [Pilot of a Micro-Randomized Factorial Trial of Self-Monitoring Feedback in a Behavioral Weight Loss Intervention.](https://pubmed.ncbi.nlm.nih.gov/42733912/)
 
-*Psychiatry Research / PubMed* · **0.70** · 2026-08-24
+*Obes Sci Pract (PubMed)* · **0.78** · 2026-09-13
 
-`network analysis` `intimate partner violence` `PTSD` `depression`
+`micro-randomized trial` `factorial` `JITAI` `weight loss` `pilot`
 
-Network analysis of PTSD, depression, anxiety, and brain injury-related symptoms in women with intimate partner violence history.
+Pilot micro-randomized factorial trial evaluates feasibility and acceptability of self-monitoring feedback delivery in a behavioral weight loss intervention.
 
 <details><summary>Abstract snippet</summary>
 
-Women who experience intimate partner violence (IPV) repetitively experience multiple trauma types, leading to comorbidities such as post-traumatic stress disorder (PTSD), depression, anxiety, and brain injury-related symptoms. The overlapping symptoms across these conditions make accurate diagnosis and effective treatment challenging. We explored the relationships between PTSD, depression, anxiety, and brain injury-related symptoms among women with histories of IPV using a network analysis.…
+BACKGROUND: The provision of self-monitoring feedback has been demonstrated to improve weight loss program outcomes; however, there is little evidence to support how this feedback should be delivered. Micro-randomized factorial trial designs can examine the proximal impact of intervention components, but their feasibility and acceptability in the context of behavioral weight management programs remain unknown. METHODS: The current pilot study evaluated the feasibility and acceptability of…
 
 </details>
 
-### [Monthly dynamic associations between cost-of-living pressure and depressive and anxiety symptoms: a longitudinal study based on cross-lagged network analysis.](https://pubmed.ncbi.nlm.nih.gov/42688177/)
+### [Deep learning models enable high-performance, real-time emotion decoding from intracranial brain activity](https://www.nature.com/articles/s43588-026-01055-0)
 
-*Front Psychiatry (PubMed)* · **0.70** · 2026-08-19
+*Nature Computational Science* · **0.75** · 2026-09-10
 
-`longitudinal` `cost-of-living` `depression` `anxiety` `network analysis`
+`deep learning` `emotion decoding` `intracranial brain activity` `real‑time` `affective BCI`
 
-Examines monthly dynamic associations between cost-of-living pressure and depressive/anxiety symptoms using cross-lagged network analysis over 12 waves.
+Deep learning models decode continuous valence and arousal from intracranial brain activity, generalizing across tasks and enabling low‑latency real‑time emotion decoding.
 
 <details><summary>Abstract snippet</summary>
 
-BACKGROUND: Cost-of-living pressure is an important social determinant of public mental health, but its short-term associations with specific depressive and anxiety symptoms remain unclear. METHODS: We analyzed 12 monthly waves from the Changing Cost of Living Study. A pooled lag-1 cross-lagged panel network was estimated to examine group-level temporal predictive associations among five economic-pressure indicators, eight PHQ-8 depressive symptoms, and seven GAD-7 anxiety symptoms. The…
+Nature Computational Science, Published online: 10 September 2026; doi:10.1038/s43588-026-01055-0 By integrating intracranial neural signals from gray and white matter, we developed personalized deep learning models that accurately decoded continuous valence and arousal states across image and video viewing tasks. The models generalized across tasks, revealed emotion-encoding brain subnetworks and enabled low-latency real-time decoding, bringing affective brain–computer interfaces closer to…
 
 </details>
 
-### [Data-Driven Learning of Unknown Nonlinear Differential Equations Using Functional Analysis](https://arxiv.org/abs/2609.04329)
+### [Time-dependent two-way partial AUC and partial Youden Index estimator for right censored data](https://arxiv.org/abs/2609.04633)
 
-*arXiv cs.LG* · **0.70** · 2026-09-07
+*arXiv stat.ME* · **0.75** · 2026-09-14
 
-`nonlinear differential equations` `dynamical systems` `functional analysis` `machine learning`
+`survival analysis` `ROC analysis` `time-dependent AUC` `censored data` `predictive performance`
 
-Proposes method to learn unknown vector field of nonlinear dynamics from a single state trajectory using functional analysis.
+Introduces a time-dependent two-way partial AUC and partial Youden Index estimator for right-censored data, addressing predictive performance evaluation in time-to-event settings with censoring.
 
 <details><summary>Abstract snippet</summary>
 
-arXiv:2609.04329v1 Announce Type: new Abstract: In this paper, the problem of data-driven discovery of nonlinear ordinary differential equations (ODEs) is recast, and a new interpretable machine learning (ML) method is proposed. The proposed method aims to learn the unknown vector field of nonlinear dynamics without prior knowledge of the system's physics from only one single state trajectory's data. The proposed method has two fundamental differences with existing methods: 1) the formulation…
+arXiv:2609.04633v2 Announce Type: replace Abstract: In medical research, it is often of interest to evaluate the predictive performance of a biomarker. Statistical approaches based on the Receiver Operating Characteristic (ROC) curve and its summary measures, such as the area under the curve (AUC) and the Youden index, are widely used to evaluate the prognostic performance of these biomarkers. In time-to-event studies, ROC analysis poses additional challenges due to change in disease status…
 
 </details>
 
-### [Social Connectedness Buffering the Interaction Between Problematic Internet Use and Psychopathological Symptoms Among Adolescents: Undirected and Bayesian Network Analyses.](https://pubmed.ncbi.nlm.nih.gov/42684264/)
+### [Bias-Corrected Data Synthesis for Imbalanced Learning](https://arxiv.org/abs/2510.26046)
 
-*J Med Internet Res (PubMed)* · **0.70** · 2026-08-31
+*arXiv stat.ME* · **0.75** · 2026-09-14
 
-`adolescents` `problematic internet use` `psychopathology` `Bayesian network` `social connectedness`
+`class imbalance` `synthetic oversampling` `bias correction` `machine learning`
 
-Examines how social connectedness buffers interaction between problematic internet use and psychopathological symptoms in adolescents using Bayesian network analysis.
+Proposes bias‑correction procedure for synthetic oversampling to reduce classifier bias in imbalanced learning.
 
 <details><summary>Abstract snippet</summary>
 
-BACKGROUND: Problematic internet use (PIU) in adolescents often co-occurs with psychopathological symptoms. Social connectedness (SC) is a potential protective factor for both PIU and psychopathological symptoms, but how SC interacts with the PIU-psychopathology system remains unclear. OBJECTIVE: This study aimed to characterize the factor-level comorbidity network linking PIU with psychopathological symptoms among adolescents at high risk of PIU and to clarify how offline and online SC…
+arXiv:2510.26046v3 Announce Type: replace-cross Abstract: Class imbalance complicates probabilistic classification because standard training objectives emphasize majority-class performance. Synthetic oversampling can reduce imbalance, but discrepancies between the synthetic and target minority distributions may bias the fitted classifier, especially because synthetic samples depend on the observed data. We propose a bias-correction procedure that estimates the generator-induced loss discrepancy…
 
 </details>
 
-### [Less can be better: decomposing clinical data modalities in large language model-based healthcare applications.](https://pubmed.ncbi.nlm.nih.gov/42700364/)
+### [Prediction of Parkinson disease progression from sparse longitudinal trajectories using multiclass likelihood contrast learning](https://www.medrxiv.org/content/10.64898/2026.09.07.26362404v1?rss=1)
 
-*J Am Med Inform Assoc (PubMed)* · **0.70** · 2026-09-05
+*medRxiv Health Informatics* · **0.70** · 2026-09-08
 
-`LLM` `multimodal` `risk prediction` `MIMIC` `clinical data modalities`
+`machine learning` `Parkinson disease` `longitudinal trajectories` `sparse data` `prediction`
 
-Quantifies contribution of clinical data modalities to early inpatient risk prediction using LLMs and MLLMs on MIMIC data.
+Multiclass likelihood contrast learning predicts Parkinson disease progression from sparse longitudinal trajectories of clinical ratings, speech, gait and wearable‑sensor features.
 
 <details><summary>Abstract snippet</summary>
 
-OBJECTIVE: To systematically examine different clinical data modalities in large language models (LLMs) and multimodal large language models (MLLMs), and to quantify the contribution of data modalities in early inpatient risk prediction and decision support tasks. MATERIALS AND METHODS: We conducted a systematic analysis using MIMIC-IV, MIMIC-IV-Note, and MIMIC-CXR-JPG datasets to create a unified cohort of 22 254 hospital admissions containing structured electronic health records (EHRs),…
+BackgroundBiomedical studies increasingly collect repeated measurements, such as clinical ratings, speech measures, gait summaries, and wearable-sensor features, at irregular subject-specific follow-up times. These data are often sparse and unaligned, making them difficult to use with standard classifiers that require fixed-length input vectors. Parkinsons disease (PD) provides a motivating example because progression is longitudinal and heterogeneous, but clinical follow-up is rarely observed…
 
 </details>
 
-### [Network analysis of symptoms and psychological distress in patients with sudden sensorineural hearing loss.](https://pubmed.ncbi.nlm.nih.gov/42675741/)
+### [A Ranking Approach for Measuring Calibration](https://arxiv.org/abs/2609.13100)
 
-*Medicine (Baltimore) (PubMed)* · **0.68** · 2026-08-01
+*arXiv stat.ME* · **0.70** · 2026-09-14
 
-`network analysis` `symptoms` `psychological distress` `sudden sensorineural hearing loss`
+`calibration` `Expected Calibration Error` `statistical methods` `machine learning reliability`
 
-Applies network analysis to model interrelations among symptoms and psychological distress in individuals with sudden sensorineural hearing loss.
+A ranking approach measures calibration error in predictive models using Expected Calibration Error.
 
 <details><summary>Abstract snippet</summary>
 
-Sudden sensorineural hearing loss (SSNHL) is characterized by rapid-onset, unexplained hearing impairment, frequently accompanied by symptoms such as tinnitus, dizziness, and nausea. Patients with SSNHL often experience psychological distress, including anxiety and depression, which are interconnected, offering insights for holistic management. This study aims to elucidate these connections, with a focus on anxiety and depression, using network analysis to inform holistic management strategies.…
+arXiv:2609.13100v1 Announce Type: new Abstract: When providing forecasted probabilities with a predictive model, the ideal model offers perfect calibration: the true probability of the outcome (i.e., the probability that $Y=1$) exactly matches the forecasted probability $f(X)$. In practice, models inevitably exhibit calibration error, and it is therefore important to be able to measure this miscalibration to assess a model's reliability. The Expected Calibration Error (ECE) is the most widely…
 
 </details>
 
-### [Stratifying the Risk of Depression in Adolescence: The IDEA-RS Calculator](https://www.sciencedirect.com/science/article/pii/S0890856726001280?dgcid=rss_sd_all)
+### [Can We Trust LLM Judges: A Study of Capability-Dependent Biases and Multi-Judge Ensemble for Bias Calibration](https://arxiv.org/abs/2609.12002)
 
-*JAACAP* · **0.68**
+*arXiv cs.LG* · **0.70** · 2026-09-14
 
-`depression risk` `adolescent` `calculator` `prediction model`
+`LLM evaluation` `bias calibration` `ensemble methods` `reliability`
 
-Introduces a calculator to stratify depression risk in adolescents.
-
-### [ProToMEx: Rapid, Interpretable Explanations via Structured Representations](https://arxiv.org/abs/2609.04265)
-
-*arXiv cs.LG* · **0.65** · 2026-09-07
-
-`explainability` `machine learning` `topic models` `interpretability`
-
-Introduces ProToMEx, a model-agnostic explainer using probabilistic topic models for structured representations.
+Study shows LLM task accuracy predicts bias and proposes a multi-judge ensemble for bias calibration in absolute scoring tasks.
 
 <details><summary>Abstract snippet</summary>
 
-arXiv:2609.04265v1 Announce Type: new Abstract: Existing post-hoc explainers for machine learning classifiers primarily focus on feature attribution, assigning importance scores to individual features. While valuable, this approach struggles to articulate the complex, combinatorial patterns that often drive a model's decision-making process. To overcome this limitation, we introduce ProToMEx, a new paradigm for explainability that leverages Probabilistic Topic Models (PTMs). Our model-agnostic…
+arXiv:2609.12002v1 Announce Type: new Abstract: LLMs are increasingly used as automated judges for model training and evaluation, yet individual judges exhibit systematic biases that undermine reliability. Much of prior work has studied biases in pairwise LLM-as-a-judge settings; in this paper, we focus on absolute scoring tasks, which mirror more realistic use cases. Across four benchmarks and six models (36 judge-examinee pairs), we show that a model's task accuracy strongly predicts its…
 
 </details>
 
-### [Toward Transportable Acute Kidney Injury Prediction: An Explainable XGBoost Model with Temporal Validation Using MIMIC-IV](https://www.medrxiv.org/content/10.64898/2026.09.01.26360393v1?rss=1)
+### [On-Device Language Models for Privacy-Preserving Stress Prediction: A Multimodal Evaluation on Mobile Health](https://arxiv.org/abs/2609.11961)
 
-*medRxiv Health Informatics* · **0.65** · 2026-09-03
+*arXiv cs.LG* · **0.70** · 2026-09-14
 
-`XGBoost` `acute kidney injury` `temporal validation` `explainable AI`
+`on‑device LM` `stress prediction` `mobile health` `multimodal` `zero‑shot`
 
-Presents explainable XGBoost model for AKI prediction with temporal validation on MIMIC-IV data.
+Evaluates on‑device language models for multimodal stress prediction on mobile health, reporting accuracy, latency, and throughput.
 
 <details><summary>Abstract snippet</summary>
 
-BackgroundAcute kidney injury (AKI) is a frequent complication within intensive care units, with its sudden onset often missed. Existing machine learning and deep learning models have contributed to closing this gap, but their complexity, requiring hundreds to thousands of features, and lack of generalisation pose a limitation that prevents them from being integrated into clinical workflows across different electronic health-record ecosystems. MethodsThis study presents a 37-feature XGBoost…
+arXiv:2609.11961v1 Announce Type: new Abstract: Stress is a pervasive determinant of mental health and a key target for mobile health interventions. On-device language models (ODLMs) offer privacy-preserving inference without cloud dependency, yet their feasibility for health prediction under mobile resource constraints remains underexplored. We evaluate ODLMs for multi-modal stress prediction using zero-shot prompting, measuring predictive accuracy alongside latency and throughput. Our results…
 
 </details>
 
-### [Evaluating Clinical Foundation Models for Early Alzheimer's Disease and Related Dementia Prediction from Longitudinal EHRs](https://www.medrxiv.org/content/10.64898/2026.09.01.26361933v1?rss=1)
+### [What Provider Frequently Asked Questions Miss: Evaluating Unmet Attention-Deficit/Hyperactivity Disorder Information Needs Through Comparison of Online Community Posts Using Large Language Model–Assisted Semantic Analysis in a Mixed Methods Study](https://www.jmir.org/2026/1/e96060)
 
-*medRxiv Health Informatics* · **0.65** · 2026-09-03
+*JMIR* · **0.70** · 2026-09-11
 
-`Alzheimer's` `longitudinal EHR` `prediction` `foundation models`
+`LLM` `semantic analysis` `ADHD` `information needs` `mixed methods`
 
-Evaluates clinical foundation models for early Alzheimer's disease prediction from longitudinal EHRs at 6-36 month lead times.
+Uses LLM‑assisted semantic analysis of online community posts to identify unmet ADHD information needs, comparing them to provider FAQs.
 
 <details><summary>Abstract snippet</summary>
 
-Early identification of Alzheimers disease and related dementias (ADRD) remains challenging despite its importance for timely intervention, management of modifiable risk factors, and care planning. We developed and evaluated ADRD onset prediction models using longitudinal electronic health records (EHRs) from the All of Us Research Program at clinically meaningful lead times of 6, 12, 24, and 36 months before diagnosis, benchmarking interpretable count-based representations against four…
+Background: Attention-deficit/hyperactivity disorder (ADHD) is a prevalent neurodevelopmental disorder that affects the functioning and quality of life of individuals throughout their lifespan. Despite the extensive information available online, patients and caregivers continue to report unmet needs, particularly regarding diagnosis, treatment, medication effects, comorbidities, and long-term management strategies. Existing provider-generated frequently asked questions (FAQs) are widely used,…
+
+</details>
+
+### [Generative model of patient health states and pan-cancer risk stratification](https://www.medrxiv.org/content/10.64898/2026.09.09.26362676v1?rss=1)
+
+*medRxiv Health Informatics* · **0.70** · 2026-09-11
+
+`generative model` `EHR` `time series` `risk stratification` `pan‑cancer`
+
+Introduces GenEHR, an autoregressive generative model on EHRs that captures irregular visit intervals for forecasting clinical events and pan‑cancer risk stratification.
+
+<details><summary>Abstract snippet</summary>
+
+While large language models are powerful generators of new text, forecasting disease progression from longitudinal health histories remains a challenging problem. We introduce GenEHR, an autoregressive generative model trained on electronic health records (EHRs) from millions of patients that explicitly represents the irregular time intervals between visits when forecasting future clinical events. We combine the general-purpose patient representation learned during foundational training with…
 
 </details>
 
