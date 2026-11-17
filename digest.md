@@ -1,289 +1,55 @@
-# Weekly ToC Digest, week of 2026-11-10
+# Weekly ToC Digest, week of 2026-11-17
 
 New papers on suicidality, intensive longitudinal data, and computational methods, scanned automatically each Monday and ranked against the [interests](interests.html) that drive this digest. Scores are a language model's judgement from the title and abstract only, so read them as triage and not as appraisal.
-
-> 2 of 7 triage batches failed, so about 80 items went unscored this week.
 
 | Section | Kept | Threshold |
 |---|---:|---:|
 | Suicide & self-harm | 20 | ≥ 0.55 |
-| Intensive longitudinal & sensing | 4 | ≥ 0.60 |
-| ML & dynamical systems methods | 14 | ≥ 0.65 |
-| Adjacent mental health, genetics & neurobiology | 7 | ≥ 0.62 |
+| Intensive longitudinal & sensing | 8 | ≥ 0.60 |
+| ML & dynamical systems methods | 15 | ≥ 0.65 |
+| Adjacent mental health, genetics & neurobiology | 1 | ≥ 0.62 |
 
-*45 kept from 280 scored, out of 1156 gathered across 42 journal feeds and 11 PubMed queries in the last 7 days. Spanning 34 sources; 37 of 45 include an abstract.*
+*44 kept from 280 scored, out of 1205 gathered across 42 journal feeds and 11 PubMed queries in the last 7 days. Spanning 29 sources; 31 of 44 include an abstract.*
 
 ---
 
 ## Suicide & self-harm
 
-### [Self-HArm one-year Risk Prediction in personality disorders (SHARP-PD): a clinical risk prediction model development and internal-external cross-validation study.](https://pubmed.ncbi.nlm.nih.gov/42972677/)
+### [Within-Conversation Sudden Changes in Expressed Suicide Risk during Crisis Counseling.](https://pubmed.ncbi.nlm.nih.gov/43022718/)
 
-*Eur Psychiatry (PubMed)* · **0.85** · 2026-11-03
+*Clin Psychol Sci (PubMed)* · **0.86** · 2026-11-11
 
-`self-harm` `risk prediction` `personality disorders` `internal-external cross-validation`
+`suicide risk` `crisis services` `sudden gains/losses` `nonlinear dynamics` `crisis counseling`
 
-Clinical risk prediction model for one-year self-harm risk in personality disorders developed with internal-external cross-validation.
-
-### [A standardised multimodal school-based suicide prevention program for adolescents: Protocol for a cluster randomized controlled trial in China.](https://pubmed.ncbi.nlm.nih.gov/42979702/)
-
-*Appl Psychol Health Well Being (PubMed)* · **0.75** · 2026-12-01
-
-`suicide prevention` `adolescents` `cluster RCT` `school-based` `protocol`
-
-Protocol for a cluster randomized trial of a standardized multimodal school-based suicide prevention program for adolescents in China.
+Detects within-conversation sudden gains and losses in expressed suicide risk across 2,110,114 messages from 81,569 crisis-line chats, adapting psychotherapy change criteria. Suicide risk in crisis services analyzed with nonlinear change-detection on massive moment-to-moment text data.
 
 <details><summary>Abstract snippet</summary>
 
-Suicide among adolescents is a critical global public health concern and ranks among the top three causes of death for this age group. Globally, more than 700,000 people die by suicide each year across all age groups. In China, this issue has also drawn growing societal attention, particularly in high-resource metropolitan areas, where mental health has become a priority on the educational agenda. Consequently, schools in these regions have pioneered diverse mental health promotion projects and…
+Crisis counseling aims to reduce suicide risk within a single conversation. While recent studies suggest that suicide risk can change nonlinearly over time, few have examined moment-to-moment changes within brief conversations changes. This study investigated sudden shifts in the expressed suicide risk during crisis chats. Using 2,110,114 messages from 81,569 text-based crisis line chats, we adapted sudden gain and loss criteria from psychotherapy research to identify within-conversation sudden…
 
 </details>
 
-### [Insomnia severity predicts suicide attempts in youth with depression in China: a 6-month prospective cohort study.](https://pubmed.ncbi.nlm.nih.gov/42978002/)
+### [Applying machine learning to investigate future life-oriented predictors of adolescents' near-term suicidal ideation.](https://pubmed.ncbi.nlm.nih.gov/43011987/)
 
-*Child Adolesc Psychiatry Ment Health (PubMed)* · **0.75** · 2026-08-02
+*J Affect Disord Rep (PubMed)* · **0.85** · 2026-06-15
 
-`suicide attempts` `youth` `depression` `insomnia` `prospective cohort`
+`machine learning` `EMA` `suicidal ideation` `adolescents` `near-term prediction`
 
-Six-month prospective cohort study of depressed youth tests whether baseline insomnia severity predicts time to first suicide attempt.
+Applies machine learning to momentary Future Life-Oriented processes predicting near-term changes in suicidal ideation in 121 adolescents aged 15-17; ML on EMA data with a suicide outcome in a youth sample.
 
 <details><summary>Abstract snippet</summary>
 
-BACKGROUND: Evidence linking insomnia to suicidal risk in depressed youth is largely cross-sectional, limiting inference about temporal direction. We examined whether baseline insomnia severity predicts subsequent suicide attempts in this population. METHODS: We conducted a 6-month prospective cohort study of depressed youth recruited from a psychiatric hospital from January 2022 to December 2023. We examined the association between baseline insomnia severity and time to first suicide attempt…
+BACKGROUND: Adolescents contemplating suicide consider both the discontinuation and continuation of their lives. Yet prior research has mainly focused on what suicidal youth want to escape from (i.e., distress-oriented predictors) rather than what may keep them living into the future. This study applies machine learning (ML) to examine how adolescents' momentary Future Life-Oriented (FLO) processes predict their near-term changes in suicidal ideation (SI). METHODS: Adolescents (N = 121; 15-17…
 
 </details>
-
-### [Study Design and Lessons Learned From Using Google Takeout Donations for Suicide Prevention Research: Prospective Cohort Study.](https://pubmed.ncbi.nlm.nih.gov/42976265/)
-
-*J Med Internet Res (PubMed)* · **0.75** · 2026-11-03
-
-`suicide risk prediction` `search engine data` `prospective cohort` `algorithm validation`
-
-Prospective cohort study tests whether algorithms applied to donated Google Takeout search data can accurately predict suicide risk, addressing undisclosed commercial prediction accuracy.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Social media and search engine tech companies, such as Google, use the wealth of data at their disposal to create algorithms to predict suicide risk and provide interventions based on company policies and outputs from these algorithms. Neither the details of these algorithms nor their accuracy in risk prediction are shared with the public; thus, research is needed to verify whether algorithms applied to search engine data can accurately predict suicide risk in a platform user. This…
-
-</details>
-
-### [Modeling change in suicidal ideation among transgender adults: a within-person intensive longitudinal test of gender minority stress and resilience theory.](https://pubmed.ncbi.nlm.nih.gov/42974854/)
-
-*Psychol Med (PubMed)* · **0.72** · 2026-11-03
-
-`suicidal ideation` `intensive longitudinal` `transgender adults` `within-person`
-
-Within-person intensive longitudinal design tracks change in suicidal ideation among 47 transgender adults with past-month suicidal thoughts or behaviors, testing gender minority stress and resilience theory in daily life.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Transgender and nonbinary (trans) people face elevated risk for suicidal ideation (SI); yet, many do not experience SI, necessitating study of mechanisms contributing to, or buffering against, trans suicide risk. Gender minority stress and resilience theories have been tested cross-sectionally; however, no work has tested these models in the daily lives of suicidal trans adults. METHODS: Trans adults with past-month suicidal thoughts or behaviors (N = 47) were enrolled for a virtual…
-
-</details>
-
-### [Suicide risk in first- and second-generation young migrants: a 12-month cohort study.](https://pubmed.ncbi.nlm.nih.gov/42986426/)
-
-*Eur Child Adolesc Psychiatry (PubMed)* · **0.70** · 2026-11-05
-
-`suicide` `adolescents` `cohort` `emergency department` `migrants`
-
-Twelve-month cohort study compares suicidal behavior among non-migrant, first-generation, and second-generation adolescent patients presenting to a child and adolescent psychiatry emergency department in Madrid.
-
-<details><summary>Abstract snippet</summary>
-
-PURPOSE: Evidence on the impact of migration on suicidal behavior among adolescents remains limited. Particularly, there is scarce knowledge concerning clinical populations and second generations of migrants. This cohort study examined differences in clinical, psychosocial and behavioral profiles associated with suicidal behavior among non-migrant, first-generation and second-generation migrant adolescents presenting to a Child and Adolescent Psychiatry Emergency Department (ED) in Madrid.…
-
-</details>
-
-### [How cyberbullying victimization relates to suicide risk: Evidence of feature-based heterogeneity from double machine learning.](https://pubmed.ncbi.nlm.nih.gov/42974850/)
-
-*Psychol Med (PubMed)* · **0.70** · 2026-11-03
-
-`suicide risk` `double machine learning` `cyberbullying` `heterogeneity`
-
-Double machine learning estimates heterogeneity in the cyberbullying–suicide risk association while adjusting for high-dimensional confounders.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: With the advancement of internet technologies, daily life has become more convenient; however, cyberbullying victimization has also risen. It poses serious threats to psychological and physical well-being and is a potential risk factor for suicide. Although prior research has linked cyberbullying victimization to suicide risk, evidence on the variation of this association across individuals and its robustness to high-dimensional confounders remains limited. This study estimates the…
-
-</details>
-
-### [Value-based decision-making and non-suicidal self-injury in adolescent females: A dimensional and computational analysis](https://www.sciencedirect.com/science/article/pii/S0165032726014692?dgcid=rss_sd_all)
-
-*J Affective Disorders* · **0.70**
-
-`NSSI` `adolescent females` `computational analysis` `decision-making`
-
-Dimensional and computational analysis of value-based decision-making and non-suicidal self-injury in adolescent females.
-
-### [Testing the Impact of the #Chatsafe Intervention on Young People's Ability to Communicate Safely About Suicide on Social Media: A Randomized Controlled Trial.](https://pubmed.ncbi.nlm.nih.gov/43000949/)
-
-*Suicide Life Threat Behav (PubMed)* · **0.70** · 2026-12-01
-
-`RCT` `suicide prevention` `young people` `social media` `#chatsafe`
-
-Randomized controlled trial of the #chatsafe intervention among young people aged 16–25 to improve safe communication about suicide on social media.
-
-<details><summary>Abstract snippet</summary>
-
-INTRODUCTION: Suicide-related content online may contribute to social transmission of suicide-related behaviors and interventions designed to improve communication safety may reduce risk and increase help-seeking in young people. METHODS: We conducted a randomized controlled trial (RCT) evaluating the #chatsafe intervention among young people aged 16-25 years. Participants were randomly assigned (1:1) to the #chatsafe intervention or the PROSPEct sexual health intervention (control), each…
-
-</details>
-
-### [Resiliency as a Protective Factor Against the Negative Impact of Adverse Childhood Experiences on Suicidality.](https://pubmed.ncbi.nlm.nih.gov/42991334/)
-
-*J Child Adolesc Trauma (PubMed)* · **0.68** · 2026-07-30
-
-`suicide attempts` `adverse childhood experiences` `resilience` `prospective`
-
-Prospective analysis of 8,671 nationally representative respondents tests whether resilience moderates the ACEs–suicide attempts association over 30 years.
-
-<details><summary>Abstract snippet</summary>
-
-Suicide is a leading cause of death in the United States. Suicide risk is higher among those who have experienced more adverse childhood events (ACEs). Yet the impact of ACEs on suicide risk could potentially be buffered by individual-level psychological characteristics. The purpose of this study was to test whether resiliency moderated the association between ACEs and suicide attempts. Using prospective data from a large, nationally representative sample of 8,671 respondents surveyed over 30…
-
-</details>
-
-### [Heterogeneity and Dynamics of Non-Suicidal Self-Injury in Rural Boarding Adolescents.](https://pubmed.ncbi.nlm.nih.gov/42991696/)
-
-*Psychol Res Behav Manag (PubMed)* · **0.65** · 2026-11-01
-
-`NSSI` `adolescents` `longitudinal` `latent classes` `intervention`
-
-Longitudinal study identifies latent classes of non-suicidal self-injury and their transition patterns over time in rural boarding adolescents, alongside an emotion management group intervention.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND AND PURPOSE: Non-suicidal self-injury (NSSI) is a global concern in adolescent mental health. Rural boarding middle school students, as a unique and vulnerable population, remain understudied regarding the potential heterogeneity and longitudinal trajectories of NSSI. This study aimed to identify latent classes of NSSI among this group, examine their transition patterns over time, and evaluate the effectiveness of an emotion management group intervention. METHODS: Study 1…
-
-</details>
-
-### [Implementation of Universal PHQ-A Screening in a Predominantly Latine Pediatric Primary Care Clinic.](https://pubmed.ncbi.nlm.nih.gov/42982226/)
-
-*Acad Pediatr (PubMed)* · **0.65** · 2026-11-04
-
-`suicide risk` `adolescents` `screening` `PHQ-A` `primary care`
-
-Quasi-experimental study evaluates universal PHQ-A screening implementation and suicide risk identification among adolescents ages 12-18 in a predominantly Latine pediatric primary care clinic.
-
-<details><summary>Abstract snippet</summary>
-
-OBJECTIVE: To evaluate implementation of universal depression screening using the Patient Health Questionnaire for Adolescents (PHQ-A) in a predominantly Latine pediatric primary care clinic and determine whether a low-resource implementation strategy increased screening uptake, identification of depression and suicide risk, and equitable reach across demographic subgroups. METHODS: We conducted a quasi-experimental retrospective observational study of adolescents ages 12-18 years attending…
-
-</details>
-
-### [Ask Suicide-Screening Questions (ASQ): Preliminary Validation of the Hebrew Version Among Adolescents.](https://pubmed.ncbi.nlm.nih.gov/42979676/)
-
-*Arch Suicide Res (PubMed)* · **0.65** · 2026-11-04
-
-`suicide` `adolescents` `screening` `validation` `ASQ`
-
-Preliminary validation study of the Hebrew Ask Suicide-Screening Questions among adolescents in emergency department and other time-critical healthcare settings.
-
-<details><summary>Abstract snippet</summary>
-
-OBJECTIVE: Suicide is one of the leading causes of death among adolescents. Given that most youth interact with healthcare system providers in the month preceding a suicide attempt, rapid and effective suicide screening tools are critically needed. The Ask Suicide-Screening Questions (ASQ) is a brief, evidence-based instrument specifically designed for the quick identification of adolescents at elevated suicide risk in time-critical and high-stress settings, such as Emergency Departments. This…
-
-</details>
-
-### [Applying Multiple Machine Learning Methods to Identify Correlates of Non-Suicidal Self-Injury Behaviors in Chinese Middle School Students: A Cross-Sectional Study.](https://pubmed.ncbi.nlm.nih.gov/42992229/)
-
-*Psychol Res Behav Manag (PubMed)* · **0.65** · 2026-11-01
-
-`machine learning` `NSSI` `adolescents` `cross-sectional` `correlates`
-
-Cross-sectional study compares five machine learning algorithms to identify correlates of non-suicidal self-injury in 2,295 Chinese middle school students.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Adolescent non-suicidal self-injury (NSSI) has become a major public health concern, with its rising prevalence driven by complex and interacting factors. Traditional analytical methods have limited capacity to capture non-linear relationships among high-dimensional variables. This study aimed to compare the performance of five machine learning algorithms in identifying NSSI and to determine its key correlates among Chinese adolescents. PARTICIPANTS AND SETTING: A total of 2,295…
-
-</details>
-
-### [Nonsuicidal self-injury-associated connectomic alterations in adolescent major depressive disorder: A rich-club and machine-learning study.](https://pubmed.ncbi.nlm.nih.gov/42976669/)
-
-*Psychiatry Res Neuroimaging (PubMed)* · **0.65** · 2026-10-29
-
-`NSSI` `adolescents` `neuroimaging` `machine learning` `connectomics`
-
-Resting-state fMRI study of 135 adolescents uses rich-club and machine-learning approaches to characterize connectomic alterations associated with non-suicidal self-injury in major depressive disorder.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Nonsuicidal self-injury (NSSI) is common in adolescents with major depressive disorder (MDD) and is associated with elevated suicide-related symptom burden, but its connectomic correlates remain incompletely characterized. METHODS: We acquired resting-state fMRI data from 135 adolescents, including 46 with MDD and clinician-assessed NSSI (MDD-NSSI), 45 with MDD without NSSI (MDD-noNSSI), and 44 healthy controls (HC). A multi-pronged analytical framework combining whole-brain…
-
-</details>
-
-### [Co-development of depressive and anxiety symptoms in adolescents with and without self-harm history.](https://pubmed.ncbi.nlm.nih.gov/42987983/)
-
-*J Affect Disord (PubMed)* · **0.65** · 2026-11-05
-
-`self-harm` `adolescents` `longitudinal` `depression` `anxiety`
-
-Longitudinal study examines joint developmental trajectories of depressive and anxiety symptoms and their association with self-harm history in adolescents.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Depressive and anxiety symptoms are well-established correlates of adolescent self-harm and suicidal thoughts and behavior (STB). While longitudinal studies have investigated the relationship between the two processes and self-harm separately, it remains largely unknown how their joint developmental trajectories are associated with self-harm behavior. This study thus aimed to examine the co-development of depressive and anxiety symptom trajectories and their associations with…
-
-</details>
-
-### [Machine learning and network analysis of psychosocial factors associated with non-suicidal self-injury severity among college students](https://www.sciencedirect.com/science/article/pii/S0165178126006001?dgcid=rss_sd_all)
-
-*Psychiatry Research* · **0.65**
-
-`NSSI` `machine learning` `network analysis` `college students`
-
-Machine learning and network analysis examine psychosocial factors associated with non-suicidal self-injury severity among college students.
-
-### [Association between the 2008 financial crisis and suicidal thoughts and behaviors among the United States adolescents: An interrupted time series analysis](https://www.sciencedirect.com/science/article/pii/S0165178126005792?dgcid=rss_sd_all)
-
-*Psychiatry Research* · **0.65**
-
-`adolescents` `suicidal thoughts and behaviors` `interrupted time series` `financial crisis`
-
-Interrupted time series analysis of the 2008 financial crisis association with suicidal thoughts and behaviors among U.S. adolescents.
-
-### [A domain-based cumulative risk framework for suicidal behaviors in adolescents: the 4-domain risk index (4D-RI).](https://pubmed.ncbi.nlm.nih.gov/42983384/)
-
-*BMC Public Health (PubMed)* · **0.60** · 2026-08-07
-
-`suicide` `adolescents` `risk index` `YRBS` `cumulative risk`
-
-Study uses 2023 and 2021 Youth Risk Behavior Survey data to develop and validate a four-domain cumulative risk index for adolescent suicidal behaviors.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Suicide remains a leading cause of death among adolescents worldwide. This study investigated whether a domain-based framework, termed the 4-Domain Risk Index (4D-RI), could characterize adolescent suicide-related vulnerability by quantifying cumulative risk across four domains: substance use, aggressive behaviors, victimization, and low support. METHODS: Data from the 2023 Youth Risk Behavior Survey (YRBS) were used as the primary analytic dataset, and data from the 2021 YRBS were…
-
-</details>
-
-### [Temporal distribution of suicide within a day among children and adolescents in Japan, 1995-2023.](https://pubmed.ncbi.nlm.nih.gov/43000072/)
-
-*J Affect Disord (PubMed)* · **0.60** · 2026-11-08
-
-`suicide` `children` `adolescents` `epidemiology` `temporal distribution`
-
-Nationwide descriptive epidemiology study maps the within-day timing of suicide deaths among children and adolescents in Japan from 1995 to 2023 using vital statistics.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Understanding the temporal distribution of suicidality is essential for timely support and care. However, it remains unclear how suicide deaths among children and adolescents are distributed within a day. We aimed to describe the temporal distribution of suicide death among this population and its variation by sex, school grade, day of the week, month, and calendar year. METHODS: This nationwide descriptive epidemiologic study used vital statistics (death records) in Japan from 1995…
-
-</details>
-
----
-
-## Intensive longitudinal & sensing
 
 ### [Variability and Influencing Factors of Suicidal Ideation in Adolescents-An Ecological Momentary Assessment Study.](https://pubmed.ncbi.nlm.nih.gov/43000929/)
 
-*Suicide Life Threat Behav (PubMed)* · **0.90** · 2026-12-01
+*Suicide Life Threat Behav (PubMed)* · **0.80** · 2026-12-01
 
-`EMA` `suicidal ideation` `adolescents` `inpatient` `smartphone sensing`
+`EMA` `suicidal ideation` `adolescents` `inpatient` `smartphone`
 
-Smartphone-based ecological momentary assessment captures within-person variability in passive and active suicidal ideation among 51 adolescents aged 12-18 recruited from three inpatient psychiatric hospitals.
+Smartphone-based EMA of current passive and active suicidal ideation in 51 adolescents aged 12-18 from three German child and adolescent psychiatric hospitals, examining SI variability and temporal and contextual factors; ILD design on the core outcome with a modest N.
 
 <details><summary>Abstract snippet</summary>
 
@@ -291,41 +57,287 @@ OBJECTIVE: Recent research demonstrated considerable variability in suicidal ide
 
 </details>
 
-### [AI Health Coach Prototype and Personalized Pathophysiological Hypotheses Based on an N-of-1 Big Data Study of Non-specific Musculoskeletal Chronic Pain.](https://pubmed.ncbi.nlm.nih.gov/42991791/)
+### [Day-to-day peer and family stress as proximal correlates of self-injurious thoughts during adolescence.](https://pubmed.ncbi.nlm.nih.gov/43021479/)
 
-*Cureus (PubMed)* · **0.75** · 2026-10-06
+*Dev Psychopathol (PubMed)* · **0.80** · 2026-11-13
 
-`n-of-1` `intensive longitudinal data` `machine learning` `chronic pain` `wearable sensing`
+`intensive longitudinal` `self-injurious thoughts` `adolescents` `peer stress` `family stress`
 
-N-of-1 big data study with high-density continuous longitudinal data for ML forecasting of chronic pain; demonstrates idiographic modeling with intensive longitudinal design.
-
-<details><summary>Abstract snippet</summary>
-
-Background Modern healthcare is shifting towards predictive, preventive, personalized, and participatory medicine. While machine learning (ML) forecasting has seen success in episodic conditions, translating these results to non-specific musculoskeletal chronic pain is challenging due to the logistical barriers of collecting high-density, continuous longitudinal data across large cohorts. Therefore, this study leverages a high-density n-of-1 dataset to (i) generate personalized data-driven…
-
-</details>
-
-### [A deep learning model for speech-based prediction of clinical scores in people with Huntington’s disease: a longitudinal study with cross-sectional replication](https://www.sciencedirect.com/science/article/pii/S2589750026000488?dgcid=rss_sd_all)
-
-*Lancet Digital Health* · **0.70**
-
-`digital phenotyping` `speech analysis` `longitudinal` `Huntington's disease` `replication`
-
-Longitudinal speech-based digital phenotyping for Huntington's disease clinical scores with cross-sectional replication; demonstrates passive sensing design.
-
-### [Patterns and Predictors of Engagement With a Mobile Mental Health Intervention Among Hurricane-Affected Adults.](https://pubmed.ncbi.nlm.nih.gov/42983914/)
-
-*Psychiatr Serv (PubMed)* · **0.60** · 2026-11-05
-
-`mobile health` `engagement` `posttraumatic stress` `depression`
-
-Examined patterns and predictors of engagement with mobile mental health intervention among Hurricane-affected adults.
+Intensive longitudinal design tests whether day-to-day peer and family stress predict same- and next-day self-injurious thoughts in adolescents; near-temporal proximal risk processes in a youth ILD sample.
 
 <details><summary>Abstract snippet</summary>
 
-OBJECTIVE: Mental disorders commonly increase after disasters, yet access to care is often limited by logistical barriers. Digital mental health applications may help address these gaps by providing private, low-cost, and readily accessible support. The authors examined patterns and predictors of engagement with Bounce Back Now (BBN), a self-help mobile application (app) designed to address posttraumatic stress, depression, and sleep disturbance among disaster-affected adults. METHODS:…
+Theory and research both highlight interpersonal stressors as precipitants to self-injurious thoughts and behaviors (SITBs) during adolescence. Yet, little is known about near-term risk or which types of interpersonal stressors (e.g., peer and/or family) are most likely to precipitate adolescent SITBs. This study used an intensive longitudinal design to examine whether peer- and family-related stress were associated with adolescents' same- and next-day self-injurious thoughts. Participants were…
 
 </details>
+
+### [Subgroup-aware suicide risk prediction via functionally adaptive interaction regularized regression.](https://pubmed.ncbi.nlm.nih.gov/43020824/)
+
+*Npj Ment Health Res (PubMed)* · **0.80** · 2026-07-22
+
+`suicide` `risk prediction` `machine learning` `subgroup fairness` `NSDUH`
+
+Introduces FAIR-PLR, a subgroup-aware penalized logistic regression for suicide risk prediction using 2013-2023 NSDUH data, targeting consistent performance across population subgroups. Machine-learning contribution to suicide prediction with explicit attention to subgroup fairness, though on cross-sectional survey data.
+
+<details><summary>Abstract snippet</summary>
+
+Suicide is a major public health issue, and machine learning offers promising tools to identify individuals at heightened risk. However, conventional models often fail to optimize performance across population subgroups, which can lead to inconsistent detection and outcomes. Using 2013-2023 data from the U.S. National Survey on Drug Use and Health (NSDUH), this study introduces the Functionally Adaptive Interaction Regularization-Penalized Logistic Regression (FAIR-PLR) framework: a logistic…
+
+</details>
+
+### [Machine learning and network analysis of psychosocial factors associated with non-suicidal self-injury severity among college students](https://www.sciencedirect.com/science/article/pii/S0165178126006001?dgcid=rss_sd_all)
+
+*Psychiatry Research* · **0.77**
+
+`NSSI` `machine learning` `network analysis` `college students` `self-harm severity`
+
+Combines machine learning and network analysis of psychosocial factors tied to non-suicidal self-injury severity in college students. Directly on the ML-plus-network intersection applied to self-harm, though cross-sectional in a young-adult sample.
+
+### [Longitudinal trajectories of non-suicidal self-injury, suicidal ideation, and suicide attempts following standardized outpatient emergency management in adolescents.](https://pubmed.ncbi.nlm.nih.gov/43010039/)
+
+*Child Adolesc Psychiatry Ment Health (PubMed)* · **0.70** · 2026-11-06
+
+`NSSI` `suicidal ideation` `suicide attempts` `adolescents` `longitudinal`
+
+Tracks NSSI behavior, NSSI thoughts, suicidal ideation, and suicide attempts longitudinally in adolescents after standardized outpatient emergency management; outcome mix and youth sample fit directly, but no ILD or computational method is stated.
+
+<details><summary>Abstract snippet</summary>
+
+BACKGROUND: Emergency presentations for non-suicidal self-injury (NSSI), suicidal ideation, and suicide attempts in youth have increased markedly. Behavioural and ideational components of self-injury and suicidality may follow partially dissociable courses, underscoring the need for longitudinal evaluation after emergency care. OBJECTIVES: To examine longitudinal changes in NSSI behaviour, NSSI thoughts, suicidal ideation, and suicide attempts after standardized outpatient emergency management;…
+
+</details>
+
+### [Association of Outpatient Crisis Services with Emergency Department Revisits in Suicidal Youth](https://www.medrxiv.org/content/10.64898/2026.11.09.26367462v1?rss=1)
+
+*medRxiv Psychiatry* · **0.70** · 2026-11-10
+
+`crisis services` `emergency department` `youth` `quasi-experimental` `suicide`
+
+Quasi-experimental test of whether referral to outpatient crisis services reduces mental-health-related ED revisits in suicidal youth; pediatric crisis-services design with a comparison group, though no ILD or prediction modeling.
+
+<details><summary>Abstract snippet</summary>
+
+Background and ObjectivePediatric emergency department (ED) visits for suicidal ideation and behavior have increased substantially, highlighting the need for scalable outpatient interventions that reduce recurrent ED use. We tested whether referral to outpatient crisis services was associated with fewer mental health-related ED revisits, hypothesizing that referred youth would have lower revisit rates than those receiving usual community care. MethodsWe conducted a quasi-experimental study of…
+
+</details>
+
+### [Value-based decision-making and non-suicidal self-injury in adolescent females: A dimensional and computational analysis](https://www.sciencedirect.com/science/article/pii/S0165032726014692?dgcid=rss_sd_all)
+
+*J Affective Disorders* · **0.70**
+
+`NSSI` `adolescent` `computational modeling` `decision-making` `reward`
+
+Applies dimensional and computational analysis to value-based decision-making in adolescent females with non-suicidal self-injury. Computational modeling of a self-harm phenotype in a youth sample, though the design appears cross-sectional.
+
+### [The validity of three suicide risk screening tools among Native American youth in a reservation-based ED](https://www.sciencedirect.com/science/article/pii/S0165178126005895?dgcid=rss_sd_all)
+
+*Psychiatry Research* · **0.70**
+
+`suicide risk` `screening` `validation` `adolescent` `Native American youth`
+
+Evaluates the validity of three suicide risk screening tools among Native American youth in a reservation-based emergency department. Youth suicide screening with a validation focus that speaks to measurement rigor, though cross-sectional.
+
+### [Testing the Impact of the #Chatsafe Intervention on Young People's Ability to Communicate Safely About Suicide on Social Media: A Randomized Controlled Trial.](https://pubmed.ncbi.nlm.nih.gov/43000949/)
+
+*Suicide Life Threat Behav (PubMed)* · **0.66** · 2026-12-01
+
+`suicide prevention` `RCT` `youth` `social media` `#Chatsafe`
+
+Randomised controlled trial of the #Chatsafe intervention versus a sexual-health control on young people's safe communication about suicide on social media, ages 16-25. Youth suicide-prevention RCT, rigorous in design but without ILD or computational modeling.
+
+<details><summary>Abstract snippet</summary>
+
+INTRODUCTION: Suicide-related content online may contribute to social transmission of suicide-related behaviors and interventions designed to improve communication safety may reduce risk and increase help-seeking in young people. METHODS: We conducted a randomized controlled trial (RCT) evaluating the #chatsafe intervention among young people aged 16-25 years. Participants were randomly assigned (1:1) to the #chatsafe intervention or the PROSPEct sexual health intervention (control), each…
+
+</details>
+
+### [Characteristics of suicide mortality among children and adolescents aged 5-19 years in Mainland China from 2013 to 2021: A national observational study.](https://pubmed.ncbi.nlm.nih.gov/43012847/)
+
+*Medicine (Baltimore) (PubMed)* · **0.65** · 2026-10-01
+
+`suicide mortality` `epidemiology` `children` `adolescents` `national`
+
+National observational characterization of suicide mortality in 5-19-year-olds in Mainland China from 2013 to 2021; pediatric suicide epidemiology at national scale, descriptive only.
+
+<details><summary>Abstract snippet</summary>
+
+Suicide among children and adolescents represents a major public health concern worldwide. Despite China's substantial share of the global youth population, research specifically focused on suicide among individuals aged 5 to 19 years remains limited. This study characterizes suicide patterns within this group to address this research gap. This study aimed to characterize suicide mortality among children and adolescents aged 5 to 19 years in Mainland China from 2013 to 2021. Using national…
+
+</details>
+
+### [Association between the 2008 financial crisis and suicidal thoughts and behaviors among the United States adolescents: An interrupted time series analysis](https://www.sciencedirect.com/science/article/pii/S0165178126005792?dgcid=rss_sd_all)
+
+*Psychiatry Research* · **0.65**
+
+`suicide` `adolescent` `interrupted time series` `time series` `financial crisis`
+
+Uses interrupted time-series analysis to link the 2008 financial crisis to suicidal thoughts and behaviors among U.S. adolescents. Adolescent suicidality with a time-series method, though on population-level rather than individual intensive longitudinal data.
+
+### [Co-development of depressive and anxiety symptoms in adolescents with and without self-harm history](https://www.sciencedirect.com/science/article/pii/S0165032726015508?dgcid=rss_sd_all)
+
+*J Affective Disorders* · **0.65**
+
+`self-harm` `adolescent` `depression` `anxiety` `developmental trajectories`
+
+Examines co-development of depressive and anxiety symptoms in adolescents with and without a self-harm history. Youth self-harm research with a longitudinal developmental angle, though no machine-learning or intensive longitudinal method is evident.
+
+### [Screening suicide-related ideation using the Kessler psychological distress scale-10: an indirect predictive model among university students](https://www.sciencedirect.com/science/article/pii/S0165178126005846?dgcid=rss_sd_all)
+
+*Psychiatry Research* · **0.65**
+
+`suicidal ideation` `predictive model` `K10` `university students` `screening`
+
+Develops an indirect predictive model using the Kessler Psychological Distress Scale-10 to screen suicide-related ideation in university students. Suicide-ideation prediction in young adults, though relying on an existing distress scale rather than ILD or a novel method.
+
+### [Dynamic change patterns in suicidal ideation differ in Brief Cognitive Behavioral Therapy (BCBT) and Present-Centered Therapy (PCT)](https://www.sciencedirect.com/science/article/pii/S0005796726002226?dgcid=rss_sd_all)
+
+*Behaviour Research and Therapy* · **0.65**
+
+`suicidal ideation` `therapy` `dynamic patterns` `clinical trial`
+
+Compares dynamic change patterns of suicidal ideation across two therapies; likely uses repeated measures but design unspecified.
+
+### [Mental health and suicidality among Black lesbian, gay, bisexual, transgender, and queer youth.](https://pubmed.ncbi.nlm.nih.gov/43004274/)
+
+*BMC Public Health (PubMed)* · **0.62** · 2026-08-13
+
+`suicide` `adolescent` `LGBTQ youth` `cross-sectional` `disparities`
+
+Examines mental health and suicidality among Black LGBTQ youth, framed around the fastest-growing suicide rate in this population and calls for culturally relevant prevention. Cross-sectional with no intensive longitudinal or computational component.
+
+<details><summary>Abstract snippet</summary>
+
+BACKGROUND: Suicide is a growing public health concern among youth. Despite historically reporting low rates of suicidality, Black youth now represent the fastest growing suicide rate, warranting immediate attention for salient and culturally-relevant prevention and intervention strategies. Because Black youth populations consist of diverse groups who bring distinct risk and protective factors shaped by their lived experiences, the goal of the present study was to better understand mental…
+
+</details>
+
+### [Temporal distribution of suicide within a day among children and adolescents in Japan, 1995–2023](https://www.sciencedirect.com/science/article/pii/S0165032726015727?dgcid=rss_sd_all)
+
+*J Affective Disorders* · **0.62**
+
+`suicide` `adolescent` `temporal patterns` `epidemiology` `Japan`
+
+Describes within-day temporal distribution of suicide among Japanese children and adolescents across 1995-2023. Youth suicide epidemiology with a short-timescale time-of-day angle but no intensive longitudinal or modeling component evident from the title.
+
+### [Long-Term Trends, Disparities, and Changes in Suicide Mortality During the COVID-19 Pandemic Among U.S. Adolescents: A Population-Based Study](https://www.sciencedirect.com/science/article/pii/S1054139X2600340X?dgcid=rss_sd_all)
+
+*J Adolescent Health* · **0.62**
+
+`suicide` `adolescent` `mortality trends` `COVID-19` `disparities`
+
+Population-based study of long-term trends, disparities, and COVID-19-era changes in U.S. adolescent suicide mortality. Adolescent suicide epidemiology that is descriptive with no intensive longitudinal or computational angle.
+
+### [Intersectional Trends in Method-Specific Suicide Among Adolescents in the United States, 2006–2023: A Pooled Cross-Sectional Study](https://www.sciencedirect.com/science/article/pii/S1054139X26002120?dgcid=rss_sd_all)
+
+*J Adolescent Health* · **0.62**
+
+`suicide` `adolescent` `method-specific` `means` `epidemiology`
+
+Pooled cross-sectional analysis of intersectional trends in method-specific adolescent suicide in the U.S., 2006-2023. Youth suicide epidemiology with a means-specific angle but no individual-level modeling or ILD.
+
+---
+
+## Intensive longitudinal & sensing
+
+### [Platform Differences in Smartphone Sensing Features for Mental Health Across Four Annual College Cohorts: Secondary Analysis](https://mhealth.jmir.org/2026/1/e103711)
+
+*JMIR mHealth uHealth / PubMed* · **0.75** · 2026-11-16
+
+`passive sensing` `smartphone` `platform differences` `digital phenotyping` `generalizability`
+
+Quantifies platform differences in passive smartphone sensing features across college cohorts; addresses measurement validity for digital phenotyping.
+
+<details><summary>Abstract snippet</summary>
+
+Background: Passive sensing for mobile mental health relies on observations that can differ across smartphone platforms. Distinguishing behavioral differences from differences in observation is necessary before using these features for symptom screening or monitoring. Objective: We quantified platform-associated differences, feature availability, sensitivity to preprocessing, and the predictive contribution of connectivity features within the Generalization of Longitudinal Behavior Modeling…
+
+</details>
+
+### [All-optical sensing of dermal activity enables an AI-powered wearable ring for continuous stress monitoring](https://www.science.org/doi/abs/10.1126/sciadv.aeh0459?af=R)
+
+*Science Advances* · **0.75** · 2026-11-13
+
+`wearable` `stress monitoring` `AI` `biosensor` `continuous monitoring`
+
+Develops an AI-powered wearable ring for continuous stress monitoring using all-optical dermal sensing; advances wearable biosensing for mental health.
+
+<details><summary>Abstract snippet</summary>
+
+Science Advances, Volume 12, Issue 46, November 2026.
+
+</details>
+
+### [When Users Log Mood After Assessment: Temporal-Lag, Discriminant Validity, and the Simplicity Paradox of Single-Label Ecological Momentary Mood Tracking in a Saudi Arabic-Language Digital Mental Health Cohort-A Diagnostic-Accuracy Study.](https://pubmed.ncbi.nlm.nih.gov/43028431/)
+
+*Diagnostics (Basel) (PubMed)* · **0.70** · 2026-10-29
+
+`EMA` `mood tracking` `diagnostic accuracy` `digital mental health` `validation`
+
+Evaluates diagnostic accuracy of single-label EMA mood tracking against PHQ-9/GAD-7 in a Saudi Arabic cohort; focuses on EMA measurement properties.
+
+<details><summary>Abstract snippet</summary>
+
+Background: Digital mental health platforms increasingly deploy self-directed single-label mood tracking as an ecological momentary assessment (EMA) tool, often framed as a screening indicator for depression or anxiety. Whether such naturalistic mood logs accurately detect screening-positive PHQ-9 and GAD-7 scores has not been tested at scale against validated Arabic-language reference-standard instruments. Objectives: To evaluate, retrospectively, how accurately naturalistic single-label…
+
+</details>
+
+### [Digital Phenotyping of Voice Biomarkers for Psychological States in College Students: Longitudinal Mobile App Study.](https://pubmed.ncbi.nlm.nih.gov/43024858/)
+
+*JMIR Biomed Eng (PubMed)* · **0.70** · 2026-11-13
+
+`digital phenotyping` `voice biomarkers` `college students` `mobile app` `longitudinal`
+
+Longitudinal digital phenotyping study using voice biomarkers and emoji expression in college students; focuses on passive sensing for psychological states.
+
+<details><summary>Abstract snippet</summary>
+
+BACKGROUND: College students face significant mental health challenges, yet traditional assessments often rely on in-person self-reports and long-form self-report survey approaches. The prevalence of smartphones and longitudinal digital phenotyping-using data from devices to rapidly monitor mental health processes-offers an opportunity to assess well-being using a nondisruptive, prevention-focused "light touch" approach via voice journaling and emoji-based expression. While voice biomarkers are…
+
+</details>
+
+### [Development of personalized machine learning models for predicting panic attacks in college students.](https://pubmed.ncbi.nlm.nih.gov/43031775/)
+
+*Front Digit Health (PubMed)* · **0.70** · 2026-10-30
+
+`wearable` `panic attacks` `personalized ML` `college students` `longitudinal`
+
+Personalized machine learning models predict panic attacks in college students using longitudinal Oura ring physiological and behavioral data (N=39).
+
+<details><summary>Abstract snippet</summary>
+
+Panic attacks (PAs) are unexpected episodes of intense fear and anxiety, accompanied by cognitive and physical symptoms that significantly impair day-to-day functioning. This study proposes a machine learning approach to predict PA risk in the upcoming week in individuals across mental health conditions, enabling timely and potentially preventive mental health intervention. We evaluate the approach in a longitudinal sample of behavioral and physiological data collected using Oura rings from 39…
+
+</details>
+
+### [The impact of sleep restriction on affective functioning in people with schizophrenia: an experimental digital phenotyping study](https://www.sciencedirect.com/science/article/pii/S0165178126006505?dgcid=rss_sd_all)
+
+*Psychiatry Research* · **0.65**
+
+`digital phenotyping` `sleep restriction` `schizophrenia` `affective functioning` `experimental`
+
+Experimental digital phenotyping study examining sleep restriction effects on affective functioning in schizophrenia; uses intensive longitudinal monitoring.
+
+### [Major depressive disorder involves motivational conflicts in emotion regulation in daily life.](https://pubmed.ncbi.nlm.nih.gov/43038079/)
+
+*J Psychopathol Clin Sci (PubMed)* · **0.60** · 2026-11-16
+
+`EMA` `emotion regulation` `MDD` `multilevel modeling` `daily life`
+
+EMA study of emotion regulation motivational conflicts in MDD (N=184) using multilevel modeling; intensive longitudinal but not suicide-focused.
+
+<details><summary>Abstract snippet</summary>
+
+What do individuals with major depressive disorder (MDD) want to achieve when regulating their emotions? The answer has not been clear, given that some evidence suggests they are more motivated and other evidence suggests they are less motivated to feel better, than healthy controls are. Tracking emotion regulation in an ecological momentary assessment study in individuals with MDD (N = 94) and in healthy individuals (N = 90), and using multilevel modeling, we demonstrated that compared with…
+
+</details>
+
+### [Objectively Measured Smartphone Use Is Associated With Worse Sleep Health Among Adolescents: The Stony Brook University MEDiA Study](https://www.sciencedirect.com/science/article/pii/S1054139X26003848?dgcid=rss_sd_all)
+
+*J Adolescent Health* · **0.60**
+
+`smartphone use` `sleep` `adolescents` `passive sensing` `objective measurement`
+
+Links objectively measured smartphone use to sleep health in adolescents; uses passive sensing but outcome not suicide-related.
 
 ---
 
@@ -333,11 +345,11 @@ OBJECTIVE: Mental disorders commonly increase after disasters, yet access to car
 
 ### [When do missed prompts matter? A simulation and empirical sensitivity study of structured nonresponse in intensive longitudinal assessment.](https://pubmed.ncbi.nlm.nih.gov/43002522/)
 
-*Psychol Assess (PubMed)* · **0.90** · 2026-11-09
+*Psychol Assess (PubMed)* · **0.85** · 2026-11-09
 
-`intensive longitudinal` `missing data` `ecological momentary assessment` `simulation` `suicidal ideation`
+`intensive longitudinal` `missing data` `simulation` `sensitivity` `suicidal ideation`
 
-Monte Carlo simulation and an empirical study evaluate how structured nonresponse in intensive longitudinal prompts biases inference, using suicidal ideation as a high-stakes exemplar.
+Monte Carlo simulation plus empirical sensitivity analysis of how structured nonresponse to missed prompts biases estimates in intensive longitudinal assessment, using suicidal ideation as the high-stakes exemplar; directly improves inference validity for EMA risk data.
 
 <details><summary>Abstract snippet</summary>
 
@@ -345,173 +357,199 @@ Inference in intensive longitudinal assessment depends on whether observed promp
 
 </details>
 
-### [Development, validation and AI chatbot evaluation of the Adolescent Mental Health AI Response Tool.](https://pubmed.ncbi.nlm.nih.gov/42974409/)
+### [When standard two-method measurement planned missing designs reach their limits: Time-embedded adaptations for intensive longitudinal studies.](https://pubmed.ncbi.nlm.nih.gov/43026392/)
 
-*Nat Ment Health (PubMed)* · **0.85** · 2026-10-28
+*Behav Res Methods (PubMed)* · **0.80** · 2026-11-13
 
-`adolescent` `AI` `chatbot` `validation` `mental health`
+`intensive longitudinal` `planned missing design` `measurement` `methods` `EMA`
 
-Clinician-informed instrument for auditing guideline-informed response content across seven domains was developed and applied to four major AI chatbots; candidate items were reviewed by clinicians.
+Proposes time-embedded adaptations of planned missing designs for intensive longitudinal studies; methodological advance for ILD measurement efficiency.
 
 <details><summary>Abstract snippet</summary>
 
-Many adolescents seek mental health advice from general-purpose artificial intelligence (AI) chatbots, despite limited evaluations against youth-relevant clinical standards. We developed the Adolescent Mental Health AI Response Tool (AMHART), a clinician-informed instrument for auditing the presence of guideline-informed response content across seven domains, and applied it to four major AI chatbots. Candidate items were reviewed by clinicians for their evidence base, objectivity, and clinical…
+Two-method measurement planned missing designs (TMM-PMD) offer a cost-efficient approach to balancing measurement quality and statistical power by strategically administering both gold-standard and efficient measures. While well established in cross-sectional and traditional longitudinal studies, their applicability in intensive longitudinal studies (ILS) remains underexplored. This study evaluates the performance of standard TMM-PMD in ILS and proposes two time-embedded adaptations: a…
 
 </details>
 
-### [Mathematical promises and clinical uncertainties in the validation of early warning scores](https://www.sciencedirect.com/science/article/pii/S2589750026001342?dgcid=rss_sd_all)
+### [Identification of Temporal Hotspots of Distributional Change in Stress and Passive mHealth Data.](https://pubmed.ncbi.nlm.nih.gov/43029537/)
 
-*Lancet Digital Health* · **0.80**
+*Sensors (Basel) (PubMed)* · **0.80** · 2026-10-24
 
-`early warning signals` `validation` `dynamical systems` `clinical prediction` `calibration`
+`change point detection` `passive sensing` `stress` `time series` `distributional change`
 
-Discusses mathematical promises and clinical uncertainties in validation of early warning scores; directly relevant to dynamical systems early warning signals for clinical state transitions.
-
-### [Mapping the Landscape of Adolescent Trauma and Posttraumatic Stress Research: A Topic Modeling Study of Research Pathways and Temporal Trends.](https://pubmed.ncbi.nlm.nih.gov/42991483/)
-
-*J Child Adolesc Trauma (PubMed)* · **0.80** · 2026-09-08
-
-`adolescent` `trauma` `topic modeling` `network`
-
-Used BERTopic topic modeling, semantic clustering, a cross-topic semantic network, and trend analysis on 4,417 English-language articles to map adolescent trauma and posttraumatic stress research pathways.
+Develops methods for identifying temporal hotspots of distributional change in stress and passive mHealth data; advances change point detection for asynchronous multivariate time series.
 
 <details><summary>Abstract snippet</summary>
 
-UNLABELLED: Research on adolescent trauma and posttraumatic stress, including posttraumatic stress disorder (PTSD), has continued to grow, yet its knowledge structure and temporal trends remain insufficiently mapped. Based on 4,417 English-language articles retrieved from PubMed and Web of Science, this study used BERTopic topic modeling, semantic clustering, a cross-topic semantic network, and topic prevalence trend analysis to examine the field's topic structure, semantic connections, and…
+Identifying temporal changes in self-reported stress and passively sensed behavioral measures is important for examining longitudinal patterns in mental health research. Conventional change point detection methods typically return isolated change points, while approaches that model relationships between stress and passive sensing variables may require explicit functional assumptions. These features can complicate the identification of potentially asynchronous distributional changes across…
 
 </details>
 
-### [Development and external validation of a contrastive learning foundation model for ECG-based prediction of cardiovascular diseases and outcomes](https://www.sciencedirect.com/science/article/pii/S2589750026001159?dgcid=rss_sd_all)
+### [Personalized Federated Vector Autoregression with Personalization Diversity](https://arxiv.org/abs/2610.04474)
 
-*Lancet Digital Health* · **0.75**
+*arXiv stat.ME* · **0.80** · 2026-11-16
 
-`contrastive learning` `foundation model` `ECG` `external validation` `cardiovascular`
+`vector autoregression` `federated learning` `idiographic` `personalized` `time series`
 
-Develops and externally validates a contrastive learning foundation model for ECG-based cardiovascular prediction; demonstrates advanced ML with rigorous validation.
-
-### [Capturing additional variance in impact of adolescent depression from free text: proof of concept and preliminary results](https://www.medrxiv.org/content/10.64898/2026.11.02.26367115v1?rss=1)
-
-*medRxiv Psychiatry* · **0.75** · 2026-11-03
-
-`adolescent` `depression` `NLP` `free text`
-
-Proof-of-concept work capturing additional variance in adolescent depression impact from free text, addressing symptom presentation and functional impact gaps.
+Personalized federated vector autoregression with shared low-rank dynamics and personalized sparse departures for high-dimensional time series.
 
 <details><summary>Abstract snippet</summary>
 
-Depression in adolescents has grown in prevalence in the past decade. Despite indications of differences in symptom presentation, measurement properties, and treatment response between adolescents and adults, research is dominated by adult participants. Qualitative work has identified symptomatic and functional domains important to depressed adolescents and those around them; however, there remains little quantitative evidence of how these domains relate to the functional impact of the…
+arXiv:2610.04474v2 Announce Type: replace Abstract: Personalized federated estimation of high-dimensional time series faces two challenges: identifying shared dynamics and retaining the statistical gains from pooling. We address these challenges through personalization diversity in a vector autoregressive model with shared low-rank dynamics, shared sparse links, and personalized sparse departures. A cross-client support-frequency cap yields a sharp majority threshold for shared-personalized…
 
 </details>
 
-### [Loneliness as a symptom of major depression in youth: a cohort study.](https://pubmed.ncbi.nlm.nih.gov/42996325/)
+### [TALQ: A reproducible language model questionnaire for dense measurement of depressive and anxious states](https://www.medrxiv.org/content/10.64898/2026.11.12.26367797v1?rss=1)
 
-*Res Sq (PubMed)* · **0.75** · 2026-10-22
+*medRxiv Psychiatry* · **0.78** · 2026-11-15
 
-`adolescent` `depression` `network` `loneliness`
+`LLM measurement` `dense repeated measures` `depression` `validation` `text psychometrics`
 
-Network analysis examined loneliness centrality in a depressive symptom network among youth and tested loneliness as a severity indicator.
+Introduces TALQ, an LLM that rates 52 symptoms from text, applied to 491 members of two online mental health communities every two weeks for a year, with stability across samples and prediction of human annotations of depression severity and low self-esteem. Dense repeated measurement plus explicit psychometric validation, though the outcome is depression/anxiety rather than suicidality.
 
 <details><summary>Abstract snippet</summary>
 
-This study evaluated loneliness as an associate symptom and severity indicator of major depressive disorder (MDD) in adolescents and young adults. We used data from the Brazilian High-Risk Cohort Study when participants were aged 14-23 (n = 1,905) and 18-28 years (n = 2,052). We examined loneliness centrality in a depressive symptom network and evaluated its role as a severity indicator by comparing clinical groups defined by clinician-diagnosed MDD and the presence of loneliness. Four groups…
+Depression and anxiety are often assessed weeks or months apart with brief questionnaires covering few symptoms, leaving changes between assessments unobserved. Here, we introduce TALQ, a scoring system in which a large language model rates 52 symptoms from text, and use it to score 491 members of two online mental health communities every two weeks for a year. Ratings were stable across samples, predicted human annotations of interpersonal risk factors, low self-esteem and depression severity,…
 
 </details>
 
-### [Counteracting the overestimation of effect size in mass-univariate brain-wide association studies using cross-validation.](https://pubmed.ncbi.nlm.nih.gov/42982783/)
+### [Menstrual Cycle Exacerbation of ADHD Symptoms in Adults: Common, Person-Specific, and Not Confined to the Luteal Phase](https://www.medrxiv.org/content/10.64898/2026.11.09.26367690v1?rss=1)
 
-*Transl Psychiatry (PubMed)* · **0.70** · 2026-11-04
+*medRxiv Psychiatry* · **0.75** · 2026-11-11
 
-`cross-validation` `neuroimaging` `effect size` `replicability` `methodology`
+`intensive longitudinal` `daily diary` `ADHD` `menstrual cycle` `person-specific`
 
-Proposes cross-validation to counter effect size overestimation in mass-univariate neuroimaging; addresses replicability and generalizability, relevant to ML validation.
+Intensive longitudinal daily diary study (N=106) examining person-specific menstrual cycle effects on ADHD symptoms; uses ILD for person-level dynamics.
 
 <details><summary>Abstract snippet</summary>
 
-BACKGROUND: Brain-wide association effects are commonly overestimated in psychiatric neuroimaging research, leading to low replicability and generalizability of findings, and ultimately to poor translation to clinical utility. Cross-validation is currently not standardly used in univariate neuroimaging analyses but could pose a potential counteracting measure for this problem. METHODS: We systematically evaluated the benefit of a cross-validation procedure to expose inflated effect size…
+ObjectivePatients often describe menstrual-cycle worsening of attention-deficit/hyperactivity disorder (ADHD). We prospectively evaluated sample- and person-level cycle effects on ADHD symptoms and their independence from cyclical negative affect and pain. MethodsIn an intensive longitudinal cohort (2019-2024), 106 naturally cycling adults meeting DSM-5 ADHD criteria on integrated assessment rated daily inattention and hyperactivity-impulsivity (Barkley Adult ADHD Rating Scale-IV), negative…
 
 </details>
 
-### [The pendular regulation model: a transdiagnostic approach to emotional regulation.](https://pubmed.ncbi.nlm.nih.gov/42990845/)
+### [Which Model, For Which Variable? Per-Variable Forecast Combination in Sparse ICU Time Series](https://arxiv.org/abs/2611.18149)
 
-*Front Psychol (PubMed)* · **0.70** · 2026-10-22
+*arXiv cs.LG* · **0.75** · 2026-11-16
 
-`transdiagnostic` `emotional regulation` `dynamical systems`
+`ICU` `time series forecasting` `multi-database` `clinical` `methodology`
 
-Introduces a pendular regulation model for emotional regulation that integrates nonlinear dynamics, hierarchical predictive processing, stress physiology, and identity stabilization.
+Shows variable-specific forecast combination across five ICU databases (MIMIC-III, MIMIC-IV, eICU, HiRID, UMM) for 94 physiology channels over 24-hour horizon.
 
 <details><summary>Abstract snippet</summary>
 
-Contemporary psychiatric classification systems face persistent concerns regarding diagnostic heterogeneity, comorbidity, and limited mechanistic precision. Although dimensional and transdiagnostic initiatives-including HiTOP, RDoC, and network models-have advanced the field, a unifying regulatory architecture integrating nonlinear dynamics, hierarchical predictive processing, stress physiology, and identity stabilization remains underdeveloped. The present article introduces the Pendular…
+arXiv:2611.18149v1 Announce Type: new Abstract: Clinical forecasting papers typically report a single best architecture. We show that on multivariate ICU physiology this question conceals variable-specific differences: no architecture is best on every variable, and which model wins changes from variable to variable. Across five ICU databases (MIMIC-III, MIMIC-IV, eICU, HiRID, and UMM (University Medicine Mannheim), a German single-center ICU) we forecast 94 channels over a 24-hour horizon with…
 
 </details>
 
-### [Modeling of Therapist-Client Dynamics in Psychotherapy Using Large Language Model–Based Assessments: Retrospective Observational Study of 1573 Psychotherapy Sessions](https://mental.jmir.org/2026/1/e95389)
+### [Text Psychometrics: Assessing psychological constructs in text using natural language processing.](https://pubmed.ncbi.nlm.nih.gov/43019512/)
 
-*JMIR Mental Health* · **0.70** · 2026-11-05
+*PLOS Digit Health (PubMed)* · **0.72** · 2026-11-12
 
-`LLM` `therapy dynamics` `computational modeling`
+`NLP` `psychometrics` `reliability` `validity` `LLM assessment`
 
-Computational framework modeled therapist-client dynamics using LLM-based assessments from 1,573 psychotherapy sessions in a retrospective observational study.
+Proposes a framework for evaluating validity, reliability, and standardization of NLP- and LLM-based psychological assessments, targeting the exact gap between questionnaire psychometrics and text-based scoring. Directly applicable to validating computational risk measures, though no suicide outcome or empirical sample is reported.
 
 <details><summary>Abstract snippet</summary>
 
-Background: Psychotherapy is a primary treatment for many mental health conditions, yet the dynamic interplay among therapist behaviors, client responses, and the therapeutic relationship remains difficult to disentangle at scale. Traditional process research relies on labor-intensive human coding, limiting the ability to model moment-to-moment therapeutic dynamics across large datasets. Objective: This study aimed to develop and validate a computational framework for modeling therapist-client…
+Large language models (LLMs) have revolutionized natural language processing (NLP). Yet when used to assess psychological constructs in text, they are generally not evaluated for the types of validity, reliability, and standardization typically expected from traditional questionnaires with rating scales. This study bridges that gap by proposing a framework for evaluating the psychometric properties of NLP-based psychological assessments (including LLMs-based ones), an area of research we refer…
 
 </details>
 
-### [Discovering semantic structures in psychological scales: A response-free front-end to efficient simplification.](https://pubmed.ncbi.nlm.nih.gov/42972153/)
+### [Differentially Private Federated Class-Incremental Learning for EEG Mental State Classification](https://arxiv.org/abs/2611.17944)
 
-*Behav Res Methods (PubMed)* · **0.70** · 2026-11-02
+*arXiv cs.LG* · **0.70** · 2026-11-16
 
-`NLP` `psychometrics` `scale refinement`
+`federated learning` `differential privacy` `EEG` `wearable` `mental state classification`
 
-Response-free NLP front-end uses semantic structures to simplify psychological scales, avoiding traditional response-based refinement methods.
+Develops differentially private federated class-incremental learning for wearable EEG mental state classification; technical ML advance for small-client biosignal settings.
 
 <details><summary>Abstract snippet</summary>
 
-Psychological scale refinement traditionally relies on response-based methods such as factor analysis, item response theory, and network psychometrics to uncover latent constructs and optimize item composition. Although methodologically rigorous, these approaches require large respondent samples and may be limited by data availability, cross-cultural comparability, and replication constraints. Recent advances in natural language processing suggest that the wording of questionnaire items…
+arXiv:2611.17944v1 Announce Type: new Abstract: Federated learning (FL) under differential privacy (DP) is typically evaluated on large client cohorts, where subsampling and cross-client averaging amplify privacy and smooth injected noise. Personal biosignal applications such as wearable EEG instead involve small federations of a handful of subjects, a regime whose interaction with formal client-level DP is largely uncharacterized. We study differentially private federated class-incremental…
 
 </details>
 
-### [Navigating Selection Bias in Genome-wide Association Studies (GWAS)](https://arxiv.org/abs/2611.09429)
+### [Beyond symptom severity: Prognostic information from subjective person-specific problem networks in young people.](https://pubmed.ncbi.nlm.nih.gov/43017366/)
 
-*arXiv stat.ME* · **0.65** · 2026-11-09
+*JCPP Adv (PubMed)* · **0.70** · 2026-11-11
 
-`GWAS` `selection bias` `polygenic scores` `Mendelian randomization` `methodology`
+`idiographic` `network analysis` `prognostic` `young people` `person-specific`
 
-Addresses selection bias in GWAS and its propagation to polygenic scores and Mendelian randomization; methodological advance for genetic epidemiology.
+Person-specific perceived causal network (PECAN) characteristics predict subsequent psychopathology beyond baseline severity in 361 young people.
 
 <details><summary>Abstract snippet</summary>
 
-arXiv:2611.09429v1 Announce Type: new Abstract: Selection bias arises when inclusion in a genetic study depends on traits, or causes of traits, that are associated with genotype. It is present in volunteer-based biobanks, case-control designs and studies of disease progression, and genome-wide association study (GWAS) summary statistics from affected samples can propagate this bias into post-GWAS analyses, such as polygenic scores (PGS), Mendelian randomization (MR) and genetic correlation…
+BACKGROUND: Person-specific network models are increasingly proposed to support personalized assessment and psychotherapy, but it remains unclear whether the information they contain is prospectively informative in young people. We tested whether characteristics derived from a brief perceived causal network (PECAN), particularly its perceived relational structure, provided prognostic information about subsequent psychopathology beyond baseline symptom severity. METHODS: Participants were 361…
 
 </details>
 
-### [Engagement, Feasibility, and Perceived Alliance With a Large Language Model–Enabled Mental Health Voice and Chatbot: Exploratory Longitudinal Observational Study](https://formative.jmir.org/2026/1/e89708)
+### [Estimand-specific bootstrap confidence intervals after optimism correction for prediction models](https://arxiv.org/abs/2611.17774)
 
-*JMIR Formative Res* · **0.65** · 2026-11-09
+*arXiv stat.ME* · **0.70** · 2026-11-16
 
-`LLM` `chatbot` `engagement` `mental health`
+`prediction models` `bootstrap` `optimism correction` `validation` `methodology`
 
-Exploratory longitudinal observational study of 527 self-referred LLM chatbot users found high distress and early working alliance; examined feasibility and descriptive outcome patterns.
+Develops estimand-specific bootstrap confidence intervals distinguishing target-population performance from average development performance after optimism correction.
 
 <details><summary>Abstract snippet</summary>
 
-Background: Conversational AI systems are increasingly used for web-based mental health support, yet evidence on sustained engagement, therapeutic alliance, and longitudinal outcomes remains limited. Baseline data from 527 self-referred users of the large language model–enabled chatbot Clare indicated high psychological distress and early development of a subjective working alliance. Objective: This exploratory study examined the feasibility and descriptive outcome patterns associated with the…
+arXiv:2611.17774v1 Announce Type: new Abstract: Confidence intervals after bootstrap optimism correction are often reported for prediction models, but what they cover depends on the estimand. We distinguish two estimands: the target-population performance of the final model developed from the observed sample, $\theta_{\mathrm{FM},n}$, and the average performance over repeated model development, $\theta_{\mathrm{proc},n}$. Using first-order expansions of the estimation errors, we identify the…
 
 </details>
 
-### [Silent Manipulation of Mental Health Treatment Recommendations From an LLM](https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2856233)
+### [Identifying Latent Neural Dynamics with Recognition-Parametrised Gaussian Process Dynamical Systems](https://arxiv.org/abs/2611.17487)
 
-*JAMA Network Open* · **0.65** · 2026-11-03
+*arXiv cs.LG* · **0.70** · 2026-11-16
 
-`LLM` `mental health` `treatment` `activation steering`
+`dynamical systems` `Gaussian process` `neural dynamics` `methodology`
 
-Quality improvement study evaluated whether activation steering changes open-weights LLM responses to questions about treatment for depression.
+Gaussian process dynamical systems with recognition-parametrized inference for latent neural dynamics from high-dimensional recordings.
 
 <details><summary>Abstract snippet</summary>
 
-This quality improvement study evaluates whether activation steering changes an open-weights large language model’s (LLM) responses to questions about treatment for depression.
+arXiv:2611.17487v1 Announce Type: new Abstract: Neural circuits are densely interconnected systems, and many neural computations are thought to be mediated by the dynamical evolution of activity within these recurrent networks, a hypothesis often referred to as "computation through dynamics". Under this view, understanding computation within real neural populations depends on building models of the dynamical rules governing the temporal evolution of recorded high-dimensional neural activity.…
+
+</details>
+
+### [Bivariate Multiscale Sample Entropy of Frontoparietal-Subgenual ACC Dynamics in Depression During Accelerated TMS at 7 T](https://www.medrxiv.org/content/10.64898/2026.11.12.26367710v1?rss=1)
+
+*medRxiv Psychiatry* · **0.70** · 2026-11-13
+
+`multiscale-entropy` `dynamical-systems` `fMRI` `TMS` `methods`
+
+Bivariate multiscale sample entropy analysis of frontoparietal-subgenual ACC dynamics in depression during accelerated TMS; dynamical systems method applied to fMRI, longitudinal baseline-follow-up design.
+
+<details><summary>Abstract snippet</summary>
+
+Objective: To examine whether longitudinal changes in frontoparietal (FP) - subgenual anterior cingulate cortex (sgACC) joint temporal complexity differ between sgACC hemispheres in patients undergoing accelerated TMS (aTMS) and untreated healthy controls. Methods: Twenty-four patients with current depressive episodes and fifteen healthy controls underwent 7T resting-state fMRI at baseline and follow-up. Patients received aTMS localized to the left DLPFC using Beam-F3. The same bilateral FP…
+
+</details>
+
+### [Trapped in time: a collapse of temporal irreversibility and remodeling of causal connectivity in major depressive disorder.](https://pubmed.ncbi.nlm.nih.gov/43020807/)
+
+*Transl Psychiatry (PubMed)* · **0.68** · 2026-08-18
+
+`temporal-irreversibility` `early-warning` `fMRI` `MDD` `methods`
+
+Quantification of temporal irreversibility (IR) in resting-state fMRI from MDD patients and healthy controls; dynamical systems method assessing temporal asymmetry, potential early warning signal for clinical state transitions, no intensive longitudinal design.
+
+<details><summary>Abstract snippet</summary>
+
+Healthy brain dynamics evolve in the direction far from thermodynamic equilibrium. The temporal asymmetry nature recently has been described in several normal and pathological brain states. However, whether the temporal asymmetry of spontaneous brain activity is affected by Major Depression Disorders (MDD) remains unknown. Resting-state fMRI data from 178 MDD patients and 205 healthy controls (HCs) were analyzed. We quantified temporal irreversibility (IR) by comparing forward and backward time…
+
+</details>
+
+### [Do Rule-Derived Labels Improve Prediction When Reported Labels Are Limited? A Two-Site Machine Learning Study](https://www.medrxiv.org/content/10.64898/2026.11.12.26367890v1?rss=1)
+
+*medRxiv Health Informatics* · **0.65** · 2026-11-13
+
+`machine learning` `weak supervision` `external validation` `EHR`
+
+Two-site machine learning study evaluating rule-derived weak labels for E. coli urine culture prediction with label-budget experiments.
+
+<details><summary>Abstract snippet</summary>
+
+**Background.** Rule derived (weak) labels can enlarge a training set when reported labels are scarce. Their value depends on label quality, on how the extra records shift the training distribution, and on whether the comparison accounts for reported labels set aside for tuning or calibration. **Methods.** We ran an exploratory label-budget experiment on *Escherichia coli* urine cultures from two de-identified electronic health record datasets: Stanford ARMD and UT Southwestern ARMD-UTSW. The…
 
 </details>
 
@@ -519,96 +557,12 @@ This quality improvement study evaluates whether activation steering changes an 
 
 ## Adjacent mental health, genetics & neurobiology
 
-### [SHARED GENETIC ARCHITECTURE AND DIRECTIONAL ASSOCIATIONS BETWEEN ATTENTION-DEFICIT/HYPERACTIVITY AND BORDERLINE PERSONALITY DISORDERS: AN INTEGRATIVE GENOMIC ANALYSIS](https://www.medrxiv.org/content/10.64898/2026.11.06.26367465v1?rss=1)
+### [Longitudinal Associations Between Depressive Symptoms and Brain Structure Across Late Childhood and Adolescence: A Panel Network Analysis Study](https://www.sciencedirect.com/science/article/pii/S2667174326001370?dgcid=rss_sd_all)
 
-*medRxiv Psychiatry* · **0.65** · 2026-11-09
+*Biol Psychiatry GOS* · **0.65**
 
-`genetics` `ADHD` `borderline personality disorder` `GWAS` `Mendelian randomization`
+`adolescent` `depression` `neuroimaging` `longitudinal` `network analysis`
 
-Integrative genomic analysis of shared genetics between ADHD and BPD using GWAS summary statistics; BPD relevance to self-harm but no ILD or computational methods.
-
-<details><summary>Abstract snippet</summary>
-
-Background: Attention-deficit/hyperactivity disorder (ADHD) and borderline personality disorder (BPD) frequently co-occur, but the contributions of shared genetic susceptibility and directional associations remain unclear. Methods: We analyzed European-ancestry GWAS summary statistics for ADHD (38,691 cases; 186,843 controls) and BPD (12,339 cases; 1,041,717 controls). Linkage disequilibrium score regression, conjunctional false discovery rate (conjFDR), bidirectional Mendelian randomization…
-
-</details>
-
-### [Transdiagnostic Functional Brain Alterations Across Familial and Phenotypic Risk Samples: A Meta-Analysis](https://www.medrxiv.org/content/10.64898/2026.11.04.26367294v1?rss=1)
-
-*medRxiv Psychiatry* · **0.65** · 2026-11-06
-
-`neuroimaging` `transdiagnostic` `meta-analysis` `risk`
-
-Meta-analysis examined transdiagnostic functional brain alterations across familial and phenotypic risk samples for mood, anxiety, and psychotic disorders.
-
-<details><summary>Abstract snippet</summary>
-
-Importance: Psychiatric risk factors are often associated with multiple clinical outcomes. However, it remains unclear whether functional brain activation changes are shared across risk for mood, anxiety, and psychotic disorders. Objective: To determine which patterns of functional brain activation are shared across risk for different psychiatric disorders, defined using phenotypic (e.g., clinical) and familial risk paradigms, relative to control samples. Data Sources: PubMed and Web of Science…
-
-</details>
-
-### [A robust coordinated molecular response following trauma promotes recovery and protects against chronic pain and neuropsychiatric symptoms](https://www.medrxiv.org/content/10.64898/2026.11.07.26367466v1?rss=1)
-
-*medRxiv Psychiatry* · **0.65** · 2026-11-09
-
-`trauma` `molecular` `neuropsychiatric` `recovery`
-
-Coordinated molecular response after trauma was associated with recovery and protection against chronic pain and neuropsychiatric symptoms in trauma survivors.
-
-<details><summary>Abstract snippet</summary>
-
-The biological mechanisms governing recovery versus chronicity of adverse posttraumatic neuropsychiatric sequelae (APNS) remain poorly understood. Here, we characterized longitudinal molecular changes among trauma survivors across ten APNS domains, including pain, anxiety, and depression. Recovery across these diverse clinical outcomes was associated with a shared, temporally coordinated transcriptional signature, characterized by early innate immune activation, subsequent homeostatic and…
-
-</details>
-
-### [Intravenous Ketamine or Esketamine in Adolescents With Major Depressive Disorder: A Systematic Review.](https://pubmed.ncbi.nlm.nih.gov/42985314/)
-
-*Alpha Psychiatry (PubMed)* · **0.65** · 2026-08-27
-
-`adolescent` `depression` `ketamine` `systematic review`
-
-Systematic review evaluated intravenous ketamine or esketamine efficacy, safety, and tolerability in adolescents with major depressive disorder.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: The therapeutic efficacy and safety of intravenous ketamine or esketamine in adolescents with major depressive disorder (MDD) remain insufficiently defined. This systematic review of randomized controlled trials (RCTs) aimed to evaluate the efficacy, safety, and tolerability of intravenous ketamine or esketamine in this population. METHODS: A comprehensive search of four international databases (PubMed, EMBASE, PsycINFO, and the Cochrane Library) was conducted to identify RCTs…
-
-</details>
-
-### [A Digital Mental Health Literacy Program Reduces Adolescent Depression and Anxiety Symptoms in a District-Wide Trial](https://www.sciencedirect.com/science/article/pii/S1054139X26003678?dgcid=rss_sd_all)
-
-*J Adolescent Health* · **0.65**
-
-`adolescent` `digital mental health` `intervention` `depression`
-
-District-wide trial tested digital mental health literacy program reducing adolescent depression and anxiety symptoms.
-
-### [Menarche and ADHD: associations between puberty, ADHD traits and mental health in female adolescents.](https://pubmed.ncbi.nlm.nih.gov/42971536/)
-
-*J Child Psychol Psychiatry (PubMed)* · **0.65** · 2026-11-02
-
-`adolescent` `ADHD` `puberty` `mental health`
-
-Examined associations between menarche, ADHD traits, and mental health in female adolescents.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Adolescents with attention-deficit/hyperactivity disorder (ADHD) may be more vulnerable to cooccurring mental health challenges during puberty, and some evidence suggests that puberty impacts ADHD traits. However, pubertal influences on psychological outcomes in female adolescents with ADHD are poorly understood. We investigated how menarche relates to ADHD traits and its potential moderation of associations between ADHD status or traits and mental health. METHODS: Analyses used…
-
-</details>
-
-### [Response to Uncertainty and Social Threat: Impact on Mental Health (RUSH) Study Protocol.](https://pubmed.ncbi.nlm.nih.gov/42976098/)
-
-*Biopsychosoc Sci Med (PubMed)* · **0.65** · 2026-11-03
-
-`depression` `stress` `naturalistic` `mental health`
-
-Protocol describes multi-week naturalistic stress paradigm comparing sorority members and others for depression and social threat.
-
-<details><summary>Abstract snippet</summary>
-
-BACKGROUND: Depression is frequently treatment-resistant, and its etiological underpinnings remain poorly understood. Chronic systemic inflammation may drive difficult-to-treat cases, yet prospective naturalistic studies among non-depressed individuals are needed to inform etiology and prevention. This protocol describes the Response to Uncertainty and Social Threat: Impact on Mental Health (RUSH) Study, a multi-week naturalistic stress paradigm comparing current sorority members (controls) to…
-
-</details>
+Longitudinal panel network analysis linking depressive symptoms to brain structure changes from late childhood through adolescence.
 
 ---
